@@ -1,0 +1,34 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Find the optimal grid angle to make a tour through $n \leq 12$ points.
+    \end{block}
+    \pause
+    \begin{block}{Subtask: assume we know the angle}
+      \begin{itemize}
+      \item All possible $\mathcal O(n!)$ routes, too slow!
+      \item DP with (current location, locations still todo)
+      \item This runs in $\mathcal O(n^2 \cdot 2^n)$
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Complete solution}
+      \begin{itemize}
+      \item Insight: in the optimal solution, there is a straight line between two consecutive locations
+      \item Consider all $n^2$ angles between pairs of locations
+      \item Total complexity $\mathcal O(n^4 \cdot 2^n)$
+      \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}
+
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{center}
+    \includegraphics[width=5cm]{02-random}
+    \includegraphics[width=5cm]{12-random}
+    \includegraphics[width=5cm]{57-plus}
+    \includegraphics[width=5cm]{63-maximal}
+  \end{center}
+\end{frame}

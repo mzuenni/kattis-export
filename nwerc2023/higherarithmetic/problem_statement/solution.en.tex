@@ -1,0 +1,40 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Print a valid arithmetic expression using \texttt+, \texttt*, \texttt(, and \texttt) and all given numbers exactly once such that the value is maximal.
+    \end{block}
+
+    \pause 
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item<+-> Idea: A maximal expression always is the product of sums. 
+            \item<+-> All numbers are $> 1$: Multiply all numbers.
+            \item<+-> With $1$s and $2$s, some numbers need to be combined into sums.
+        \end{itemize}
+        \vspace{-0.5em}
+        \uncover<+->{\textbf{Cases:}}
+        \vspace{-0.5em}
+        \begin{itemize}
+            \item<+-> Only one $1$: 
+            Add to second smallest number. 
+            % , i.e. \texttt{(1 + $a_1$) * $a_2$ * $\ldots$}.
+            \item<+-> No $2$s: Repeatedly combine three $1$s. 
+            % , i.e.  \texttt{(1 + 1 + 1) $\ldots$ * (1 + 1 + 1) * $a_1$ * $a_2$ * $\ldots$}.
+            \begin{itemize}
+                \item<+-> Special case: If two $1$s or four $1$s, combine two $1$s.  
+                % i.e. \texttt{(1 + 1) * (1 + 1) * $a_1$ * $a_2$ * $\ldots$}. 
+            \end{itemize}
+            \item<+-> At least one $1$ and one $2$: 
+            Repeatedly combine one $1$ and one $2$. 
+            % , multiply with remaining numbers, i.e. 
+            % \texttt{(1 + 2) * (1 + 2) * $\ldots$ * (1 + 2) * $a_1$ * $a_2$ * $\ldots$}.
+            \begin{itemize}
+                \item<+-> Special case: If two $1$s and one $2$, combine those.  
+                % output \texttt{(1 + 1 + 2) * $a_1$ * $a_2$ * $\ldots$}. 
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+
+    % TODO: example?
+    \solvestats
+\end{frame}

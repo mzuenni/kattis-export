@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\usetikzlibrary{calc,fadings,intersections}
+\tikzfading[name=fade l,left color=transparent!100,right color=transparent!0]
+\tikzfading[name=fade r,right color=transparent!100,left color=transparent!0]
+\tikzfading[name=fade d,bottom color=transparent!100,top color=transparent!0]
+\tikzfading[name=fade u,top color=transparent!100,bottom color=transparent!0]
+
+\begin{document}
+\begin{tikzpicture}[infinite/.style={shorten <= -10cm, shorten >= -10cm}]
+  \clip (0.03,0.03) rectangle (8.97,8.97);
+  \draw[step=1cm,gray,very thin] (0,0) grid (9,9);
+  \draw[ultra thick,gray,name path=xax] (1,0) -- (1,8);
+  \draw[ultra thick,gray,name path=yax] (0,1) -- (8,1);
+
+  \node (p1) at (7,1)[circle,fill,inner sep=3pt]{};
+  \node (p2) at (6,4)[circle,fill,inner sep=3pt]{};
+  \node (p3) at (2,5)[circle,fill,inner sep=3pt]{};
+  \node (p4) at (3,7)[circle,fill,inner sep=3pt]{};
+
+  \draw[infinite,name path=line1] (p3) -- ++(1,4);
+  \draw[infinite,name path=line2] (p1) -- ++(1,4);
+  \draw[infinite,name path=line3] (p3) -- ++(4,-1) -- ++(4,-1);
+  \draw[infinite,name path=line4] (p4) -- ++(-4,1);
+  \path[name intersections={of=line2 and line3,by={int1}}];
+  \path[name intersections={of=line1 and line4,by={int3}}];
+  
+  \draw[color=blue, ultra thick, line cap=round] (p1) -- (int1) -- (p2) -- (p3) -- (int3) -- (p4);
+  
+  \fill[white,path fading=fade u] (0,0) rectangle (9,0.3);
+  \fill[white,path fading=fade d] (0,9) rectangle (9,8.7);
+  \fill[white,path fading=fade r] (0,0) rectangle (0.3,9);
+  \fill[white,path fading=fade l] (9,0) rectangle (8.7,9);
+  \draw[->,ultra thick,gray,name path=xax] (1,8) -- (1,8.97);
+  \draw[->,ultra thick,gray,name path=yax] (8,1) -- (8.97,1);
+\end{tikzpicture}
+\end{document}

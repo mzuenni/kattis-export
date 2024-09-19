@@ -1,0 +1,46 @@
+\newcommand\problemblock{
+    \begin{block}{Problem}
+        Given your availability for every hour in a week,
+        pick at least $1 \leq d \leq 7$ days in the first poll and at least $1 \leq h \leq 24$ hours in the second poll
+        to get the highest probability that you will be available.
+
+        \footnotesize Fun fact: based on a true story, while the jury was planning their first meeting!
+    \end{block}
+}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \problemblock
+    \pause
+    \begin{block}{Observation}
+        Selecting more than $d$ days/$h$ hours is never more efficient than selecting exactly $d$ days/$h$ hours.
+    \end{block}
+    \pause
+    \begin{block}{Brute-force solution}
+        For every combination of (a subset of $d$ days) and (a subset of $h$ hours),
+        calculate the number of free timeslots, take the maximum, and divide by $d\cdot h$.
+        \pause
+        \textbf{Too slow:} in the worst case where $d=3$ and $h=12$,
+        this requires checking $\binom73 \cdot \binom{24}{12} \cdot 3 \cdot 12 \approx 3 \cdot 10^9$ timeslots.
+        \pause
+        \footnotesize (Unless you write \emph{very} efficient \cpp)
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \problemblock
+    \begin{block}{Greedy Solution}
+        To avoid having to check all combinations, only check all combinations of $d$ days.
+        \pause
+
+        For every combination of $d$ days:
+        \begin{itemize}
+            \item For every hour, count the number of cells with `\texttt.'.
+            \item Sort this list and select the $h$ hours with the most open timeslots.
+            \item Calculate the number of free timeslots, take the maximum, and divide by $d\cdot h$.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

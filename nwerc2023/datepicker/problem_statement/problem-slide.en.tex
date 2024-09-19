@@ -1,0 +1,35 @@
+\begin{frame}[fragile]
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.80\textwidth}
+            \begin{itemize}
+                \item A meeting is about to be scheduled for which you have to
+                  indicate availability.
+                \item You know your availability on each hour of each day.
+                \item Select at least $d$ days in the first poll and at least $h$ hours in the second poll.
+                \item Assume the meeting will be scheduled in a random indicated slot.
+                \item Maximize the probability that you can attend.
+            \end{itemize}
+        \end{column}
+        %%
+        \illustration{0.23}{agenda.jpg}{A filled agenda.}% Source: Jeroen's camera
+    \end{columns}
+
+    \begin{center}
+        % Hacky centering by manually defining margins: margin,content,margin = 0.32,0.36,0.32
+        \begin{lstlisting}[basicstyle=\ttfamily,linewidth=0.68\textwidth,xleftmargin=0.32\textwidth]
+xxxxxx..xx..xxxxxxxxxxxx
+xxxxxxxxxxxxx....xxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxx..xx..xxxxxxxxxxxx
+xxxxxxxxxxxxx...x..xxxxx
+xxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxx
+        \end{lstlisting}
+        \small
+        Your availability in Sample Input 1.
+        You need to pick at least $d=2$ days and $h=5$ hours, \\
+        so the maximum probability that you can attend is $0.8$.
+    \end{center}
+\end{frame}

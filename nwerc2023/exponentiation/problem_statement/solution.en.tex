@@ -1,0 +1,40 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        There are $n$ variables $x_1, x_2, \dots, x_n$, initially set to $2023$.
+        You are given $m$ queries that either assigns $x_i$ to $x_i^{x_j}$, or
+        asks you to compare $x_i$ and $x_j$.
+    \end{block}
+    \pause
+    \begin{block}{Observation}
+        \begin{itemize}
+            \item<+-> To make the numbers slightly less huge, take the logarithm twice. Let
+            $y_i = \log\log(x_i)$.
+            \item<+-> $x_i = x_i^{x_j} \Longleftrightarrow y_i = y_i + 2023^{y_j}$.
+            \item<+-> Consider these numbers in base $2023$.
+            Each operation, one of the digits will increase by one. But no carry will ever happen since
+            there are fewer than $2023$ operations.
+            \item<+-> When a variable gets updated, it is much easier to
+            create a new variable $y' = y_i + 2023^{y_j}$.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item<+-> Keep all variables ordered by size at all times. 
+            Answering queries becomes easy. But how to maintain the order? 
+            \item<+-> For every variable $y$, let $d(y)$ be a list containing the positions of its non-zero digits (in base $2023$). 
+            These positions will be other variables, that we know the order of.
+            Two variables can be compared by lexicographically comparing their lists.
+            \item<+-> When a new variable $y' = y_i + 2023^{y_j}$ is created, let $d(y') = d(y_i) \cup \{y_j\}$.
+            Insert this new variable $y'$ into the ordering. 
+            \item<+-> To keep track of the order of variables, a trie or a sorted list can be used.
+            This can be done in $\mathcal{O}(n^2)$ or $\mathcal{O}(n^2\log(n))$.
+            \item<+-> \textbf{Challenge}: Can you solve the problem faster than quadratic time?
+        \end{itemize}
+    \end{block}
+    \solvestats
+\end{frame}

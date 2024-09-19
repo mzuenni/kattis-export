@@ -1,0 +1,49 @@
+\documentclass[margin=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,backgrounds}
+%ICPC logo colors
+\definecolor{red}{HTML}{972e21}
+\definecolor{yellow}{HTML}{ebb83f}
+\definecolor{blue}{HTML}{5e7fbf}
+\begin{document}
+	\newcommand{\unit}{0.5cm}
+	\newcommand{\n}{7}
+\begin{tikzpicture}[x=\unit,y=-\unit]
+
+	%grid
+	\draw[step=\unit,gray,very thin] (0,0) grid (\n,\n);
+	\draw[step=\unit,gray,very thin] (0,0) grid (\n,-1);
+	\draw[step=\unit,gray,very thin] (0,0) grid (-1,\n);
+	\draw[thick] (0,0) rectangle (\n,\n);
+	\foreach \i in {1,...,\n}{
+		\node at (\i-0.5,-0.5) {\i}; 
+		\node at (-0.5,\i-0.5) {\i};
+	} 
+	
+	%ships
+	\newcommand{\shipH}[2]{
+		\begin{pgfonlayer}{background}
+			\draw[line cap=round,blue!30!black,fill=blue!50] (-0.1+#2-0.2) to[out=180, in=-45,looseness=0.4] (0.1+#1+0.5) -- (0.1+#1+0.5) to[out=45, in=180,looseness=0.4] (-0.1+#2-0.8) -- cycle;
+		\end{pgfonlayer}
+	}
+	\newcommand{\shipV}[2]{
+		\begin{pgfonlayer}{background}
+			\draw[line cap=round,blue!30!black,fill=blue!50] (-0.2+#2-0.1) to[out=90, in=-45,looseness=0.4] (0.5+#1+0.1) -- (0.5+#1+0.1) to[out=-135, in=90,looseness=0.4] (-0.8+#2-0.1) -- cycle;
+		\end{pgfonlayer}
+	}
+	\shipH{0,2}{5,3}
+	\shipV{5,1}{6,6}
+
+	%hits
+	\newcommand{\hit}[2]{
+		\draw[#2,line width=0.15*\unit, line cap=round, shorten <= 0.2*\unit, shorten >= 0.2*\unit] (#1) -- ($(#1)-(1,1)$);
+		\draw[#2,line width=0.15*\unit, line cap=round, shorten <= 0.2*\unit, shorten >= 0.2*\unit] ($(#1)-(0,1)$) -- ($(#1)-(1,0)$);
+	};
+
+	\hit{6,1}{blue}
+	\hit{6,3}{black}
+	\hit{7,3}{blue}
+	\hit{5,3}{black}
+	% Only showing the first four hits
+\end{tikzpicture}
+\end{document}

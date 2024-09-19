@@ -1,0 +1,25 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Play \emph{Battleships} with a $100 \times 100$ grid
+        where you need to sink up to $10$ aircraft carriers
+        in at most $2500$ shots,
+        and your opponent is potentially cheating (adaptive).
+    \end{block}
+    \pause
+    \begin{block}{Observation}
+        Shooting every fifth position in a straight line
+        prevents your opponent from placing ships in between them.
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Generalizing this observation over two dimensions: \\
+                shoot every position on every fifth diagonal line.
+            \item For every hit, shoot the four positions left, right, above, and below
+                to sink the full ship.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

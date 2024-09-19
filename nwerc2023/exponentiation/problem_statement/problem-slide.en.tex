@@ -1,0 +1,32 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.70\textwidth}
+            \begin{itemize}
+                \item Given are $2\leq n\leq 1000$ variables $x_i$, initially
+                  all set to $2023$.
+                \item Execute $1\leq m\leq 1000$ instructions:
+                  \begin{itemize}
+                    \item Operation: ``\texttt{!~$i$~$j$}'': Replace $x_i$ by $x_i^{x_j}$.
+                    \item Query: ``\texttt{?~$i$~$j$}'': Answer which of $x_i$
+                      and $x_j$ is larger.
+                  \end{itemize}
+            \end{itemize}
+
+            \centering
+            \vspace{1em}
+            \newcommand{\x}{{2023}}
+            \begin{align*}
+              x_1&=\left(\x^\x\right)^{\x^\x},\\
+              x_2&=\left(\x^{\x^\x}\right)^\x,\\
+              x_3&=\x,\\
+              x_4&=\x^\x.
+            \end{align*}
+
+            \small The values of the variables at the end of the first sample.
+        \end{column}
+
+\illustration{0.25}{new_years_card_299_2023_a.jpg}{Image by callmetak on \href{https://www.freepik.com/free-vector/year-2023-logo-fireworks-with-text-space-vector-illustration-celebrating-new-year_29660812.htm}{Freepik}}%
+    \end{columns}
+\end{frame}
