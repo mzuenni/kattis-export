@@ -1,0 +1,7 @@
+INT(2,10^5,n) SPACE INT(1,10^5,q) NEWLINE
+REP(q)
+    REGEX("[?+-]", s) SPACE INT(1,n,a)
+    IF (s == "?") SPACE INT(1,n,b) ASSERT(a != b) END
+    NEWLINE
+END
+EOF

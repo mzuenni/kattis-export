@@ -1,0 +1,11 @@
+name: Flappy Bird
+source: German Collegiate Programming Contest (GCPC) 2021
+source_url: https://gcpc.nwerc.eu
+author: Florian Leimgruber
+license: cc by-sa
+keywords: ad-hoc, geometry
+
+validation: custom
+limits:
+  time_multiplier: 2 # CHT solution is way too fast..
+  output: 25

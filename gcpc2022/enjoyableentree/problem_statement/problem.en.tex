@@ -1,0 +1,34 @@
+\problemname{Enjoyable Entree}
+
+\illustration{0.32}{soups}{$\pi$-tato and $\tau$-mato soup. Picture by RitaE, \href{https://pixabay.com/de/users/ritae-19628/}{Pixabay}\vspace{-0.5cm}}
+For many days now, the canteen in Hilbert's Hotel has been offering its famous
+\emph{Fibonacci Soup}. Today is the $n$th day that they offer the soup, and the
+recipe changes every day:
+
+\begin{itemize}
+  \item On the first day, it is a \emph{$\pi$-tato soup}, made from a blend of local
+    potato varieties, and served with onion strips and celery.
+  \item On the second day, it is a \emph{$\tau$-mato soup}, consisting of
+    pur\'eed tomatoes, together with carrots, onions, garlic, and basil leaves on top.
+\end{itemize}
+
+\begin{itemize}
+  \item On every day after that, the soup is made from two ingredients, the soup of the
+    previous day and the soup of the day before that, mixed together in equal parts.
+\end{itemize}
+
+Find the composition of today's Fibonacci Soup.
+
+\begin{Input}
+  The input consists of:
+  \begin{itemize}
+    \item One line with a single integer $n$ ($1 \le n \le 10^{18}$), the current day.
+  \end{itemize}
+\end{Input}
+
+\begin{Output}
+  Output two real numbers $\pi$ and $\tau$ ($0 \le \pi,\tau \le 100$), giving
+  the percentages of $\pi$-tato soup and $\tau$-mato soup in the $n$th day's
+  Fibonacci soup. Your answer will be accepted if the absolute or relative
+  error is at most $10^{-6}$.
+\end{Output}

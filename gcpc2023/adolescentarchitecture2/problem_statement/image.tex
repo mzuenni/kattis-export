@@ -1,0 +1,82 @@
+\documentclass[12pt]{standalone}
+
+\RequirePackage{times}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows,backgrounds,scopes,calc}
+
+\usepackage{pifont}
+
+\definecolor{red}{HTML}{972e21}
+\definecolor{yellow}{HTML}{ebb83f}
+\definecolor{blue}{HTML}{5e7fbf}
+
+\begin{document}
+	\Huge
+	\newcommand{\z}{0.2}%
+	\newcommand{\triScale}{0.57735026919}%1/sqrt(3)
+	\newcommand{\squScale}{0.70710678118}%1/sqrt(2)
+	\begin{tikzpicture}[x=0.75cm,y=0.75cm,z={(0cm,0.75cm)},line join=round]
+		\newcommand{\cyl}[4][blue]{%[color]y,r,centre
+			\draw[fill=#1] (#4+#2,0) circle[y=\z cm,radius=#3];
+			\fill[#1] (-#3+#4+#2,0) rectangle (#3+#4+#2,1);
+			\draw (-#3+#4+#2,0) -- (-#3+#4+#2,1);
+			\draw (#3+#4+#2,0) -- (#3+#4+#2,1);
+			\draw[fill=#1] (#4+#2,1) circle[y=\z cm,radius=#3];
+		}
+		\newcommand{\tri}[5][blue]{%[color]y,r,centre,rotation
+			%todo scale radius with sqrt(3)
+			\coordinate (a1) at ($(xyz polar cs:angle=0+#5,x radius=#3*\triScale,y radius=#3*\z*\triScale)+(0,#2)+(#4)$);
+			\coordinate (b1) at ($(xyz polar cs:angle=120+#5,x radius=#3*\triScale,y radius=#3*\z*\triScale)+(0,#2)+(#4)$);
+			\coordinate (c1) at ($(xyz polar cs:angle=240+#5,x radius=#3*\triScale,y radius=#3*\z*\triScale)+(0,#2)+(#4)$);
+			
+			\coordinate (a2) at  ($(a1)+(0,0,1)$);
+			\coordinate (b2) at  ($(b1)+(0,0,1)$);
+			\coordinate (c2) at  ($(c1)+(0,0,1)$);
+			
+			\draw[fill=#1] (a1) -- (b1) -- (c1) -- cycle;
+			%just the visible 2 faces...
+			\draw[fill=#1] (a1) -- (c1) -- (c2) -- (a2) -- cycle;
+			\draw[fill=#1] (c1) -- (b1) -- (b2) -- (c2) -- cycle;
+			\draw[fill=#1] (a2) -- (b2) -- (c2) -- cycle;
+		}
+		\newcommand{\squ}[5][blue]{%[color]y,r,centre,rotation
+			%\draw[fill=blue] (#4+#2,0) circle[y=\z,radius=#3];
+			\coordinate (a1) at ($(xyz polar cs:angle=0+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			\coordinate (b1) at ($(xyz polar cs:angle=90+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			\coordinate (c1) at ($(xyz polar cs:angle=180+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			\coordinate (d1) at ($(xyz polar cs:angle=270+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			
+			\coordinate (a2) at  ($(a1)+(0,0,1)$);
+			\coordinate (b2) at  ($(b1)+(0,0,1)$);
+			\coordinate (c2) at  ($(c1)+(0,0,1)$);
+			\coordinate (d2) at  ($(d1)+(0,0,1)$);
+			
+			\draw[fill=#1] (a1) -- (b1) -- (c1) -- (d1) -- cycle;
+			\draw[fill=#1] (c1) -- (d1) -- (d2) -- (c2) -- cycle;
+			\draw[fill=#1] (a1) -- (d1) -- (d2) -- (a2) -- cycle;
+			\draw[fill=#1] (a2) -- (b2) -- (c2) -- (d2) -- cycle;
+		}
+		\squ{0}{12}{-16,0}{10}
+		\tri[yellow]{1}{12}{-15.2,0.15}{0}
+		\tri[red]{2}{11}{-15.2,0.15}{117}
+		\cyl[yellow]{3}{2}{-15.2,0.15}
+		\cyl[yellow]{4}{1}{-14.5,0.15}
+			
+		\cyl{0}{7}{0,0}
+		\squ[red]{1}{9}{0,0}{20}
+		\cyl[red]{2}{4}{0.3,0.3}
+		\cyl[yellow]{3}{3}{0.3,0.3}
+		\tri[red]{4}{5}{0,0.3}{10}
+		
+		\tri{0}{7}{10,0}{10}
+		\tri[yellow]{1}{5}{10,0}{20}
+		\tri[red]{2}{4}{10,0}{11}
+	\end{tikzpicture}
+\end{document}

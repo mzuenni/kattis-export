@@ -1,0 +1,11 @@
+INT(-10^9, 10^9, xs) SPACE INT(-10^9, 10^9) SPACE INT(-10^9, 10^9, xt) SPACE INT(-10^9, 10^9) NEWLINE
+INT(0, 10^6, n) NEWLINE
+SET(xp = xs)
+REP(n)
+	INT(-10^9, 10^9, x) SPACE INT(-10^9, 10^9, y0) SPACE INT(-10^9, 10^9, y1) NEWLINE
+	ASSERT(xp < x)
+	SET(xp = x)
+	ASSERT(y0 < y1)
+END
+ASSERT(xp < xt)
+EOF

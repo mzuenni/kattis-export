@@ -1,0 +1,75 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{tikzlings}
+\begin{document}
+	\tikzset{
+		crack/.pic={
+			%\draw (0.,0.) -- (1.,0.) -- (1.,1.) -- (0.,1.) -- cycle;
+			\draw (0.5,0.5)       -- (0.7576,0.7501);
+			\draw (0.7576,0.7501) -- (1.,0.6673);
+			\draw (0.7576,0.7501) -- (0.8922,0.7967);
+			\draw (0.7576,0.7501) -- (0.8042,0.9055);
+			\draw (0.8042,0.9055) -- (0.6126,1.);
+			\draw (0.5,0.5)       -- (0.4828,0.8037);
+			\draw (0.4828,0.8037) -- (0.5528,0.8776);
+			\draw (0.4828,0.8037) -- (0.2377,1.);
+			\draw (0.5,0.5)       -- (0.2066,0.5548);
+			\draw (0.2066,0.5548) -- (0.1016,0.7882);
+			\draw (0.1590,0.6607) -- (0.,0.6);
+			\draw (0.2066,0.5548) -- (0.,0.3136);
+			\draw (0.5,0.5)       -- (0.3505,0.2669);
+			\draw (0.5,0.5)       -- (0.6306,0.2553);
+			\draw (0.5,0.5)       -- (0.8290,0.3408);
+			\draw (0.8290,0.3408) -- (1.,0.4);
+			\draw (0.7085,0.3991) -- (0.8406,0.4653);
+			\draw (0.8290,0.3408) -- (0.8368,0.1503);
+			\draw (0.8368,0.1503) -- (1.,0.);
+			\draw (0.6306,0.2553) -- (0.5256,0.1036);
+			\draw (0.6306,0.2553) -- (0.6812,0.1114);
+			\draw (0.5256,0.1036) -- (0.6,0.);
+			\draw (0.3505,0.2669) -- (0.3856,0.0919);
+			\draw (0.3505,0.2669) -- (0.1522,0.2397);
+			\draw (0.1522,0.2397) -- (0.,0.1230);
+			\draw (0.3856,0.0919) -- (0.2300,0.);
+			\draw (0.4919,0.6421) -- (0.2768,0.7648);
+			\draw (0.8042,0.9055) -- (0.9230,0.9431);
+			\draw (0.8368,0.1503) -- (0.8034,0.0795);
+			\draw (0.1522,0.2397) -- (0.1266,0.3567);
+			\draw (0.3856,0.0919) -- (0.4,0.);
+			\draw (0.5256,0.1036) -- (0.4942,0.0358);
+		},
+	}
+	\begin{tikzpicture}[line cap=round, every draw/.append style={line width=1.pt}]
+		\fill[cyan!30] (0,-1) rectangle (8,1);
+		\draw[step=1cm, thick] (0,-1) grid  (8,1);
+		
+		\pic at (0, -1) {crack};
+		\pic[rotate around={90:(0.5, 0.5)}] at (1, -1) {crack};
+		\pic at (2, 0) {crack};
+		\pic[rotate around={-90:(0.5, 0.5)}] at (3, -1) {crack};
+		\pic[rotate around={180:(0.5, 0.5)}] at (4, -1) {crack};
+		\pic[rotate around={90:(0.5, 0.5)}] at (5, -1) {crack};
+		\pic at (6, 0) {crack};
+		\pic[rotate around={180:(0.5, 0.5)}] at (7, 0) {crack};
+		
+		\draw [-stealth, line width=.7mm](-.75,0) -- (-.25,0);
+		
+		\coati[rotatehead=15,xshift=-1.25cm,yshift=-0.5cm,scale=0.45]
+		\bear[santa=cyan!70!black,xshift=-2.25cm,yshift=-0.5cm,scale=0.45]
+		\elephant[crown=yellow!90!orange,xshift=-3.25cm,yshift=-0.5cm,scale=0.45]
+		\chicken[baby=yellow,xshift=-4.25cm,yshift=-0.5cm,scale=0.7]
+		\owl[xshift=-5.25cm,yshift=-0.5cm,scale=0.45]
+		\sloth[xshift=-6.25cm,yshift=-0.5cm,scale=0.45]
+		\mouse[beret=black,xshift=-7.25cm,yshift=-0.5cm,scale=0.45]
+%		\node[circle, fill=black] at (-1, 0) {};
+%		\node[circle, fill=black] at (-1.5, 0) {};
+%		\node[circle, fill=black] at (-2, 0) {};
+%		\node[circle, fill=black] at (-2.5, 0) {};
+%		\node[circle, fill=black] at (-3, 0) {};
+%		\node[circle, fill=black] at (-3.5, 0) {};
+%		\node[circle, fill=black] at (-4, 0) {};   
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,164 @@
+\documentclass[12pt]{standalone}
+
+\RequirePackage{times}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows,backgrounds,scopes,calc}
+
+\usepackage{pifont}
+
+\definecolor{red}{HTML}{972e21}
+\definecolor{yellow}{HTML}{ebb83f}
+\definecolor{blue}{HTML}{7999db}
+
+\begin{document}
+	\Huge
+	\newcommand{\z}{0.2}%
+	\newcommand{\triScale}{0.57735026919}%1/sqrt(3)
+	\newcommand{\squScale}{0.70710678118}%1/sqrt(2)
+	\begin{tikzpicture}[x=0.75cm,y=0.75cm,z={(0cm,0.75cm)},line join=round]
+		\newcommand{\cyl}[4][blue]{%[color]y,r,centre
+			\draw[fill=#1] (#4+#2,0) circle[y=\z cm,radius=#3];
+			\fill[#1] (-#3+#4+#2,0) rectangle (#3+#4+#2,1);
+			\draw (-#3+#4+#2,0) -- (-#3+#4+#2,1);
+			\draw (#3+#4+#2,0) -- (#3+#4+#2,1);
+			\draw[fill=#1] (#4+#2,1) circle[y=\z cm,radius=#3];
+		}
+		\newcommand{\tri}[5][blue]{%[color]y,r,centre,rotation
+			%todo scale radius with sqrt(3)
+			\coordinate (a1) at ($(xyz polar cs:angle=0+#5,x radius=#3*\triScale,y radius=#3*\z*\triScale)+(0,#2)+(#4)$);
+			\coordinate (b1) at ($(xyz polar cs:angle=120+#5,x radius=#3*\triScale,y radius=#3*\z*\triScale)+(0,#2)+(#4)$);
+			\coordinate (c1) at ($(xyz polar cs:angle=240+#5,x radius=#3*\triScale,y radius=#3*\z*\triScale)+(0,#2)+(#4)$);
+			
+			\coordinate (a2) at  ($(a1)+(0,0,1)$);
+			\coordinate (b2) at  ($(b1)+(0,0,1)$);
+			\coordinate (c2) at  ($(c1)+(0,0,1)$);
+			
+			\draw[fill=#1] (a1) -- (b1) -- (c1) -- cycle;
+			%just the visible 2 faces...
+			\draw[fill=#1] (a1) -- (c1) -- (c2) -- (a2) -- cycle;
+			\draw[fill=#1] (c1) -- (b1) -- (b2) -- (c2) -- cycle;
+			\draw[fill=#1] (a2) -- (b2) -- (c2) -- cycle;
+		}
+		\newcommand{\squ}[5][blue]{%[color]y,r,centre,rotation
+			%\draw[fill=blue] (#4+#2,0) circle[y=\z,radius=#3];
+			\coordinate (a1) at ($(xyz polar cs:angle=0+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			\coordinate (b1) at ($(xyz polar cs:angle=90+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			\coordinate (c1) at ($(xyz polar cs:angle=180+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			\coordinate (d1) at ($(xyz polar cs:angle=270+#5,x radius=#3*\squScale,y radius=#3*\z*\squScale)+(0,#2)+(#4)$);
+			
+			\coordinate (a2) at  ($(a1)+(0,0,1)$);
+			\coordinate (b2) at  ($(b1)+(0,0,1)$);
+			\coordinate (c2) at  ($(c1)+(0,0,1)$);
+			\coordinate (d2) at  ($(d1)+(0,0,1)$);
+			
+			\draw[fill=#1] (a1) -- (b1) -- (c1) -- (d1) -- cycle;
+			\draw[fill=#1] (c1) -- (d1) -- (d2) -- (c2) -- cycle;
+			\draw[fill=#1] (a1) -- (d1) -- (d2) -- (a2) -- cycle;
+			\draw[fill=#1] (a2) -- (b2) -- (c2) -- (d2) -- cycle;
+		}		
+		\cyl{0}{2}{0,0}
+		\cyl[red]{1}{1}{0,0}
+		\squ[red]{2}{1}{0,0}{20}
+		\tri[black!20]{3}{1}{0.1,0}{40}
+		
+		\cyl{0}{1}{4,0}
+		\squ[yellow]{1}{1}{4,0}{10}
+		\tri[black!20]{2}{1}{4.09,0}{20}
+		
+		
+		\cyl{0}{2}{10,0}
+		\cyl[red]{1}{1}{10.2,0}
+		\squ[yellow]{2}{1}{10.2,0}{30}
+		\tri[black!20]{3}{1}{10.29,0}{40}
+		
+		\cyl{0}{1}{14,0}
+		\squ[red]{1}{1}{14,0}{10}
+		\tri[black!20]{2}{1}{14.09,0}{20}
+		
+		
+		\cyl{0}{2}{20,0}
+		\cyl[red]{1}{1}{20,0}
+		\tri[black!20]{2}{1}{20.09,0}{50}
+		
+		\cyl{0}{1}{24,0}
+		\tri[black!20]{1}{1}{24.09,0}{10}
+		
+		
+		
+		
+		\cyl{0}{2}{0,-6}
+		\squ[red]{1}{2}{0,-6}{20}
+		\tri[red]{2}{2}{0.14,-6}{30}
+		\tri[black!20]{3}{1}{0.14,-6}{30}
+		
+		\cyl{0}{1}{4,-6}
+		\squ[yellow]{1}{1}{4,-6}{10}
+		\tri[black!20]{2}{1}{4.09,-6}{20}
+		
+		
+		\cyl{0}{2}{10,-6}
+		\squ[red]{1}{2}{10,-6}{10}
+		\tri[yellow]{2}{2}{10.14,-6}{20}
+		\tri[black!20]{3}{1}{10.14,-6}{20}
+		
+		\cyl{0}{1}{14,-6}
+		\squ[red]{1}{1}{14,-6}{10}
+		\tri[black!20]{2}{1}{14.09,-6}{20}
+		
+		
+		\cyl{0}{2}{20,-6}
+		\squ[red]{1}{2}{20,-6}{-30}
+		\tri[black!20]{2}{1}{20,-6}{20}
+		
+		\cyl{0}{1}{24,-6}
+		\tri[black!20]{1}{1}{24.09,-6}{50}
+		
+		
+		
+		
+		\cyl{0}{2}{0,-12}
+		\tri[red]{1}{3}{0,-12}{20}
+		\squ[red]{2}{1}{0,-12}{10}
+		\tri[black!20]{3}{1}{0.09,-12}{20}
+		
+		\cyl{0}{1}{4,-12}
+		\squ[yellow]{1}{1}{4,-12}{20}
+		\tri[black!20]{2}{1}{4.1,-12}{40}
+		
+		
+		\cyl{0}{2}{10,-12}
+		\tri[red]{1}{3}{10,-12}{20}
+		\squ[yellow]{2}{1}{10,-12}{10}
+		\tri[black!20]{3}{1}{10.09,-12}{20}
+		
+		\cyl{0}{1}{14,-12}
+		\squ[red]{1}{1}{14,-12}{20}
+		\tri[black!20]{2}{1}{14.09,-12}{30}
+		
+		
+		\cyl{0}{2}{20,-12}
+		\tri[red]{1}{3}{20,-12}{20}
+		\tri[yellow]{2}{2}{20,-12}{25}
+		\tri[black!20]{3}{1}{20.09,-12}{10}
+		
+		\cyl{0}{1}{24,-12}
+		\squ[red]{1}{1}{24,-12}{10}
+		\tri[black!20]{2}{1}{24.09,-12}{20}
+		
+		
+		
+		\cyl{0}{2}{30,-12}
+		\tri[red]{1}{3}{30,-12}{40}
+		\tri[black!20]{2}{1}{30.09,-12}{20}
+		
+		\cyl{0}{1}{34,-12}
+		\tri[black!20]{1}{1}{34.09,-12}{20}
+	\end{tikzpicture}
+\end{document}

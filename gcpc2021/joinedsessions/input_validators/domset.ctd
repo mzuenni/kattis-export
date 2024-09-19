@@ -1,0 +1,6 @@
+INT(2,10^6,n) NEWLINE
+REP(n)
+	INT(0,10^9,a) SPACE INT(0,10^9,b) NEWLINE
+	ASSERT(a <= b)
+END
+EOF

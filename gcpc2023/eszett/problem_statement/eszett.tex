@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage{libertine}
+\usepackage{newunicodechar}
+
+\newunicodechar{ß}{\ss}
+\renewcommand{\SS}{\iffontchar\font"1E9E \symbol{"1E9E}\else SS\fi}
+
+\begin{document}
+\Huge\MakeUppercase{ß}
+\end{document}

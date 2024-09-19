@@ -1,0 +1,5 @@
+INT(1,10^6,n) SPACE INT(0,10^6,m) SPACE INT(3,10^9) NEWLINE
+REP(m)
+  INT(1,n,a) SPACE INT(1,n,b) NEWLINE
+  ASSERT( a != b )
+END

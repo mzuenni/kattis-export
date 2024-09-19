@@ -1,0 +1,50 @@
+\problemname{Hardcore Hangman}
+
+\illustration{0.32}{hangman}{A hangman game with the word \emph{banana}.\vspace{-0.5cm}}
+You have probably heard about the game called hangman (and played it
+as a child). You try to guess a word with as few guesses as
+possible. In each guess, you suggest a letter, for example an \texttt{a}, and
+you get all the positions in the word, where an \texttt{a} appears.
+
+That can take quite a few guesses, in particular, if a difficult word
+was chosen. So, let's change the game a bit. Instead of
+guessing just a single letter, any set of letters can be guessed in
+one turn. As a result you get all positions which contain one of the guessed letters.
+
+If the word is `hangman' and you guess the letters \texttt{h}, \texttt{z} and \texttt{a} in the first
+turn, you get the positions 1, 2 and 6. Of course, you still don't know
+whether there is an \texttt{h}, \texttt{z} or \texttt{a} at these positions, but it has to
+be one of those three letters.
+
+Your task is to find the hidden word (it is not always a proper English
+word, but can be any string consisting of lowercase English letters) using at
+most 7 guesses.
+
+\begin{Interaction}
+This is an interactive problem. Your submission will be run against an interactor, which reads the standard output of your submission and writes to the standard input of your submission. This interaction needs to follow a specific protocol:
+\medskip
+
+Your submission repeatedly sends one of two query types:
+\begin{itemize}
+\item  ``\texttt{?~s}'', where $s$ is a string of pairwise distinct lowercase letters. The interactor replies with an integer $n$ followed by $n$ integers $i_1, i_2, \dots, i_n$, the indices of the positions (1-indexed) in the hidden string, which contain a character in $s$.
+\item ``\texttt{!~x}'', where $x$ ($1 \leq |x| \leq 10^4$) is a string of lower case letters. The interactor replies with ``correct'' in case $x$ is the hidden string, else it replies with ``incorrect''. After the answer ``correct'', your program should terminate.
+\end{itemize}
+\medskip
+
+All interactions must be ended by a newline.
+Further note that you additionally need to \emph{flush} the standard output to ensure that the query is sent.
+For example, you can use:
+\begin{itemize}
+\item \texttt{std::cout <{}< std::flush} in C++
+\item \texttt{fflush(stdout)} in C
+\item \texttt{System.out.flush()} in Java
+\item \texttt{sys.stdout.flush()} in Python
+\end{itemize}
+
+The hidden word has length at most $10^4$. You may use at most $7$ queries.
+% the length/number of queries are up to discussion, it is possible in 6 queries as Paul noticed (when you don't have a special length query at the start) and the length could also be $10^5$ (but maybe such a large length is simply not necessary, if you solve it for 10^4 that's fine for me)
+\bigskip
+
+A testing tool is provided to help you develop your solution. It can be downloaded from the DOMjudge problems overview page.
+\end{Interaction}
+\newpage

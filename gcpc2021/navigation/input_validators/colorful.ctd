@@ -1,0 +1,10 @@
+INT(1, 500000, n) SPACE INT(1, 500000, m) SPACE INT(1, 1000, k) NEWLINE
+REP(m)
+	INT(1, n, ui) SPACE INT(1, n, vi) SPACE INT(1, 10^6, ti) NEWLINE
+	INT(1, k, li)
+	REP(li)
+		SPACE INT(1, k)
+	END
+	NEWLINE
+END
+EOF

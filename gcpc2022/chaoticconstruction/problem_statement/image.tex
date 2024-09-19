@@ -1,0 +1,27 @@
+% This is a separate file because it uses the emoji package and must thus be compiled with lualatex
+
+\documentclass{standalone}
+\usepackage{emoji}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw[line width=20,color=gray!75] (0,0) circle [radius=2.5] node {};
+\draw[line width=2.5,dash pattern=on 7pt off 7pt,color=white] (0,0) circle [radius=2.5] node {};
+\draw[color=white,line width=20,dash pattern=on 1pt off 43.7pt] (0,0) circle [radius=2.5] node {};
+
+\node[regular polygon,regular polygon sides=10,minimum size=2.8cm,rotate=18] at (0,0) (10-gon) {};
+\foreach \X [count=\Y] in {1,10,9,8,7,6,5,4,3,2}{
+  {\fill (10-gon.corner \Y) node[anchor=270-36+\Y*36,font=\normalfont] (node\X) {\textbf \X};}}
+%\node at (-2.4,0.8) {\Huge\emoji{house}};
+\node at (-2.3,0.6) {\Huge\emoji{person-standing}};
+%\node at (-1.4,-1.8) {\Huge\emoji{house}};
+\node at (-1.4,-1.65) {\Huge\emoji{house}};
+\node at (-2.31,-0.5) {\Huge\emoji{construction}};
+\node at (1.7,2.25) {\Huge\emoji{construction}};
+\end{tikzpicture}
+
+\end{document}

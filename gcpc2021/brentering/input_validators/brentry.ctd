@@ -1,0 +1,3 @@
+REGEX("[A-Z]?[a-z]*[aeiou][a-z]*", s) NEWLINE
+ASSERT(STRLEN(s)<=50)
+EOF

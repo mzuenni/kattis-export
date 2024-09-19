@@ -1,0 +1,40 @@
+\documentclass[12pt,varwidth=8.4cm,border=5pt]{standalone}
+
+\RequirePackage{times}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{beramono}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\RequirePackage{textcomp}
+\usepackage{microtype}
+\DisableLigatures[<,>]{encoding=T1,family=tt*}
+
+\catcode`'=\active
+\let'\textquotesingle
+
+\newcommand{\Pstring}[1]{\textcolor{yellow!80!black}{#1}}
+\newcommand{\Pkey}[1]{\textcolor{blue!50!white}{#1}}
+\newcommand{\Pname}[1]{\textcolor{green!80!black}{#1}}
+\newcommand{\Pparam}[1]{\textcolor{orange!80!black}{\textit{#1}}}
+\newcommand{\Pcom}[1]{\textcolor{black!20}{#1}}
+\newcommand{\Pind}[1]{\textcolor{orange!80!black}{#1}}
+
+\begin{document}
+	\ttfamily
+	\pagecolor{black!90}
+	\color{white}
+	\Pname{\textbf{jury@GCPC}}:\Pkey{\textasciitilde/gcpc23}\$ python3\\
+	\Pcom{Python 3.11.2 on linux\\
+	Type \Pstring{"help"} for more information.}\\
+	\Pind{>>>} \Pkey{\textit{def}} \Pname{test}(\Pparam{s}):\\
+	\Pcom{...} ~~~~\Pkey{print}(s.\Pkey{upper}())\\
+	\Pcom{...}\\
+	\Pind{>>>} \Pkey{test}(\Pstring{'python ist großartig!'})\\
+	PYTHON IST GROSSARTIG!\\
+	\Pind{>>>} \rule[-0.2ex]{1ex}{1em}
+\end{document}

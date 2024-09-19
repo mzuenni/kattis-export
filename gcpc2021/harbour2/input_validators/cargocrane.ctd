@@ -1,0 +1,22 @@
+# One line with three integers $n$, $s_1$ and $s_2$.
+# ===
+INT(3, 4*10^5+1, n) SPACE   # n  = the number of items
+INT(2, 2*10^5, s1) SPACE    # s1 = the number of items on the first stack
+INT(2, 2*10^5, s2) NEWLINE  # s2 = the number of items on the second stack
+ASSERT(s1+s2 == n+1)        # (it is guaranteed that s1+s2 = n+1)
+
+# One line with the tracking numbers of the items on the first stack
+# (in order, from bottom to top)
+# ===
+REP(s1, SPACE)
+  INT(0, n)
+END
+NEWLINE
+
+# One line with the tracking numbers of the items on the second stack
+# (in order, from bottom to top)
+# ===
+REP(s2, SPACE)
+  INT(0, n)
+END
+NEWLINE

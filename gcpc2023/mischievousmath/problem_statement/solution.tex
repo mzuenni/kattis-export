@@ -1,0 +1,19 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    Given an integer $d$, find integers $a$, $b$ and $c$ such that it is impossible to write $d$ as the result of a mathematical expression involving $a$, $b$ and $c$ and using the four basic operations $+$, $-$, $\times$, and $\div$.
+    All numbers must be distinct and from the range $\{1,\dots,100\}$.
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item<+-> If we put $a=1$, $b=2$ and $c=3$, then the largest representable number is $9 = (1+2)\times 3$.
+      \item<+-> Therefore, if $d \ge 10$ we simply output \texttt{1 2 3}.
+      \item<+-> Similarly, we can find a triple of numbers that works for all $d \le 9$, for example:
+        \begin{center}
+          \texttt{79 90 100} \qquad \texttt{13 57 100} \qquad \texttt{10 21 43}
+        \end{center}
+      \item<+-> In total, exactly $29\,486$ out of the $\binom{100}{3} = 161\,700$ possible triples avoid all $d \le 9$.
+    \end{itemize}
+  \end{block}
+\end{frame}

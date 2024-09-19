@@ -1,0 +1,43 @@
+\begin{frame}[t]
+    \frametitle{\problemtitle}
+
+    \begin{block}{Problem}
+        Given an undirected, unweighted graph with $n \leq 2 \cdot 10^5$ vertices and a set $W$ of $k$ wormholes, 
+        what is the length of the shortest expected path from $s$ to $t$?  
+
+        \begin{itemize}
+            \item By entering a wormhole, you are teleported to another wormhole chosen uniformly at random.  
+            \item You can use teleportation at most once. 
+        \end{itemize}
+    \end{block}
+
+    \pause
+    \alt<6->{\begin{block}{Solution}
+        \begin{itemize}
+            \item<6-> It might be better to directly go from $s$ to $t$ without using any wormhole.  
+            \item<7-> Output the minimum $\min\{\mathrm{dist}(s, t), \min_{w \in W}\{\mathrm{dist}_w\}\}$.
+        \end{itemize} 
+        \uncover<8->{Running time: $\mathcal{O}(n + m)$} 
+    \end{block}}{
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item If you enter wormhole $w$, the expected distance from $s$ to $t$ is 
+            \begin{equation*}
+                \mathrm{dist}_w = \mathrm{dist}(s, w) + \frac{1}{k - 1} \sum_{w' \in W \setminus \{w\}} \mathrm{dist}(w', t) \pause = \mathrm{dist}(s, w) + \frac{1}{k - 1} (S - \mathrm{dist}(w, t))\; 
+            \end{equation*} 
+            with $S = \sum_{w' \in W} \mathrm{dist}(w', t)$ \pause 
+            \item Compute $\mathrm{dist}(s, w)$ and $\mathrm{dist}(w, t)$ for each wormhole $w$ and sum $S$ using two BFS from $s$ and $t$. \pause 
+            \item Determine the wormhole you should enter to minimize the expected distance. 
+            % \begin{itemize}
+            %     \item Determine $\min_{w \in W} \mathrm{dist}_w$. 
+            %     % \item Let $S = \sum_{w \in W} \mathrm{dist}(w, t)$ be the sum of distances between all wormholes and $t$. 
+            %     % \item Compute $\mathrm{dist}_w = \mathrm{dist}(s, w) + \frac{1}{k - 1} (S - \mathrm{dist}(w, t))$ for each wormhole $w$. 
+            % \end{itemize}
+            % \item Minimize the expected distance: $\min\{\mathrm{dist}(s, t), \min_{w \in W}\{\mathrm{dist}_w\}\}$.
+            % \item It might be better to directly go from $s$ to $t$ without using any wormhole. 
+            % \item Output the minimum $\min\{\mathrm{dist}(s, t), \min_{w \in W}\{\mathrm{dist}_w\}\}$.
+        \end{itemize}
+        % Running time: $\mathcal{O}(n + m)$ 
+    \end{block}
+    }
+\end{frame}

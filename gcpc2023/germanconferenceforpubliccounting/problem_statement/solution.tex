@@ -1,0 +1,30 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    Count the number of signs with digits needed to display all numbers from $0$ to $n$.
+  \end{block}
+  \begin{block}{Example ($n=15$)}
+    \begin{center}
+      \fbox{1}\fbox{5}, \fbox{1}\fbox{4}, \fbox{1}\fbox{3}, \fbox{1}\fbox{2}, \fbox{1}\fbox{1}, \fbox{1}\fbox{0}, \fbox{9}, \fbox{8}, \fbox{7}, \fbox{6}, \fbox{5}, \fbox{4}, \fbox{3}, \fbox{2}, \fbox{1}, \fbox{0}
+    \end{center}
+    \vspace{-2mm}
+    We need $11$ signs: \fbox{0}, \fbox{1}, \fbox{1}, \fbox{2}, \fbox{3}, \fbox{4}, \fbox{5}, \fbox{6}, \fbox{7}, \fbox{8}, \fbox{9}
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item<+-> For each digit, find the number in the range that uses the most copies of that digit.
+      \item<+-> For each digit from $1$ to $9$:
+        \begin{itemize}
+          \item Find the longest \emph{repdigit} (number made up only of that digit) not exceeding $n$.
+          \item Add its length to the result.
+        \end{itemize}
+      \item<+-> For the digit $0$:
+        \begin{itemize}
+          \item We always need at least one sign for the end of the countdown.
+          \item The smallest number to use two signs is $100$, the smallest to use three signs is $1000$, \dots
+          \item Find the largest power of $10$ not exceeding $n$ and add the appropriate number of $0$ signs.
+        \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}

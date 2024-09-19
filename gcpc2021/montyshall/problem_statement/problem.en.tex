@@ -1,0 +1,30 @@
+\problemname{Monty's Hall}
+
+\illustration{0.32}{goat}{This could be you if you choose poorly.\\Photo by Armin K{\"u}belbeck, \href{https://creativecommons.org/licenses/by-sa/3.0/}{cc-by-sa}, \href{https://en.wikipedia.org/wiki/File:Hausziege_04.jpg}{Wikimedia Commons}\vspace{-1cm}}
+You have explored the deep catacombs under a long lost city for the past couple of hours and finally you have reached their end:
+The hall of the undead wizard Monty. His restless spirit materialises in front of you and you prepare for battle.
+
+However,
+it turns out that you are the first explorer to find him in over a hundred years, so he has grown incredibly bored. Instead of a fight,
+he offers to play a game for his artefacts. The hall has $d$ closed doors, but only one of them leads to the artefacts
+(Monty knows which one it is, of course). The procedure is as follows:
+\begin{enumerate}
+	\item You choose $s$ closed doors.
+	\item Monty opens $e$ doors that were not selected by you and lead to empty rooms.\label{itm:OpenDoor}
+	\item Among the remaining closed doors, you may change your selection of $s$ doors however you want 
+				(you can even stay with your current selection if you wish to). 
+	\item Monty reveals which door leads to the room with his artefacts.
+\end{enumerate}
+If the door with the artefacts is among your selected doors, you win and can take them with you unscathed.
+If not, Monty will transform you into a goat. So you better hope your luck is on point today.
+
+
+\section*{Input}
+The input consists of:
+\begin{itemize}
+	\item One line with three integers $d$, $s$ and $e$ ($1 \le d,s,e \le 10^{6}, s + e < d$), the number of doors in Monty's hall, the
+	number of doors you are allowed to select and the number of doors Monty opens in step~\ref{itm:OpenDoor}.
+\end{itemize}
+
+\section*{Output}
+Output your chance to win at Monty's game when playing optimally. Your answer should have an absolute or relative error of at most $10^{-6}$.

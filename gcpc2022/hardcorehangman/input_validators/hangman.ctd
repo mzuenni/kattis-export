@@ -1,0 +1,3 @@
+REGEX("[a-z]+", s) NEWLINE
+ASSERT(STRLEN(s)<=10000)
+EOF
