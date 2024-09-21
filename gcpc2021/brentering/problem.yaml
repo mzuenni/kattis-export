@@ -1,6 +1,7 @@
 name: Brexiting and Brentering
+uuid: ca5fb45a-be88-45f5-9c43-2683547af746
 source: German Collegiate Programming Contest (GCPC) 2021
 source_url: https://gcpc.nwerc.eu
 author: Gregor Matl
 license: cc by-sa
-keywords: String, No-Brainer
+keywords: String No-Brainer
