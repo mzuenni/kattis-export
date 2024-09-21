@@ -1,9 +1,10 @@
 name: Flappy Bird
+uuid: 917fc717-890c-4623-bcfd-30ae5f8ede6d
 source: German Collegiate Programming Contest (GCPC) 2021
 source_url: https://gcpc.nwerc.eu
 author: Florian Leimgruber
 license: cc by-sa
-keywords: ad-hoc, geometry
+keywords: ad-hoc geometry
 
 validation: custom
 limits:
