@@ -20,7 +20,7 @@ int main() {
 	while (!b[1].empty()) {
 		if (!b[2].empty()) {
 			combine(1, 2);
-		} else if (ssize(b[1]) > 1) {
+		} else if (b[1].size() > 1) {
 			combine(1, 1);
 		} else if (n > 1) {
 			int k = 2;

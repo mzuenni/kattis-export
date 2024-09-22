@@ -91,7 +91,7 @@ int main() {
 	angles.push_back(angles[0] + 2*M_PI);
 
 	double res = 1e20;
-	for (int i = 0; i+1 < ssize(angles); i++) {
+	for (int i = 0; i+1 < angles.size(); i++) {
 		double a = angles[i], b = angles[i+1];
 		if (b-a < 1e-6) continue;
 		res = min(res, gss(a, b, solve));

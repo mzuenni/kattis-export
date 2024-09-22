@@ -1,3 +1,4 @@
+// @EXPECTED_RESULTS@: RUN_TIME_ERROR, WRONG_ANSWER
 #include <bits/stdc++.h>
 using namespace std;
 

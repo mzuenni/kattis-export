@@ -1,3 +1,4 @@
+// @EXPECTED_RESULTS@: ACCEPTED, TIME_LIMIT_EXCEEDED
 #include <bits/stdc++.h>
 using namespace std;
 

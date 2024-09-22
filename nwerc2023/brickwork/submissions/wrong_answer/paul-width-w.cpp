@@ -70,13 +70,13 @@ int main() {
 			sort(begin(p), end(p));
 			res.push_back(p);
 		}
-		if(ssize(res) == 2) break;
+		if(res.size() == 2) break;
 	}
 
 	// If only one partition was found, then it must consist of just a single
 	// brick width. As we must use at least two copies of that brick per row,
 	// it is impossible to avoid alignments.
-	if(ssize(res) < 2) fail();
+	if(res.size() < 2) fail();
 
 	// If we found two partitions, then a solution always exists, but we need
 	// to consider two cases. First, if the two solutions both consist of just

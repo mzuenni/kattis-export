@@ -1,3 +1,4 @@
+// @EXPECTED_RESULTS@: RUN_TIME_ERROR, TIME_LIMIT_EXCEEDED
 #include <cmath>
 #include <iomanip>
 #include <iostream>

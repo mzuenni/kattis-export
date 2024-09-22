@@ -22,7 +22,7 @@ struct frac {
 		p = a; q = b;
 	}
 
-	std::strong_ordering operator<=>(const frac& b) const {
+	pair<__int128, __int128> cross(const frac& b) const {
 		__int128 ap = p, aq = q, bp = b.p, bq = b.q;
 		if (aq < 0 || (aq == 0 && ap < 0)) {
 			ap *= -1; aq *= -1;
@@ -30,7 +30,15 @@ struct frac {
 		if (bq < 0 || (bq == 0 && bp < 0)) {
 			bp *= -1; bq *= -1;
 		}
-		return ap*bq <=> bp*aq;
+		return make_pair(ap*bq, bp*aq);
+	}
+	bool operator<(const frac& b) const {
+		auto [l, r] = cross(b);
+		return l < r;
+	}
+	bool operator>(const frac& b) const {
+		auto [l, r] = cross(b);
+		return l > r;
 	}
 	bool operator==(const frac& b) const { return p*b.q == q*b.p; }
 };

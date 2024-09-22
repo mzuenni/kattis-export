@@ -1,11 +1,11 @@
-fun moves(a: Int, b: Int) = buildList {
+fun moves(a: Int, b: Int) = mutableListOf<Pair<Int, Int>>().apply {
     for ((aa, bb) in listOf(a to b, b to a)) {
         add(aa to bb)
         add(-aa to bb)
         add(aa to -bb)
         add(-aa to -bb)
     }
-}.distinct()
+}.distinct().toList()
 
 fun main() {
     val n = readInt()
@@ -35,3 +35,5 @@ private fun readInt() = readln().toInt()
 private fun readLongs() = readStrings().map { it.toLong() }
 private fun readStrings() = readln().split(" ")
 private fun readInts() = readStrings().map { it.toInt() }
+
+private fun readln() = readLine()!! // TODO Only to make this submission compatible with Kattis' Kotlin 1.3, remove when upgrading to 1.6 or higher

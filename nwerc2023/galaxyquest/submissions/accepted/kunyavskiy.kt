@@ -50,3 +50,5 @@ private fun readInt() = readln().toInt()
 private fun readLongs() = readStrings().map { it.toLong() }
 private fun readStrings() = readln().split(" ")
 private fun readInts() = readStrings().map { it.toInt() }
+
+private fun readln() = readLine()!! // TODO Only to make this submission compatible with Kattis' Kotlin 1.3, remove when upgrading to 1.6 or higher

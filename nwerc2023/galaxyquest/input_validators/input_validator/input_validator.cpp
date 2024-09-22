@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
 		points.emplace(x[i], y[i], z[i]);
 	}
 
-	v.check(ssize(points) == n, "points are not unique");
+	v.check(points.size() == n, "points are not unique");
 
 	set<pair<int,int>> edges;
 
@@ -79,7 +79,7 @@ int main(int argc, char *argv[]) {
 		adj[b].emplace_back(a, d);
 	}
 
-	v.check(ssize(edges) == m, "edges are not unique");
+	v.check(edges.size() == m, "edges are not unique");
 
 	auto dist = dijkstra(adj, 0);
 

@@ -62,10 +62,10 @@ int main() {
 			sort(begin(p), end(p));
 			res.push_back(p);
 		}
-		if (ssize(res) == 2) break;
+		if (res.size() == 2) break;
 	}
 
-	if (ssize(res) < 2) fail();
+	if (res.size() < 2) fail();
 
 	if (res[0][0] == res[0].back() && res[1][0] == res[1].back()) {
 		success(res[0], res[1]);

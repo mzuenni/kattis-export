@@ -68,3 +68,6 @@ fun main() {
     }
     println("impossible")
 }
+
+private fun readln() = readLine()!! // TODO Only to make this submission compatible with Kattis' Kotlin 1.3, remove when upgrading to 1.6 or higher
+val Char.code: Int get() = toByte().toInt() // TODO Only to make this submission compatible with Kattis' Kotlin 1.3, remove when upgrading to 1.5 or higher
