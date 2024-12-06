@@ -1,0 +1,22 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Given a word $s$, take every second letter of $s+s$, starting with the first.
+        Do this $k \leq 10^{18}$ times.
+    \end{block}
+    \pause
+    \begin{block}{Observation}
+        A solution that simply applies the method $k$ or $\sqrt k$ times, is too slow.
+        We need something $\mathcal O(n \log k)$.
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item After each time of applying the method, the resulting indices multiply by $2$.
+            \item Thus, the $i$th character in the resulting word is the $(i \cdot 2^k \bmod n)$th character in the original word (using $0$-based indexing).
+        \end{itemize}
+        Run time is $\mathcal O(n + \log k)$ when pre-calculating $2^k \bmod n$, but $\mathcal O(n \log k)$ is also accepted.
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

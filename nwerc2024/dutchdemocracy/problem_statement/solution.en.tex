@@ -1,0 +1,39 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Given $n$ parties and their number of seats, how many subsets
+        are there such that
+        \begin{itemize}
+            \item the cumulative number of seats of the subset is larger than
+                half the total number of seats, and
+            \item dropping any party lowers the cumulative number of seats
+                to at most half the total number of seats?
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        Categorise valid subsets by their party with the lowest number of seats.
+        Without it, the cumulative number of seats drops below the threshold.
+        By transitivity, this is true for all parties in the subset.
+        \begin{itemize}
+            \item Sort parties by their number of seats.
+            \item Dynamic programming on the number of subsets
+                that include party $k$ and any party with more seats,
+                and that has a cumulative number of seats of at least $m$.
+            \item Runs in $\mathcal{O}(\text{number of parties }\times\text{ total number of seats})$.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+	\begin{block}{Fun fact}
+		The current Dutch coalition has a majority, but does not meet the minimality criterion.
+	\end{block}
+	\pause
+	\begin{block}{Fun fact 2}
+		The German coalition met both criteria until the 6th of November, 2024. They dropped the smallest party.
+	\end{block}
+\end{frame}

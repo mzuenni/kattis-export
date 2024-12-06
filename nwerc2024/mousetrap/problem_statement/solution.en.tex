@@ -1,0 +1,31 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    You are given a convex polygon.
+    A point in that polygon is chosen uniformly at random.
+    Find the expected number of triangles that can be formed by taking three vertices of the polygon which contain the chosen point.
+  \end{block}
+  \centering
+  \includegraphics[width=0.4\textwidth]{figure.pdf}
+\end{frame}
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item By linearity of expectation the answer is equal to the sum of the areas of all triangles, divided by the area of the polygon.
+      \item The latter can be found in linear time. For the former we compute:
+        \begin{align*}
+          &\textstyle\sum_{i < j < k} \frac{1}{2} (p_j-p_i)\times(p_k-p_j) \\
+          &= \textstyle\frac{1}{2} \sum_j (\sum_{i < j} (p_j - p_i)) \times (\sum_{j < k} (p_k - p_j)) \\
+          &= \textstyle\frac{1}{2} \sum_j ((j-1)p_j - \sum_{i < j} p_i) \times (\sum_{j < k} p_k - (n-1-j)p_j)
+        \end{align*}
+      \item The inner sums can be precomputed in linear time, so the overall running time is linear as well.
+    \end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{Possible Pitfall}
+    All summations can be done in integers, but the sums may overflow $64$-bit integers.
+  \end{block}
+  \pause
+  \solvestats
+\end{frame}

@@ -1,0 +1,40 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.62\textwidth}
+            \begin{itemize}
+              \item You are given a convex polygon with $n$ vertices ($3 \le n \le 2\cdot 10^5$), with a mouse sitting at each vertex.
+              \item A cat jumps to some point inside that polygon.
+              \item For any location of the cat one can count the number of \emph{encirclements}: sets of three mice such that the cat is in the triangle spanned by the mice.
+              \item Find the expected value for the number of encirclements when the location of the cat is uniformly random inside the polygon.
+              \item The coordinates $x,y$ are up to $10^7$ in absolute value.
+              \item The absolute or relative error of your answer must be at most $10^{-4}$.
+            \end{itemize}
+
+            \vspace{1em}
+
+        \end{column}
+        \begin{column}[T]{.30\textwidth}
+          \illustration{0.85}{cat.jpg}{
+              Medea with a mouse.
+          }
+
+          \vspace{2em}
+          \centering
+          \includegraphics[width=0.85\textwidth]{figure}
+        \end{column}
+    \end{columns}
+
+    \vspace{-1em}
+
+    \begin{columns}
+        \begin{column}{.32\textwidth}
+        \end{column}
+        \begin{column}{.60\textwidth}
+            \flushright
+            \small
+            Illustration of Sample Input 2, showing one of the three encirclements in the case where Medea jumps to $(1.4,1.4)$.
+        \end{column}
+    \end{columns}
+\end{frame}

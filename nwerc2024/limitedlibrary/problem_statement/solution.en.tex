@@ -1,0 +1,41 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Fit $m$ books with height $b_i$ into $n$ shelves of height $a_j$.
+        \begin{itemize}
+            \item Constraint: a book of height $b_i$ only fits into a
+                shelf of height $a_j \geq b_i$.
+            \item Choice: shelves have capacity for either $x$ or $y<x$ books.
+        \end{itemize}
+        Find the maximum number of shelves with capacity $y$
+        so that all boos fit, or print \texttt{impossible} if the items
+        do not fit even when all shelves have capacity $x$.
+    \end{block}
+    \pause
+    \begin{block}{Observations}
+        \begin{itemize}
+            \item When a book fits into a shelf of height $a_i$,
+                it fits into all shelves of height $a_j \geq a_i$.
+            \item When choosing shelves to narrow down to capacity $y$,
+                we do not lose anything by choosing the shelves
+                with the smallest height.
+            \item If we can fit all books when $k$ shelves have capacity $y$,
+                we can always fit all books when fewer than $k$ shelves
+                have capacity $y$.
+        \end{itemize}
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Sort shelves by height.
+            \item Sort books by height.
+            \item For a given number $k$ of shelves with capacity $y$,
+               greedily match books to shelves to decide if they fit.
+            \item Binary-search for the maximum number of shelves.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

@@ -1,0 +1,94 @@
+\RequirePackage{setspace}
+\RequirePackage{times}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{xparse}
+\RequirePackage{ifthen}
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows,calc,patterns,patterns.meta}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\definecolor{plainred}{HTML}{ff0000}
+\definecolor{red}{HTML}{972e21}
+\definecolor{yellow}{HTML}{ebb83f}
+\definecolor{blue}{HTML}{5e7fbf}
+\renewcommand{\seriesdefault}{\bfdefault}
+\renewcommand{\familydefault}{\sfdefault} 
+
+\newcommand{\depth}{0.2}
+\newcommand{\shrink}{0.05}
+\newcommand{\field}[3]{%width,height,content
+	\draw[fill=brown] (-0.25,-0.25) rectangle (#1+0.25,#2+0.25);
+	
+	\draw[fill=brown!75!black] (-0.25,-0.25,0) -- (#1+0.25,-0.25,0) -- (#1+0.25,-0.25,1) -- (-0.25,-0.25,1) -- cycle;%bottom
+	\draw[fill=brown!85!black] (#1+0.25,-0.25,0) -- (#1+0.25,#2+0.25,0) -- (#1+0.25,#2+0.25,1) -- (#1+0.25,-0.25,1) -- cycle;%right
+	\fill[brown] (0,0) rectangle (#1,#2);
+	\begin{scope}
+		\clip (0,0) rectangle (#1,#2);
+		\draw[fill=brown!75!black] (0,#2,0) -- (#1,#2,0) -- (#1,#2,1) -- (0,#2,1) -- cycle;%inner top
+		\draw[fill=brown!85!black] (0,0,0) -- (0,#2,0) -- (0,#2,1) -- (0,0,1) -- cycle;%inner left
+		
+		\foreach \tile [count=\pos] in {#3}{
+			\pgfmathsetmacro\x{Mod(\pos-1,#1)}
+			\pgfmathsetmacro\y{#2-1-div(\pos-1,#1)}
+			
+			\draw[fill=blue!30] (\x+\shrink,\y+\shrink,\depth) rectangle (\x+1-\shrink,\y+1-\shrink,\depth);
+			\draw[fill=blue!30!white!75!black]
+			(\x+\shrink,\y+\shrink,\depth) --
+			(\x+1-\shrink,\y+\shrink,\depth) --
+			(\x+1-\shrink,\y+\shrink,1) --
+			(\x+\shrink,\y+\shrink,1) --
+			cycle;%bottom
+			\draw[fill=blue!30!white!85!black]
+			(\x+1-\shrink,\y+\shrink,\depth) --
+			(\x+1-\shrink,\y+1-\shrink,\depth) --
+			(\x+1-\shrink,\y+1-\shrink,1) --
+			(\x+1-\shrink,\y+\shrink,1) --
+			cycle;%right
+			
+			\node at (\x+0.5,\y+0.5,\depth) {\tile};
+		}
+	\end{scope}
+	\draw (0,0) rectangle (#1,#2);
+}
+
+\newcommand{\topGlue}[1]{
+	\fill[green!70!black,opacity=0.7,rounded corners,shift={(#1)}]
+		(0.1,1.25+0.025,0) [sharp corners,bend left=10]to
+		(0.2,1,0) --
+		(0.2,0.95,\depth) [rounded corners]--
+		(0.3,0.75,\depth) --
+		(0.2,0.5,\depth) --
+		(0.4,0.25,\depth) --
+		(0.7,0.3,\depth) --
+		(0.75,0.6,\depth) [sharp corners]--
+		(0.9,0.95,\depth) --
+		(0.9,1,0) [bend right=10]to
+		(0.95,1.25+0.025,0) --
+		cycle;
+}
+
+\newcommand{\bottomGlue}[1]{
+	\fill[green!70!black,opacity=0.7,shift={(#1)}]
+		(0,-0.25-0.025,1) to[bend right=10]
+		(0,-0.25,0) to[bend left=10]
+		(0.1,0+0.025,0) --
+		(0.9,0+0.025,0) to[bend left=10]
+		(1,-0.25,0) to[bend right=10]
+		(1,-0.25-0.025,1) --
+		cycle;
+	
+	\fill[green!70!black,opacity=0.7,rounded corners=0.12cm,shift={(#1)}]
+		(0.2,0.025,0) --
+		(0.1,0.35,\depth) --
+		(0.3,0.6,\depth) --
+		(0.5,0.5,\depth) --
+		(0.7,0.55,\depth) --
+		(0.85,0.35,\depth) [sharp corners]--
+		(0.95,0.025,0) --
+		cycle;
+}

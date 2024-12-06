@@ -1,0 +1,34 @@
+\newcommand{\maxn}{2\cdot 10^5}
+\newcommand{\maxq}{1000}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.62\textwidth}
+            \begin{itemize}
+                \item There is a hidden function $f\colon \{1,2,\ldots,n\} \to \{1,2,\ldots,n\}$, where~$n \leq \maxn$.
+                \item You may ask at most $\maxq$ times for the value of $f^c(r) = \underbrace{f(\cdots f(}_{c~\mathrm{times}}r)\cdots)$ for $c$ and $r$ in $\{1,2,\ldots,n\}$.
+                \item Find values of $c$ and $r$ such that $f^c(r) = c$.
+                \item If there are multiple valid solutions, you may output any one of them.
+                \item The interactor is not adaptive: the hidden function $f$ is fixed up front, and does not depend on your queries.
+                \item A testing tool is provided to help you develop your solution.
+            \end{itemize}
+
+            %\vspace{1em}
+
+            %\centering
+            %\includegraphics[width=0.25\textwidth]{sample}
+
+            %\small
+            %Illustration of Sample Input 1.
+        \end{column}
+
+        \illustration{0.30}{argument.png}{
+            Silhouettes free to use from \href{https://www.pxfuel.com/en/free-photo-jrhmi}{pxfuel.com}
+            % Speech bubbles are Public Domain from:
+            % https://www.freestockphotos.biz/stockphoto/15668
+            % https://www.freestockphotos.biz/stockphoto/15669
+        }
+    \end{columns}
+\end{frame}

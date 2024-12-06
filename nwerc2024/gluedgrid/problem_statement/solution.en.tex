@@ -1,0 +1,57 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Given an $h\times w$ grid of labelled tiles with one position left empty,
+        arrange the tiles in ascending order of their labels.
+        \begin{itemize}
+            \item Some tiles glued in place.
+            \item Moving tiles form a simply connected region.
+            \item Only asks for yes/no, not a sequence of moves.
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Graph-theoretical Approach}
+     \vspace{.5em}
+     \begin{minipage}{\textwidth}
+      \begin{columns}
+        \begin{column}[T]{.72\textwidth}
+          Model moving tiles as a connected undirected graph.
+          Cannot move tiles across articulation points/cut vertices!
+          \begin{itemize}
+              \item Decompose graph into biconnected components.
+              \item Solve problem on each component individually.
+              \item Pay attention to attribution of articulation points to components.
+          \end{itemize}
+        \end{column}
+        \begin{column}[T]{.2\textwidth}
+          \includegraphics{solution-illustration.pdf}
+        \end{column}
+      \end{columns}
+     \end{minipage}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Solvability of a Sliding Puzzle}
+      Can determine solvability without constructing explicit solution.
+      \begin{itemize}
+        \item Can solve if and only if the parity of the permutation
+            of the tile labels is even.
+        \item Check that label permutations are contained within each component.
+        \item Compute parity in $\mathcal{O}(n\log n)$ time.
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Alternate Approach}
+        Same insights possible from game mechanics.
+        \begin{itemize}
+          \item Flood-fill areas of moving tiles with a $2\times 2$ stencil.
+          \item Exclude from each area the single tile topologically closest
+              to the bottom right square.
+          \item Compute permutation parity on each area as above.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

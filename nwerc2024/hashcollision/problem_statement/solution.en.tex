@@ -1,0 +1,48 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        For some hidden function $f: \{1,2,\ldots,n\} \rightarrow \{1,2,\ldots,n\}$, use at most $1000$ queries retrieving $f^c(r) = f( \ldots f(r) \ldots )$, to find $c$ and $r$ such that $f^c(r) = c$.
+    \end{block}
+	\pause
+	\begin{block}{Observations}
+		\begin{itemize}
+			\item When repeatedly applying $f$, you eventually end up in a cycle.
+			\item When we know the length $m$ of this cycle, and $c$ is part of the cycle, we can effectively invert $f$, e.g. $f(x) = c$ for $x = f^{-1}(c) = f^{m-1}(c) = f^{2m-1}(c) = \ldots$.
+			\item Likewise: $f^c(r) = c$ for $r = f^{y}(c)$ where $y$ is any integer $y \equiv -c \mod m$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{\problemtitle}
+	\begin{block}{Finding the cycle length}
+		\begin{itemize}
+			\item Starting from an arbitrary value $x$, compute $c = f^n(x)$ to make sure $c$ is in the cycle.
+			\item Get $f^k(c)$ for various values of $k$.
+			\item When you get the same value for $k_1$ and $k_2$, the cycle length is (a divisor of) $m = |k_1 - k_2|$.
+			\item Compute $i = -c \mod m$ and get $r = f^i(c)$.
+			\item We now have $f^c(r) = c$.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Suitable values of $k$}
+		\begin{itemize}
+			\item Let $s = \lceil \sqrt{n} \rceil$. Use $k \in \{1, 2, 3, \ldots, s-1, s, 2s, 3s, \ldots, s^2\}$.
+			\item For any $m$, there are guaranteed to be $k_1$, $k_2$ such that $m = k_1 - k_2$.
+			\item This requires about $2s$ queries, which is comfortably less than $1000$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{\problemtitle}
+	\begin{block}{Solution 2}
+		\begin{itemize}
+			\item Take an arbitrary value $x$.
+			\item Get $c = f^n(x)$.
+			\item Get $r = f^{n-c}(x)$ (mind the case $n-c = 0$).
+			\item We now have $f^c(r) = f^c(f^{n-c}(x)) = f^n(x) = c$.
+			\item Done!
+		\end{itemize}
+	\end{block}
+    \pause
+    \solvestats
+\end{frame}

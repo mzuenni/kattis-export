@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\draw (0,0) -- (1,0) -- (2,1) -- (1,2) -- (0,2) -- cycle;
+
+\draw[thick, red, fill=red!20] (0,0) -- (2,1) -- (1,2) -- cycle;
+
+\node at (0,0) {\includegraphics[width=4mm]{mouse-emoji.pdf}};
+\node at (1,0) {\includegraphics[width=4mm]{mouse-emoji.pdf}};
+\node at (2,1) {\includegraphics[width=4mm]{mouse-emoji.pdf}};
+\node at (1,2) {\includegraphics[width=4mm]{mouse-emoji.pdf}};
+\node at (0,2) {\includegraphics[width=4mm]{mouse-emoji.pdf}};
+\node at (1.4,1.4) {\includegraphics[width=3.5mm]{cat-emoji.pdf}};
+
+\end{tikzpicture}
+
+\end{document}

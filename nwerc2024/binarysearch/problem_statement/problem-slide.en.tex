@@ -1,0 +1,30 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{\textwidth}
+            \begin{itemize}
+                \item Given is an undirected simple graph $G$ with $n\leq 3\cdot 10^5$ vertices and $m\leq 3\cdot 10^5$ edges.
+                \item Each vertex $v$ has a binary label $a_v \in \{0, 1\}$.
+				\item We call a binary sequence $s = s_1s_2 \dots s_k$ \textit{walkable} if there exists a walk $v_1v_2 \dots v_k$ in $G$ with
+					$a_{v_1} a_{v_2} \dots a_{v_k} = s$.
+                \item If every binary sequence is walkable, output ``\texttt{infinity}''.
+                    Otherwise, output the length of a shortest binary sequence that is not walkable.
+            \end{itemize}
+
+            \vspace{1em}
+
+            \centering
+            \includegraphics[width=0.35\textwidth]{sample}
+
+            \small
+            Illustration of Sample Input 1.
+            The solution is $4$, as there exists a binary sequence of this length that is not walkable, while every binary sequence of length at most $3$ is walkable.
+        \end{column}
+
+        %\illustration{0.25}{illustration.jpg}{
+        %    Caption of the illustration (optional).
+        %    CC BY-SA 4.0 by X on \href{https://example.com/reference-to-image}{Y}
+        %}
+    \end{columns}
+\end{frame}

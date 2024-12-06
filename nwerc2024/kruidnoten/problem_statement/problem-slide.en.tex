@@ -1,0 +1,30 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{0.67\textwidth}
+            \begin{itemize}
+                \item You are a given an undirected, weighted graph of $n \le 2\cdot10^5$ vertices and $m \le 2\cdot10^5$ edges.
+                \item $k \le n$ of the vertices contain a store that \textit{may} sell kruidnoten.
+                \item Store $i$ sells kruidnoten with probability $0 < p_i \le 1$.
+                \item Karlijn takes a path from vertex $1$ to vertex $n$ that must contain at least one store that sells kruidnoten.
+                \item Find the expected length of a shortest path from $1$ to $n$.
+            \end{itemize}
+        \end{column}
+
+        % This illustration is not 0.30 but 0.25, else the figure below does not fit.
+        \illustration{0.25}{kruidnoten.jpg}{
+            Kruidnoten, a typical Dutch snack.\\
+            CC BY 4.0 by Hanno Lans on~\href{https://commons.wikimedia.org/w/index.php?curid=64873895}{Wikimedia~Commons}
+        }
+    \end{columns}
+
+    \vspace{0.5em}
+
+    \centering
+    \includegraphics[width=0.65\textwidth]{sample}
+
+    \small
+    A possible situation from Sample Input 1, where not every store is stocked with kruidnoten. \\
+    In this case, Karlijn buys the kruidnoten at the store at intersection $3$, and the shortest path has length $11$.
+\end{frame}

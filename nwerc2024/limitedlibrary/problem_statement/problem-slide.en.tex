@@ -1,0 +1,49 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.72\textwidth}
+            \begin{itemize}
+                \item You have a bookcase with $n \leq 10^5$ shelves with given heights up~to~$10^9$.
+                \begin{itemize}
+                    \normalsize
+		        \item Each shelf fits at most $x \leq 1000$ books on a full shelf (without~art~piece).
+		        \item Each shelf fits at most $y < x$ books on a shelf with art piece.
+                \end{itemize}
+                \item You have $m \leq 10^5$ books with given heights up to $10^9$.
+                \begin{itemize}
+                    \normalsize
+                    \item All books have the same width.
+                \end{itemize}
+                \item If possible, you should fit all books on the shelf, and output the largest number of art pieces you can place. Else, output ``impossible''.
+            \end{itemize}
+
+            \vspace{3em}
+
+            \flushright
+            \small
+            Illustration of Sample Input 1. \\
+            Three shelves can have art pieces in the hatched areas, \\
+            while still fitting all new books.
+        \end{column}
+
+        % This column is not 0.30\textwidth but 0.20, because it is quite tall.
+        \begin{column}[T]{0.20\textwidth}
+            \centering
+
+            \illustration{1.0}{library.jpg}{
+                The many bookshelves in \\ the TU Delft library.
+            }
+            % Photo by Maarten
+
+            \vspace{1em}
+
+            \includegraphics[width=0.75\textwidth]{sample.pdf}
+        \end{column}
+
+        %\illustration{0.25}{illustration.jpg}{
+        %    Caption of the illustration (optional).
+        %    CC BY-SA 4.0 by X on \href{https://example.com/reference-to-image}{Y}
+        %}
+    \end{columns}
+\end{frame}
