@@ -1,0 +1,41 @@
+#!/bin/python3
+
+# n humans & m friendships.
+n, m = map(int, input().split())
+
+
+# Union-Find data structure
+class UnionFind:
+    def __init__(self, size):
+        self.parent = [i for i in range(size)]
+        self.size = [1] * size
+
+    def find(self, x):
+        while x != self.parent[x]:
+            x = self.parent[x]
+        return x
+
+    def union(self, x, y):
+        rootX = self.find(x)
+        rootY = self.find(y)
+
+        if rootX != rootY:
+            self.parent[rootY] = rootX
+            self.size[rootX] += self.size[rootY]
+
+
+uf = UnionFind(n)
+
+# Read friendships.
+for _ in range(m):
+    a, b = map(int, input().split())
+    a -= 1
+    b -= 1
+
+    # Merge components of a and b, if they are friends. This way, we can
+    # determine the size of the component containing a or b by looking at uf.size.
+    uf.union(a, b)
+
+
+# The solution is the maximum component size.
+print(max(uf.size))

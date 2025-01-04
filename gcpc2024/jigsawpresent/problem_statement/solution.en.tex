@@ -1,0 +1,42 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}
+        \item Given $n \leq 4\,096$ pairs of numbers $(x_i, y_i)$, with $1 \leq x_i \leq 4\,096 =: C$ and $|y_i| \leq C$. Find two distinct subsets with the same sum or report that this is not possible.
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+    \begin{itemize}
+        \item<+-> The coordinates are too large to run a dp solution, so we should look for a brute force approach.
+        \item<+-> We could solve this in $\mathcal{O}(3^n)$ by deciding for each element whether it should go in the 1st subset, the 2nd subset, or none of the subsets.
+        \item<+-> Optimize with meet-in-the-middle to $\mathcal{O}(3^{n/2})$ by computing all possible sums of the form $$\sum_{i=1}^{n/2} s_i \cdot (x_i, y_i), \sum_{i=n/2+1}^{n} s_i \cdot (x_i, y_i),\quad s_i\in\{-1, 0, 1\}$$ and finding a collision.
+        \item<+-> But $n$ is waaay too large for this approach...
+    \end{itemize}
+    \end{block}
+    % \solvestats
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Insights}
+        \begin{itemize}
+            \item We can have up to $2^n$ possible subset sums, which is exponential in $n$. \pause
+            \item However, the absolute value of the coordinates in any subset sum are always $\leq n \cdot C$, which is polynomial in $n$!
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item<+-> If $n$ is large enough we can always find two distinct subsets with the same sum. Just do \texttt{n = min(n, N)} at the beginning of your code. ($N \sim 28-32$)
+            \item<+-> One can prove that for $n \geq 32$ there always is a collision (short sketch on next slide).
+            \item<+-> Challenge: Construct test cases without collision and with a large $n$. The best case we could achieve has $n = 27$. Hint: powers of $2$ are not useful.        
+        \end{itemize}
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Proof sketch}
+    Let $(X, Y)$ be the total sum of all pairs. Pick a random subset with sum $(\tilde{x},\tilde{y})$. Using Chebyshev's inequality you can show that the probability that we are ``close''' to the total sum $$\left|(\tilde{x},\tilde{y}) - \frac{1}{2}(X, Y)\right| \lesssim \sqrt{n} C$$ happens with probability $\geq 1/2$. Note that there are $\mathcal{O}(nC^2)$ possible sums that are ``close''. If all subset sums that are ``close'' to the total sum are distinct, then this requires $$nC^2\cdot 2^{-n} \gtrsim \frac{1}{2} \Rightarrow C \gtrsim \frac{2^{n/2}}{\sqrt{n}}.$$ Inserting numbers and more details\footnote{search for ``Probabilistic method''} shows that we always have a collision for $n \geq 32$.
+    \end{block}
+\end{frame}

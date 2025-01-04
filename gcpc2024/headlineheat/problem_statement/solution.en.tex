@@ -1,0 +1,27 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+    \begin{itemize}
+        \item Given $n<10^5$ university names, $m<10^5$ rivalries between universities, and $k<10^5$ texts. For each text, answer if there are two rivalling universities with different number of occurrences.\\
+        The summed length of all names and texts is $W<10^6$.
+    \end{itemize}
+    \end{block}
+    \pause
+
+    \begin{block}{Solution}
+    First a solution in time $\mathcal O(mW)$.
+    \pause
+    \begin{itemize}
+        \item<+-> build Aho-Corasick automaton out of all the names
+        \item<+-> each state stores $m$ long vector that tracks for each rivalry the difference in occurrence, initially 0
+        \item<+-> for rivalry $i$ between $u$ and $v$, add +1 to the $i$th entry of the vector of states that accept $u$ and -1 in states that accept $v$
+        \item<+-> to process an article, feed the text into the automaton and add the $m$ long vectors up element wise
+        \item<+-> a text is safe if we get a vector with all 0s
+    \end{itemize}
+
+    \action<+->{
+    To avoid quadratic time, hash the vectors.
+    \textbf{Runtime}: $\mathcal O(n+m+k)$
+    }
+    \end{block}
+\end{frame}

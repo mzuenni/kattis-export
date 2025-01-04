@@ -1,0 +1,10 @@
+INT(1, 10^4, t) NEWLINE
+REP(t)
+  INT(1,10^9) NEWLINE
+  REPI(i, 7, SPACE)
+    INT(0,10^9)
+  END
+  NEWLINE
+END
+EOF
+

@@ -1,0 +1,10 @@
+name:
+  en: Jigsaw Present
+validation: custom
+author: Erik Sünderhauf
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+
+# uuid added by BAPCtools
+uuid: 8ee7605a-a0c0-8415-2f5a-9a1b2bebe7da

@@ -1,0 +1,19 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+    \begin{itemize}
+        % TODO: Remove this comment when you're done writing the solutions.
+        \item \textbf{Problem:} Find the minimal distance from the input sequence to any sequence $x, x+1, x+2, $\dots$, x+n-1$.
+    \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+    \begin{itemize}
+        \item<+-> For a fixed $x$, the distance can be determined in $O(n)$. 
+        \item<+-> Naive solution: Compute the distance for all possible $x \in [-250\,000, 200\,000]$. $\mathcal O(v \cdot n)$ is too slow!
+        \item<+-> Binary searching $x$ does not work, as the score is not a monotonic function.
+        \item<+-> Ternary search the answer over all possible x! $\mathcal O(\log(v) \cdot n)$
+    \end{itemize}
+    \end{block}
+    % \solvestats
+\end{frame}

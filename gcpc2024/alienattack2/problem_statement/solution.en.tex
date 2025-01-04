@@ -1,0 +1,22 @@
+\begin{frame}
+	\frametitle{\problemtitle}
+	\begin{block}{Problem}
+		\begin{itemize}
+			%\item Aliens wish to abduct a collection of $n$ people where each person is always abducted along with their friends. \pause{}
+			\item Find the size of the largest connected component in an undirected graph representing friendships. \pause{}
+		\end{itemize}
+	\end{block}
+	\begin{block}{Solution}
+		\begin{itemize}
+			\item Perform a graph search starting from any unvisited node.
+			\item Utilize algorithms like Depth First Search (DFS), Breadth First Search (BFS), or Union-Find with path compression to traverse the graph. \pause{}
+			% \item During traversal, mark nodes as visited to prevent revisiting. \pause{}
+			\item Count the number of nodes visited during each traversal to determine the size of the connected component.
+			\item Repeat the process until all nodes have been visited. \pause{}
+			\item The size of the largest component found will dictate the size of the smallest necessary ship. \pause{}
+
+			\item Pitfalls: Inefficient graph traversal algorithms, e.g. revisiting nodes or Union-Find without path compression, may lead to time limit problems.
+            \item For Python users: default recursion depth is low. Increase using sys.setrecursionlimit
+		\end{itemize}
+	\end{block}
+\end{frame}

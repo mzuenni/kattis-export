@@ -1,0 +1,25 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    Apply a bunch of rotations and reflections to a string consisting of \texttt{bdpq}:
+    \begin{itemize}
+      \item \texttt{h}: horizontal flip: \texttt{bbq} $\leftrightarrow$ \texttt{pdd}
+      \item \texttt{v}: vertical flip: \texttt{bbq} $\leftrightarrow$ \texttt{ppd}
+      \item \texttt{r}: 180 degree rotation: \texttt{bbq} $\leftrightarrow$ \texttt{bqq}
+    \end{itemize}
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item<+-> Applying all the transformations one by one takes $\Theta(n^2)$ time, too slow!
+      \item<+-> Instead, we make some observations:
+        \begin{itemize}
+          \item we may replace each \texttt{r} by \texttt{hv}
+          \item doing \texttt{vh} is the same as \texttt{hv} $\leadsto$ move all \texttt{h} to the front
+          \item we only need to know if the number of \texttt{h} is even or odd (same for \texttt{v})
+        \end{itemize}
+      \item<+-> Using these, we only need to do at most one \texttt{h} and at most one \texttt{v} transformation.
+      \item<+-> All of this can be done in $\mathcal{O}(n)$ time.
+    \end{itemize}
+  \end{block}
+\end{frame}

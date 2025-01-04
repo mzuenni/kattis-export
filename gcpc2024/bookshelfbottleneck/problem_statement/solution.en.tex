@@ -1,0 +1,19 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    Store books of size $l \times w \times h$ into a shelf of height $H$ while minimizing the shelf width used.
+  \end{block}
+
+  \pause{}
+  \hfill
+
+  \begin{block}{Solution}
+    \begin{itemize}
+    \item Put the smallest side length in shelf direction and
+      the second smallest upwards \pause{}
+    \item If this does not fit with the height $H$, swap the dimensions \pause{}
+    \item<4-> If it still does not fit, the task is impossible \pause{}
+    \item<4-> Otherwise, do this for every book. The sum of the lengths is the solution
+    \end{itemize}
+  \end{block}
+\end{frame}
