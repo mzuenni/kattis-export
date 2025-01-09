@@ -16,7 +16,7 @@ validation: default
 # float_relative_tolerance eps
 # float_tolerance eps
 validator_flags: float_tolerance 1e-6
-
+uuid: "ce64ba21-5d0a-445e-8caa-71dd4ffc74d6"
 # To change the time limit factors for problemtools/Kattis, use:
 limits:
   # Time limit is 2*slowest accepted submission: (default: 5)
