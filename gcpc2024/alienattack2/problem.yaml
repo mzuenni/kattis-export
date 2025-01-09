@@ -1,11 +1,9 @@
 name:
   #lang: name
   en: Alien Attack 2
-author: Yvonne Kothmeier \& Andreas Grigorjew
-# Contest name and year
-source:
-# contest.region.eu
-source_url:
+author: Yvonne Kothmeier, Andreas Grigorjew
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
 uuid: 8ee7605a-ac60-80a5-1951-2c9536aabd9c
 license: cc by-sa
 rights_owner: author

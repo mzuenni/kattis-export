@@ -2,10 +2,8 @@ name:
   #lang: name
   en: Even Odd Game
 author: Paul Wild
-# Contest name and year
-source: unknown
-# contest.region.eu
-source_url: unknown
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
 uuid: 8ee7605a-4eb1-8d67-1d25-b1231ddb69cb
 license: cc by-sa
 rights_owner: author

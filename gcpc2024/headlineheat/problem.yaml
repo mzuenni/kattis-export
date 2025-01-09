@@ -1,7 +1,10 @@
 name:
   en: Headline Heat
 author: Christopher Weyand
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
 license: cc by-sa
+rights_owner: author
 validation: default
 # uuid added by BAPCtools
 uuid: 8ee7605a-7881-8cff-003f-3b431f4b1e68

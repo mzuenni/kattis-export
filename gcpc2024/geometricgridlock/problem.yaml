@@ -2,10 +2,8 @@ name:
   #lang: name
   en: Geometric Gridlock
 author: Paul Wild
-# Contest name and year
-source: unknown
-# contest.region.eu
-source_url: unknown
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
 uuid: 8ee7605a-3fa0-8f55-2b6f-210f77c62819
 license: cc by-sa
 rights_owner: author

@@ -2,6 +2,10 @@ name:
   en: Jigsaw Present
 validation: custom
 author: Erik Sünderhauf
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
+license: cc by-sa
+rights_owner: author
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5

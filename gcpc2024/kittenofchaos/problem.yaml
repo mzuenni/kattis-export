@@ -2,10 +2,8 @@ name:
   #lang: name
   en: Kitten of Chaos
 author: Paul Wild
-# Contest name and year
-source: unknown
-# contest.region.eu
-source_url: unknown
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
 uuid: 8ee7605a-b82d-88a3-0f96-77678044a754
 license: cc by-sa
 rights_owner: author

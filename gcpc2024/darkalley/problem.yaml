@@ -1,8 +1,9 @@
 name: Dark Alley 
 author: Michael Zündorf
-source: Winter Contest 2024
-source_url: https://wintercontest.io
+source: German Collegiate Programming Contest (GCPC) 2024
+source_url: https://gcpc.nwerc.eu
 license: cc by-sa
+rights_owner: author
 validation: default
 # uuid added by BAPCtools
 uuid: 8ee7605a-65aa-84d7-3602-aedf7577c21b
