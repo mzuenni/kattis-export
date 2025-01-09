@@ -1,3 +1,5 @@
+// @EXPECTED_RESULTS@: ACCEPTED, WRONG_ANSWER
+
 #include <bits/stdc++.h>
 using namespace std;
 const int C = 3'100;
