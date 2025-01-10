@@ -1,6 +1,6 @@
 import sys
 from itertools import permutations
-sys.setrecursionlimit(10000000)
+sys.setrecursionlimit(500000)
 
 n, shelf_height = map(int, input().split())
 

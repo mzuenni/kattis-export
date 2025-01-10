@@ -1,6 +1,6 @@
 from collections import defaultdict
 import sys
-sys.setrecursionlimit(1<<20)
+sys.setrecursionlimit(1<<18)
 n, m = map(int, input().split())
 
 friends = defaultdict(list)
