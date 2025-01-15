@@ -1,3 +1,5 @@
+// @EXPECTED_RESULTS@: ACCEPTED, TIME_LIMIT_EXCEEDED
+
 import java.util.*;
 
 public class jannik {
