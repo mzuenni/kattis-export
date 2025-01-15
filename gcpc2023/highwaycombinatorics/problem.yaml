@@ -1,6 +1,12 @@
 name: Highway Combinatorics
-source: Michael Zündorf
 author: Michael Zündorf
+source: German Collegiate Programming Contest (GCPC) 2023
+source_url: https://gcpc.nwerc.eu
 license: cc by-sa
-
+rights_owner: author
 validation: custom
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+  memory: 2048

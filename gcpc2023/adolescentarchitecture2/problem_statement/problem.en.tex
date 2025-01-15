@@ -30,7 +30,6 @@ The first player who is unable to make a move loses the game.
 
 Given the initial configuration, determine the number of winning moves for the first player.
 
-\vspace{-3mm}
 \begin{Input}
   The input consists of:
   \begin{itemize}
@@ -39,26 +38,22 @@ Given the initial configuration, determine the number of winning moves for the f
   \end{itemize}
 \end{Input}
 
-\vspace{-3mm}
 \begin{Output}
   Output the number of winning moves for the first player.
 \end{Output}
 
-\begin{afterSample}
-  \section*{Notes}
-  \begin{figure}[h]
-    \includegraphics[width=\textwidth]{sample2}
-    \vspace{3mm}
-    \caption{
-      Illustration of Sample Input 2, showing all possible end configurations of the game when \playerA{}
-      went first and played optimally to win. The blue blocks are the initial configuration.
-      \playerA{} needs to put one of \texttt{circle 1}, \texttt{square 2} or \texttt{triangle 3}
-      on top of \texttt{circle 2} in order to win.
-      Each of these options corresponds to one row of the figure.
-      Blocks placed by \playerA{} are coloured in red, and blocks placed by \playerB{} are coloured in yellow.
-      As the last two blocks are always of type \texttt{triangle 1}, they are shown in grey.
-      If, for instance, \playerA{} first puts \texttt{circle 1} (as depicted in the first row),
-      then \playerA{} can win by mirroring the following moves by \playerB{}.
-    }
-  \end{figure}
-\end{afterSample}
+\section*{Notes}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{sample2}
+\caption{
+  Illustration of Sample Input 2, showing all possible end configurations of the game when \playerA{}
+  went first and played optimally to win. The blue blocks are the initial configuration.
+  \playerA{} needs to put one of \texttt{circle 1}, \texttt{square 2} or \texttt{triangle 3}
+  on top of \texttt{circle 2} in order to win.
+  Each of these options corresponds to one row of the figure.
+  Blocks placed by \playerA{} are coloured in red, and blocks placed by \playerB{} are coloured in yellow.
+  As the last two blocks are always of type \texttt{triangle 1}, they are shown in grey.
+  If, for instance, \playerA{} first puts \texttt{circle 1} (as depicted in the first row),
+  then \playerA{} can win by mirroring the following moves by \playerB{}.
+}
+\end{figure}

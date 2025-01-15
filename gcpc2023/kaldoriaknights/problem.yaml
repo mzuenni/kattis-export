@@ -5,3 +5,7 @@ source_url: https://gcpc.nwerc.eu
 license: cc by-sa
 rights_owner: author
 validation: default
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
