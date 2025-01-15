@@ -4,9 +4,8 @@ source: German Collegiate Programming Contest (GCPC) 2023
 source_url: https://gcpc.nwerc.eu
 license: cc by-sa
 rights_owner: author
-
 validation: custom
-
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
+uuid: "b168aa78-b910-407d-b6f1-a21f08ec342c"

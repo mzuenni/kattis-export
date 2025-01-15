@@ -1,6 +1,7 @@
 name: Japanese Lottery
-source: Michael Zündorf
+source: German Collegiate Programming Contest (GCPC) 2023
+source_url: https://gcpc.nwerc.eu
 author: Michael Zündorf
 license: cc by-sa
-
 validation: default
+uuid: "60d39a71-5c28-47ba-94c6-bacef22a2205"

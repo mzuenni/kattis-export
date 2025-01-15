@@ -5,9 +5,7 @@ source_url: https://gcpc.nwerc.eu
 license: cc by-sa
 rights_owner: author
 validation: default
-
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
-# uuid added by BAPCtools
-uuid: 8ee7605a-7d71-829b-3d2f-275e7c22afff
+uuid: "2878e914-2921-4b3d-afe7-8c26485ea331"

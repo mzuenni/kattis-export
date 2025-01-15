@@ -8,7 +8,7 @@ license: cc by-sa
 rights_owner: author
 # 'default', 'custom', or 'custom interactive'
 validation: custom
-
+uuid: "28b8c6c7-d3b3-4560-b3ad-11584a4cfa86"
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5

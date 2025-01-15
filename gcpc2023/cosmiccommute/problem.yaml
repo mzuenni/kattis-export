@@ -5,7 +5,7 @@ source_url: https://gcpc.nwerc.eu
 license: cc by-sa
 rights_owner: author
 validation: default
-
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
+uuid: "2256b49f-c4b1-4351-9ee7-1950a17ec080"
