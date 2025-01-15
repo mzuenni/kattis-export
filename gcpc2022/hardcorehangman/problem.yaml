@@ -3,4 +3,11 @@ author: Marcel Wienöbst
 source: German Collegiate Programming Contest 2022
 source_url: https://gcpc.nwerc.eu
 license: cc by-sa
+rights_owner: author
+
 validation: custom interactive
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+
