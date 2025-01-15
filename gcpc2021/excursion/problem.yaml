@@ -4,3 +4,7 @@ source: German Collegiate Programming Contest (GCPC) 2021
 source_url: https://gcpc.nwerc.eu
 author: Andreas Grigorjew
 license: cc by-sa
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

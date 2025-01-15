@@ -4,3 +4,7 @@ source_url: https://gcpc.nwerc.eu
 author: Gregor Matl
 license: cc by-sa
 keywords: Shortest Path, Dijkstra, Topological Ordering
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

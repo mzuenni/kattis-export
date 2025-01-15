@@ -6,3 +6,5 @@ license: cc by-sa
 
 limits:
   time_multiplier: 1.5
+  time_safety_margin: 1.5
+

@@ -5,3 +5,8 @@ source_url: https://gcpc.nwerc.eu
 author: Alexander Dietsch
 license: cc by-sa
 validation: custom
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+

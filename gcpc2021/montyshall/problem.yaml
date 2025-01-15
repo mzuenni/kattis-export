@@ -5,3 +5,7 @@ author: Alexander Dietsch
 license: cc by-sa
 
 validator_flags: float_tolerance 1e-6
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
