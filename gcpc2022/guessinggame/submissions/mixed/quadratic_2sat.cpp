@@ -1,3 +1,5 @@
+// @EXPECTED_RESULTS@: RUN_TIME_ERROR, TIME_LIMIT_EXCEEDED
+
 #include<vector>
 #include<iostream>
 
