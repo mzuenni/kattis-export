@@ -42,7 +42,7 @@ int main() {
 	while (true) {
 		auto finish = std::chrono::steady_clock::now();
 		double elapsed = chrono::duration_cast<chrono::duration<double>>(finish - start).count();
-		if (elapsed > 1.85) break;
+		if (elapsed > 0.85) break;
 
 		vector<ll> ind;
 		random_shuffle(all(in));
