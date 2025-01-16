@@ -6,7 +6,7 @@ license: cc by-sa
 rights_owner: author
 
 validation: custom interactive
-
+uuid: "f2d1080c-4f38-4730-9666-88016d5a301c"
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5

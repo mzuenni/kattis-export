@@ -7,7 +7,7 @@ rights_owner: author
 
 validation: default
 validator_flags: float_tolerance 1e-6
-
+uuid: "8bf51fd4-3c0e-403a-85e2-6f7ea01d0ce6"
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
