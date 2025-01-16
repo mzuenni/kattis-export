@@ -31,7 +31,7 @@ int main() {
 	cin >> s;
 	ll n = sz(s);
 	ll res = n;
-	if (n > 60) res = -1;
+	if (n > 60) n = 60;
 	for (ll i = 0; i < (1ll << n); i++) {
 		string tmp;
 		for (ll j = 0; j < n; j++) {
