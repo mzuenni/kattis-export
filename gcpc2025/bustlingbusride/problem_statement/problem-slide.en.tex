@@ -1,0 +1,52 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.70\textwidth}
+            \begin{itemize}
+                \item Partition people in a queue into contiguous segments, such that the latest arrival time is minimized.
+                \item All people on the bus need to leave at every stop (taking time $w$).
+                \pause
+               \item Solution to this problem:
+                \begin{itemize}
+                  \item Binary Search the answer $o^*$.
+                        \pause
+                    \item For each tested $o$ put as many people into the currently last bus $B$.
+                        \pause
+                  \item Final arrival time is\\
+                        \scalebox{0.8}{\begin{minipage}{\textwidth}
+                        \begin{align*}
+                        &\mathrm{Start}(B) + \mathrm{MaxDist}(B) + \sum_{s \in \mathrm{Stops}(B)} w\cdot(\#\mathrm{PeopleLeavingAt}(s) + \#\mathrm{PeopleEnteringAt}(s)).
+                        \end{align*}
+                      \end{minipage}}
+                        \pause
+                    \item We have
+                        \scalebox{0.8}{\begin{minipage}{\textwidth}
+                        \begin{align*}
+&\;\sum_{s \in \mathrm{Stops}(B)} w\cdot(\#\mathrm{PeopleLeavingAt}(s) + \#\mathrm{PeopleEnteringAt}(s))\\
+                          =&\;\sum_{p\in \mathrm{PeopleRiding}(B)} 2w(1 + \#\mathrm{ApproachedStopsBefore}(\mathrm{Dest}(p))).
+                        \end{align*}
+                      \end{minipage}}
+                        \pause
+                \item Final arrival time, after adding a person, can be maintained in \(O(\log n)\) using a data structure (Segment Tree/OST)
+                        \pause
+                  \item Running time for testing one particular $o$: \(O(n \log n)\)
+                  \item Running time for solving the whole problem: \(O(n \log n \log o^{*})\)
+                \end{itemize}
+            \end{itemize}
+
+            %\vspace{1em}
+
+            %\centering
+            %\includegraphics[width=0.25\textwidth]{sample}
+
+            %\small
+            %Illustration of Sample Input 1.
+        \end{column}
+
+        %\illustration{0.25}{illustration.jpg}{
+        %    Caption of the illustration (optional).
+        %    CC BY-SA 4.0 by X on \href{https://example.com/reference-to-image}{Y}
+        %}
+    \end{columns}
+\end{frame}

@@ -1,0 +1,33 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    Given time $t_w$. Find the minimum time $0 \leq t_b$, such that
+    \begin{itemize}
+    \item $t_w - t_b \leq 60 * 6$ or
+    \item $t_w - t_b \leq 60 * 9 \wedge t_b \geq 30$ or
+    \item $t_w - t_b \leq 60 * 10 \wedge t_b \geq 45$
+    \end{itemize}
+    \pause{}
+  \end{block}
+  \only<2-3> {
+    \begin{block}{Solution 1}
+      \begin{itemize}
+      \item Case matching
+      \item if $t_w \leq 60 * 6 \Rightarrow 0$
+      \item if $60 * 6 + 30 < t_w \leq 60 * 9 + 30 \Rightarrow 30$
+      \item if $60 * 9 + 45 < t_w \leq 60 * 10 + 45 \Rightarrow 45$
+      \item if $60 * 10 + 45 < t_w \Rightarrow $ Output difference \pause{}
+      \item Fill gaps between cases by adding difference to lower bracket to solution
+      \end{itemize}
+    \end{block}
+  }
+  \only<4> {
+    \begin{block}{Solution 2}
+      \begin{itemize}
+      \item Loop over $t_b$ from $0$ to $t_w$
+      \item Check if solution is valid
+      \item Output first valid solution
+      \end{itemize}
+    \end{block}
+  }
+\end{frame}

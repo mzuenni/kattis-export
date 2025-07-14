@@ -1,0 +1,22 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}
+            \item We are given a directed graph with $n$ vertices and $m$ edges, and two different vertices $u$ and $v$.
+            \item Find a vertex $c$, such that there is a path from $u$ to $c$ and a path from $v$ to $c$. Or return that no such vertex exists.
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Implement a depth first search or a breadth first search.
+            \item Call two searches: one starting from $u$, one starting from $v$.
+            \pause
+            \item Maintain a boolean array for both searches, indicating for every vertex whether it has been reached by the search.
+            \item Output any vertex for which the entry in both arrays is true, or output ``\texttt{no}'' if no such vertex exists.
+            \item Runtime: $O(n+m)$.
+        \end{itemize}
+    \end{block}
+    % \solvestats
+\end{frame}
+

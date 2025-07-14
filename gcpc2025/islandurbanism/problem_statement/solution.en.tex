@@ -1,0 +1,46 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+		Given a graph $G$ consisting of a large cycle where some edges are replaced by an arbitrary connected graph (a village).
+        Further, given terminal vertices in $G$ such that every village contains at most $7$ terminals. Find a Steiner Tree in $G$, that is, a subtree of $G$ connecting all terminals.
+	\end{block}
+    \alt<1>{%
+    \vspace{-3mm}
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{sample.pdf}
+    \end{center}
+    }{%
+    \begin{block}{Solution}
+    \alt<2>{%
+    How do we solve this for few terminals?
+    \begin{itemize}
+        \item Dynamic Programming: Let $D(S,i)$ be the weight of the smallest tree connecting the terminals
+            \newline in $S$ and vertex $i$:
+        \begin{alignat*}{3}
+            D(\emptyset, i) &= 0 &\qquad& \forall i \\
+            D(S,i) &\leq D(S\setminus\{i\},i) && \text{if $i$ is a terminal} \\
+            D(S, i) &\leq D(S,j) + w && \text{if there is an edge $(i,j)$ with weight $w$} \\
+            D(S, i) &\leq D(A,i) + D(S\setminus A,i) && \forall A\subset S
+        \end{alignat*}
+        \item Time Complexity: $\mathcal O(n\cdot 3^k + 2^k\cdot m\cdot\log n)$ for $n$ vertices, $m$ edges, and $k$ terminals
+    \end{itemize}%
+    }{%
+    \begin{itemize}
+        \item The solution is a tree
+            \newline $\implies$ We must cut the cycle somewhere
+        \item Two cases:
+            \begin{itemize}
+                \item Cut inside a village (s.t.\ the ``leftmost'' and ``rightmost'' vertices are disconnected within the village)
+                \item Cut between two villages (``leftmost'' and ``rightmost'' vertices are connected within the villages)
+            \end{itemize}
+        \item Treat ``leftmost'' and ``rightmost'' vertices of villages as terminals
+            \newline $\implies$ cases can be computed with DP
+        \item Just try cutting between any adjacent villages, and within each village!
+        \item Take care with villages without terminals 
+        \item Time Complexity: $\mathcal O(n\cdot 3^7 + 2^7\cdot m\cdot\log n)$
+    \end{itemize}
+    }
+    \end{block}
+    }
+    \onslide<3>{}
+\end{frame}

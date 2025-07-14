@@ -1,0 +1,15 @@
+# Specification: https://icpc.io/problem-package-format/spec/2023-07-draft.html
+problem_format_version: 2023-07-draft
+type: multi-pass
+name:
+  en: Jumbled Packets
+credits: Yidi Zang
+source:
+  name: German Collegiate Programming Contest 2025
+  url: https://gcpc.nwerc.eu
+license: cc by-sa
+rights_owner: author
+uuid: 8ee7605a-21bd-8a71-30ce-4ff82eca204f
+
+limits:
+  validation_passes: 11

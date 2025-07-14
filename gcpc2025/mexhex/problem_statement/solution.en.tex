@@ -1,0 +1,74 @@
+\newcommand*{\mex}{\mathtt{mex}}
+
+\begin{frame}
+	\frametitle{\problemtitle}
+	\onslide<+->{
+		\begin{block}{Problem}
+			Given an array $p$ and an integer $d$, cover length-$d$ intervals of $p$ so that the $\mex$ of the uncovered numbers is minimized.
+			After a covered interval, the next $d$ numbers cannot be covered.
+		\end{block}
+		\medskip
+		\centering%
+		\includegraphics[width=0.8\textwidth]{sample}%
+		\medskip
+	}
+
+	\onslide<+->{
+		\begin{block}{Observations}
+			\begin{itemize}
+				\item Let $p'$ be the set of uncovered numbers.
+				\item How to achieve $\mex(p') = 0$ (the best possible)? \onslide<+-> $\Rightarrow$ Cover all $i$ with $p_i = 0$.
+				\item<+-> In general, covering all $i$ with $p_i = x$ implies that $\mex(p') \le x$.
+			\end{itemize}
+		\end{block}
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\problemtitle}
+	\onslide<+->{
+		New problem: Check if a set of indices $\mathcal I = \{i \mid p_i = x\}$ can be covered.
+	}
+
+	\onslide<+->{
+		\begin{block}{Greedy algorithm}
+			\begin{itemize}
+				\item Place a covering interval $[i, i+d)$ to start on the first uncovered $i \in \mathcal I$.
+				\item<+->
+				      Move this interval to the left to start on the smallest index $j$ so that
+				      \begin{itemize}
+					      \item it still covers the same relevant indices, that is, $[i, i+d) \cap \mathcal I = [j, j+d) \cap \mathcal I$, and
+					      \item it is at least $d$ far away from the previous interval.
+				      \end{itemize}
+				\item<+->
+				      If $[j+d, j+2d) \cap \mathcal I \ne \emptyset$, then $\mathcal I$ cannot be covered.
+				      Otherwise repeat until all of $\mathcal I$ is covered.
+			\end{itemize}
+			\onslide<+->
+			Correctness can be proven via greedy stays ahead argument.
+			Time complexity: $\mathcal O(\lvert \mathcal I \rvert)$.
+		\end{block}
+	}
+
+	\begin{center}
+		\includegraphics<+>[width=0.75\textwidth,page=1]{greedy}%
+		\includegraphics<+>[width=0.75\textwidth,page=2]{greedy}%
+		\includegraphics<+>[width=0.75\textwidth,page=3]{greedy}%
+		\includegraphics<+>[width=0.75\textwidth,page=4]{greedy}%
+		\includegraphics<+>[width=0.75\textwidth,page=5]{greedy}%
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{\problemtitle}
+
+	\begin{block}{Solution}
+		\begin{itemize}
+			\item Partition indices into $\mathcal I_x = \{ i \mid p_i = x \}$.
+			\item Check for $x = 0, 1, \dots, n$ in increasing order whether $\mathcal I_x$ can be covered.
+		\end{itemize}
+		Time complexity: $\sum_{x = 0}^n \mathcal O(\lvert \mathcal I_x \rvert) = \mathcal O(n)$.
+	\end{block}
+
+	% \solvestats
+\end{frame}

@@ -1,0 +1,18 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+	\begin{block}{Problem}
+
+         Given an axis-aligned polygon, find an enclosing axis-aligned polygon with minimum circumference
+	\end{block}
+	 \begin{block}{Solution}
+    \begin{itemize}
+        \item Insight: An optimal solution has no two consecutive convex vertices
+        \newline $\implies$ Any optimal solution is \emph{rectilinear convex}
+        \item What's the circumference of such a polygon? \pause $2(x_\mathit{max} - x_\mathit{min}) + 2(y_\mathit{max} - y_\mathit{min})$
+        \item This is the same as the rectangle with corners $\langle x_\mathit{min},y_\mathit{min}\rangle$ and $\langle x_\mathit{max},y_\mathit{max}\rangle$
+        \item Find $x_\mathit{min}$, $x_\mathit{max}$, $y_\mathit{min}$ and $y_\mathit{max}$
+        \item Time complexity: $\mathcal{O}(n)$
+    \end{itemize}
+	\end{block}
+\end{frame}
+

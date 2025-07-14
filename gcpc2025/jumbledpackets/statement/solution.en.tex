@@ -1,0 +1,52 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}
+            \item This is a multi pass problem.
+            \item You are given a binary string $s$ of length $n$ ($1 \leq n \leq 10^5$).
+            \item Encode it into a ternary string of length $n$.
+            \item After this string is cyclically rotated by some amount, restore the original string $s$.
+        \end{itemize}
+    \end{block}
+
+    \pause
+
+    \begin{block}{Encode}
+        \begin{itemize}
+            \item If the string $s$ consists of only `\texttt{0}', do nothing.
+            \pause
+            \item Otherwise, find the first `\texttt{1}'.
+            \item Replace everything up to that `\texttt{1}' with `\texttt{2}'.
+            \item For example, replace ``\texttt{0000\textcolor{blue}{1}011}'' with ``\texttt{\textcolor{blue}{22222}011}''.
+      \end{itemize}
+    \end{block}{}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Encode}
+        \begin{itemize}
+            \item If the string $s$ consists of only `\texttt{0}', do nothing.
+            \item Otherwise, find the first `\texttt{1}'.
+            \item Replace everything up to that `\texttt{1}' with `\texttt{2}'.
+            \item For example, replace ``\texttt{0000\textcolor{blue}{1}011}'' with ``\texttt{\textcolor{blue}{22222}011}''.
+      \end{itemize}
+    \end{block}{}
+
+    \begin{block}{Decode}
+        \begin{itemize}
+            \item If the received ternary string consists of only `\texttt{0}', this is already decoded.
+            \pause
+            \item Otherwise, find the substring of `\texttt{2}'s.
+            \begin{itemize}
+                \item Careful, this might wrap over the end, e.g. ``\texttt{\textcolor{blue}{22}011\textcolor{blue}{222}}''.
+            \end{itemize}
+            \pause
+            \item Rotate this substring to the beginning, ``\texttt{\textcolor{blue}{22}011\textcolor{blue}{222}}'' $\to$ ``\texttt{\textcolor{blue}{22222}011}''.
+            \pause
+            \item Replace the last `\texttt{2}' with `\texttt{1}', all other `\texttt{2}'s with `\texttt{0}', ``\texttt{\textcolor{blue}{2222}\textcolor{red}{2}011}'' $\to$ ``\texttt{\textcolor{blue}{0000}\textcolor{red}{1}011}''.
+            \pause
+            \item Encoding and decoding both take $\mathcal{O}(n)$.
+        \end{itemize}
+    \end{block}
+\end{frame}

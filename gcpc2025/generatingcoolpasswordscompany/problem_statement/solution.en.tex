@@ -1,0 +1,29 @@
+\begin{frame}
+  \frametitle{\problemtitle}
+  \begin{block}{Problem}
+    Generate a list of $n$ passwords ($1 \le n \le 1000$).
+    \begin{enumerate}
+      \item\label{rule:1} Passwords must contain at least one each of \texttt{a-z}, \texttt{A-Z}, \texttt{0-9} and a special symbol (e.g.\ \texttt{!} or \texttt{\#})
+      \item\label{rule:2} Passwords must have pairwise edit distance at least $2$
+      \item\label{rule:3} Passwords must be between $8$ and $12$ in length
+    \end{enumerate}
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item Here's one of the many approaches that work:
+        \begin{center}
+          {\color{blue}{\texttt{000{\color{red}{GCPC!x}}000}}},
+          {\color{blue}{\texttt{001{\color{red}{GCPC!x}}001}}},
+          {\color{blue}{\texttt{002{\color{red}{GCPC!x}}002}}},
+          \dots,
+          {\color{blue}{\texttt{999{\color{red}{GCPC!x}}999}}}
+        \end{center}
+        \begin{itemize}
+          \item The common part \texttt{{\color{red}{GCPC!x}}} is used to satisfy rules \ref{rule:1} and \ref{rule:3}
+          \item The two counters are used to satisfy rule \ref{rule:2}
+        \end{itemize}
+      \item Other approaches include using randomization, permutations, or the digits of $\pi$
+    \end{itemize}
+  \end{block}
+\end{frame}

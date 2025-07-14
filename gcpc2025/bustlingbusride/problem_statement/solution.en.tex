@@ -1,0 +1,48 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+	\begin{block}{Problem}
+      Partition people queuing for a bus into contiguous segments minimizing the latest arrival time.\\
+      All people on the bus need to leave and possibly reenter at every stop (taking some time).
+	\end{block}
+    \pause
+	\begin{block}{Solution}
+    \begin{itemize}
+                  \item<2-> Binary Search the answer $a^*$.
+                    \item<3-> For each tested $a$, put as many people into one bus $B$ as possible while not arriving after time $a$.
+                  \item<4-> Final arrival time of \(B\) is
+                  %\scalebox{0.8}{\begin{minipage}{\textwidth}
+                        \begin{align*}
+                        &\;\mathrm{Start}(B) + \mathrm{MaxDist}(B) + \sum_{s \in \mathrm{Stops}(B)} w\cdot(\#\mathrm{PeopleLeavingAt}(s) + \#\mathrm{PeopleEnteringAt}(s))\\
+                          \onslide<5->{=&\;\mathrm{Start}(B) + \mathrm{MaxDist}(B) +\sum_{p\in \mathrm{PeopleRiding}(B)} 2w(1 + \#\mathrm{ApproachedStopsBefore}(\mathrm{Dest}(p))).}
+                        \end{align*}
+                        %\end{minipage}}
+%                    \item<6-> Maintain set of approached stops in \(O(\log n)\) using (basically) any tree data structure.
+%                  \item<7-> Running time for testing one particular $a$: \(O(n \log n)\)
+%                  \item<8-> Running time for solving the whole problem: \(O(n \log n \log a^{*})\)
+    \end{itemize}
+	\end{block}
+    % \solvestats
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Solution (cont.)}
+    \begin{itemize}
+      \item<1-> Need to maintain \(\sum_{p\in \mathrm{PeopleRiding}(B)} 2w(1 + \#\mathrm{ApproachedStopsBefore}(\mathrm{Dest}(p)))\) for each new person $p$ on the bus
+      \item<2-> Two cases:
+      \begin{itemize}
+        \item<3-> $\mathrm{Dest}(p)$ is already driven to:
+        \item<4->[] Change in final arrival time \(= 2w(1 + \#\mathrm{ApproachedStopsBefore}(\mathrm{Dest}(p)))\)
+        \item<5-> $\mathrm{Dest}(p)$ is \emph{not} already driven to:
+        \item<6->[] Change in final arrival time \(= 2w(1 + \#\mathrm{ApproachedStopsBefore}(\mathrm{Dest}(p)) + \#\mathrm{PeopleLeavingAfter}(\mathrm{Dest}(p)))\)
+      \end{itemize}
+      \item<7-> Can be maintained in \(O(\log n)\) with (basically) any tree data structure.
+      \item<8-> Watch out to not TLE when many buses are needed.
+      \begin{itemize}
+        \item<9-> You need might need to rollback the updates to your data structure instead of building it fresh.
+      \end{itemize}
+      \item<10-> Running time for testing one particular $a$: \(O(n \log n)\)
+      \item<11-> Running time for solving the whole problem: \(O(n \log n \log a^{*})\)
+    \end{itemize}
+	\end{block}
+    % \solvestats
+\end{frame}
