@@ -12,8 +12,8 @@
 
 #include <boost/beast/core/detail/config.hpp>
 #include <boost/beast/core/detail/get_io_context.hpp>
-#include <boost/beast/_experimental/unit_test/suite.hpp>
-#include <boost/beast/_experimental/test/handler.hpp>
+#include <boost/beast/experimental/unit_test/suite.hpp>
+#include <boost/beast/experimental/test/handler.hpp>
 #include <boost/asio/ip/tcp.hpp>
 #include <chrono>
 

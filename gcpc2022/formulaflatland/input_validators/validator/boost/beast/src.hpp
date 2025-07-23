@@ -25,10 +25,10 @@ the program, with the macro BOOST_BEAST_SEPARATE_COMPILATION defined.
 # error Do not compile Beast library source with BOOST_BEAST_HEADER_ONLY defined
 #endif
 
-#include <boost/beast/_experimental/test/impl/error.ipp>
-#include <boost/beast/_experimental/test/impl/fail_count.ipp>
-#include <boost/beast/_experimental/test/impl/stream.ipp>
-#include <boost/beast/_experimental/test/detail/stream_state.ipp>
+#include <boost/beast/experimental/test/impl/error.ipp>
+#include <boost/beast/experimental/test/impl/fail_count.ipp>
+#include <boost/beast/experimental/test/impl/stream.ipp>
+#include <boost/beast/experimental/test/detail/stream_state.ipp>
 
 #include <boost/beast/core/detail/base64.ipp>
 #include <boost/beast/core/detail/sha1.ipp>

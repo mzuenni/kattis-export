@@ -12,7 +12,7 @@
 #include <boost/predef/version_number.h>
 #include <boost/predef/make.h>
 
-#include <boost/predef/library/c/_prefix.h>
+#include <boost/predef/library/c/c_prefix.h>
 
 #if defined(__CloudABI__)
 #include <stddef.h>

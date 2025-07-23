@@ -1,4 +1,4 @@
-//
+/
 // Copyright (c) 2016-2019 Vinnie Falco (vinnie dot falco at gmail dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
@@ -14,8 +14,8 @@
 #include <boost/beast/core/flat_buffer.hpp>
 #include <boost/beast/core/role.hpp>
 #include <boost/beast/core/string.hpp>
-#include <boost/beast/_experimental/test/fail_count.hpp>
-#include <boost/beast/_experimental/test/detail/stream_state.hpp>
+#include <boost/beast/experimental/test/fail_count.hpp>
+#include <boost/beast/experimental/test/detail/stream_state.hpp>
 #include <boost/asio/async_result.hpp>
 #include <boost/asio/buffer.hpp>
 #include <boost/asio/error.hpp>
@@ -616,9 +616,9 @@ using stream = basic_stream<>;
 } // beast
 } // boost
 
-#include <boost/beast/_experimental/test/impl/stream.hpp>
+#include <boost/beast/experimental/test/impl/stream.hpp>
 //#ifdef BOOST_BEAST_HEADER_ONLY
-#include <boost/beast/_experimental/test/impl/stream.ipp>
+#include <boost/beast/experimental/test/impl/stream.ipp>
 //#endif
 
 #endif

@@ -10,7 +10,7 @@ http://www.boost.org/LICENSE_1_0.txt)
 #define BOOST_PREDEF_LIBRARY_C_H
 #endif
 
-#include <boost/predef/library/c/_prefix.h>
+#include <boost/predef/library/c/c_prefix.h>
 
 #include <boost/predef/library/c/cloudabi.h>
 #include <boost/predef/library/c/gnu.h>

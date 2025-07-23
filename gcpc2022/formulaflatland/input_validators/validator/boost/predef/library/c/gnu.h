@@ -11,7 +11,7 @@ http://www.boost.org/LICENSE_1_0.txt)
 #include <boost/predef/version_number.h>
 #include <boost/predef/make.h>
 
-#include <boost/predef/library/c/_prefix.h>
+#include <boost/predef/library/c/c_prefix.h>
 
 #if defined(__STDC__)
 #include <stddef.h>

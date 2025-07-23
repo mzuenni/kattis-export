@@ -10,7 +10,7 @@
 #ifndef BOOST_BEAST_TEST_IMPL_FAIL_COUNT_IPP
 #define BOOST_BEAST_TEST_IMPL_FAIL_COUNT_IPP
 
-#include <boost/beast/_experimental/test/fail_count.hpp>
+#include <boost/beast/experimental/test/fail_count.hpp>
 #include <boost/throw_exception.hpp>
 
 namespace boost {

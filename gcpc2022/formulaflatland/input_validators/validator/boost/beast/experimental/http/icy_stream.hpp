@@ -324,6 +324,6 @@ public:
 } // beast
 } // boost
 
-#include <boost/beast/_experimental/http/impl/icy_stream.hpp>
+#include <boost/beast/experimental/http/impl/icy_stream.hpp>
 
 #endif

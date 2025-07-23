@@ -10,7 +10,7 @@
 #ifndef BOOST_BEAST_TEST_HANDLER_HPP
 #define BOOST_BEAST_TEST_HANDLER_HPP
 
-#include <boost/beast/_experimental/unit_test/suite.hpp>
+#include <boost/beast/experimental/unit_test/suite.hpp>
 #include <boost/beast/core/error.hpp>
 #include <boost/asio/io_context.hpp>
 #include <boost/core/exchange.hpp>

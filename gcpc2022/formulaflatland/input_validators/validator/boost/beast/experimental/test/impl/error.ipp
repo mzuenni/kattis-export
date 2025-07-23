@@ -10,7 +10,7 @@
 #ifndef BOOST_BEAST_TEST_IMPL_ERROR_IPP
 #define BOOST_BEAST_TEST_IMPL_ERROR_IPP
 
-#include <boost/beast/_experimental/test/error.hpp>
+#include <boost/beast/experimental/test/error.hpp>
 
 namespace boost {
 namespace beast {

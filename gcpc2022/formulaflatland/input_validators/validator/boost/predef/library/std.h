@@ -9,7 +9,7 @@ http://www.boost.org/LICENSE_1_0.txt)
 #define BOOST_PREDEF_LIBRARY_STD_H
 #endif
 
-#include <boost/predef/library/std/_prefix.h>
+#include <boost/predef/library/std/std_prefix.h>
 
 #include <boost/predef/library/std/cxx.h>
 #include <boost/predef/library/std/dinkumware.h>

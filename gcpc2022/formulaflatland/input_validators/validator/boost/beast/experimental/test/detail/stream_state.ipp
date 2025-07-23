@@ -11,7 +11,7 @@
 #ifndef BOOST_BEAST_TEST_DETAIL_STREAM_STATE_IPP
 #define BOOST_BEAST_TEST_DETAIL_STREAM_STATE_IPP
 
-#include <boost/beast/_experimental/test/error.hpp>
+#include <boost/beast/experimental/test/error.hpp>
 #include <boost/asio/error.hpp>
 #include <boost/make_shared.hpp>
 
