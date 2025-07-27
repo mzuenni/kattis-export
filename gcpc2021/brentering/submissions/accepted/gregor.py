@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import re
 
-print(re.sub("^([a-zA-Z]*[aeiou])?([^aeiou])*$",r"\1ntry",raw_input()))
+print(re.sub("^([a-zA-Z]*[aeiou])?([^aeiou])*$",r"\1ntry",input()))
