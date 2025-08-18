@@ -10,7 +10,7 @@ int main() {
 	auto solve = [&](int a, int b) {
 		if (a > b) swap(a,b);
 		if (closed.empty()) return true;
-		if (closed.contains(a) || closed.contains(b)) return false;
+		if (closed.find(a) != closed.end() || closed.find(a) != closed.end()) return false;
 		auto it = closed.lower_bound(a);
 		if (it == end(closed) || *it > b) return true;
 		if (*begin(closed) > a && *rbegin(closed) < b) return true;

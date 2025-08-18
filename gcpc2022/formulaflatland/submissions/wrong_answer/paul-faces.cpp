@@ -53,7 +53,7 @@ int main() {
 			return compare(p[a], p[b], p[c]);
 		};
 		sort(begin(adj[a]), end(adj[a]), comp);
-		for (int k = 0; k < ssize(adj[a]); k++) {
+		for (int k = 0; k < (int)adj[a].size(); k++) {
 			edge_pos[ adj[a][k] ] = k;
 		}
 	}
@@ -68,7 +68,7 @@ int main() {
 			auto [a,b] = edges[i%m];
 			if (i >= m) swap(a,b);
 			int k = edge_pos[ (i+m)%(2*m) ];
-			i = adj[b][ (k+1)%ssize(adj[b]) ];
+			i = adj[b][ (k+1)% ((int)adj[b].size()) ];
 		}
 		res = min(res, len);
 	}

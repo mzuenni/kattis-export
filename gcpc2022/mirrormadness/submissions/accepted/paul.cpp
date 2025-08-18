@@ -42,7 +42,7 @@ void northwest_matching(const vector<point> &a, vector<vector<match>> &v) {
 		}
 		sort(begin(events2), end(events2));
 		
-		for (int k = 0; k < ssize(events2); k += 2) {
+		for (int k = 0; k < (int)events2.size(); k += 2) {
 			int i = events2[k].second, j = events2[k+1].second;
 			int zi = a[i].x + a[i].y, zj = a[j].x + a[j].y;
 			int ifrom = min(abs(z1-zi), abs(z2-zi));

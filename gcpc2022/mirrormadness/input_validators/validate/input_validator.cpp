@@ -67,7 +67,7 @@ void check_polygon(InputValidator &v, vector<point> a) {
 		} else if (t == -1) {
 			v.check(ys.insert(a[i].y).second, "edges must not intersect");
 		} else {
-			assert(ys.contains(a[i].y));
+			assert(ys.find(a[i].y) != ys.end());
 			ys.erase(a[i].y);
 		}
 	}

@@ -25,7 +25,7 @@ int main() {
 	for (int a = 0; a < n; a++) {
 		for (int b: adj[a]) if (b > a) {
 			for (int c: adj[b]) if (c > a) {
-				if (adj_set[c].contains(a)) {
+				if (adj_set[c].find(a) != adj_set[c].end()) {
 					cout << 3 << '\n';
 					return 0;
 				}
@@ -37,7 +37,7 @@ int main() {
 		for (int b: adj[a]) if (b > a) {
 			for (int c: adj[b]) if (c > a) {
 				for (int d: adj[c]) if (d > b) {
-					if (adj_set[d].contains(a)) {
+					if (adj_set[d].find(a) != adj_set[d].end()) {
 						cout << 4 << '\n';
 						return 0;
 					}
