@@ -5,6 +5,7 @@ author: Alexander Dietsch
 license: cc by-sa
 
 validator_flags: float_tolerance 1e-6
+uuid: 58130622-07cb-4240-8bd6-7ebba3387e8c
 
 limits:
   time_multiplier: 2

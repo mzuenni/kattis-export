@@ -3,6 +3,7 @@ source: German Collegiate Programming Contest (GCPC) 2021
 source_url: https://gcpc.nwerc.eu
 author: Felicia Lucke
 license: cc by-sa
+uuid: 27b0e611-80e6-481d-835d-d559e4ed6eb3
 
 limits:
   time_multiplier: 1.5

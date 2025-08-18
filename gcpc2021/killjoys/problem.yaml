@@ -3,7 +3,8 @@ source: German Collegiate Programming Contest (GCPC) 2021
 source_url: https://gcpc.nwerc.eu
 author: Gregor Behnke 
 license: cc by-sa
+uuid: 6292cf75-e7c5-4a25-b3c2-42ffd123c4ad
 
 limits:
-  time_multiplier: 2
+  time_multiplier: 1.5
   time_safety_margin: 1.5
