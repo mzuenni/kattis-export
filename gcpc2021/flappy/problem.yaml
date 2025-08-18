@@ -8,5 +8,6 @@ keywords: ad-hoc geometry
 
 validation: custom
 limits:
-  time_multiplier: 2 # CHT solution is way too fast..
-  output: 25
+  time_multiplier: 1.5 # CHT solution is way too fast..
+  time_safety_margin: 1.5
+  output: 50

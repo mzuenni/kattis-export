@@ -1,6 +1,5 @@
-// same idea as florian-cht, but instead of maintaining the lines
-// using convex hull tricks, just iterate over all of them for every query
-// divide & conquer can degenerate and cause O(n^2) runtime
+// @EXPECTED_RESULTS@: ACCEPTED, TIME_LIMIT_EXCEEDED
+// O(nlog^2(n)) with segmenttree of convex hull tricks
 // Using doubles, which possibly causes precision errors
 #include <bits/stdc++.h>
 
@@ -11,16 +10,61 @@ struct Constraint { int x, y_lo, y_hi; };
 struct Point { int x, y; };
 struct Line { int k, d; };
 
-struct {
-	vector<Line> lines;
+struct LineTree
+{
+	struct Item : Line { int index; };
+	int n;
+	vector<vector<Item>> tree;
 	
+	LineTree(const vector<Line>& lines = {}) :
+		n(lines.size()), tree(2*n)
+	{
+		for (int i = 0; i < n; i++) // leafs
+			tree[i + n].push_back({ lines[i], i });
+		for (int i = n-1; i > 0; i--) { // merge sort tree
+			auto &l = tree[2*i], &r = tree[2*i+1], &p = tree[i];
+			p.resize(l.size() + r.size());
+			merge(l.begin(), l.end(), r.begin(), r.end(), p.begin(),
+					[](Item& a, Item& b) { return a.k < b.k; });
+		}
+		auto bad = [](Item &a, Item &b, Item &c) { // no 2 slopes are the same
+			return (c.d - a.d)*1LL*(a.k - b.k) <= (b.d - a.d)*1LL*(a.k - c.k);
+		};
+		for (int i = 1; i < n; i++) { // build convex hull in every vertex
+			auto &hull = tree[i];
+			int j = 0;
+			for (auto &item : hull) {
+				while (j > 1 && bad(hull[j-2], hull[j-1], item))
+					j--;
+				hull[j++] = item;
+			}
+			hull.resize(j);
+		}
+	}
+
 	// return the l <= index < r of the line that's maximum at the given x and
 	// the y-coordinate of the line at this x
 	pair<int, ld> query(int l, int r, ld x) {
+		auto query_hull = [x](vector<Item>& hull) {
+			return *lower_bound(hull.begin(), hull.end(), x,
+				[&](Item &a, ld x) {
+					if (&a == &hull.back()) // last line has an open interval
+						return false;
+					Item &b = *(&a + 1);
+					return (a.k - b.k)*x < b.d - a.d;
+				});
+		};
 		pair<int, ld> opt{ -1, numeric_limits<ld>::lowest() };
-		for (int i = l; i < r; i++)
-			if (auto y = lines[i].k*x + lines[i].d; opt.second < y)
-				opt = { i, y };
+		auto relax = [&](const Item &item) {
+			if (auto y = item.k*x + item.d; opt.second < y)
+				opt = { item.index, y };
+		};
+		for (l += n, r += n; l < r; l /= 2, r /= 2) {
+			if (l & 1)
+				relax(query_hull(tree[l++]));
+			if (r & 1)
+				relax(query_hull(tree[--r]));
+		}
 		return opt;
 	}
 } lower, upper;
@@ -61,7 +105,7 @@ void solve(Point from, Point to)
 		l_lower.push_back({ c.x, -c.y_hi });
 		l_upper.push_back({ -c.x, c.y_lo });
 	}
-	lower = { move(l_lower) }, upper = { move(l_upper) };
+	lower = l_lower, upper = l_upper;
 	solve_dc(from, to, 0, constraints.size());
 	ans.push_back(to);
 }
