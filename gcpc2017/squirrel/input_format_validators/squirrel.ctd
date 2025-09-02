@@ -1,0 +1,11 @@
+INT(3,80,n) NEWLINE
+INT(1,n,r) NEWLINE
+INT(1,n,h) NEWLINE
+ASSERT(h != r)
+INT(1,n,m) NEWLINE
+ASSERT(m != r)
+ASSERT(m != h)
+REP(n-1)
+	INT(1,n,s) SPACE INT(s + 1,n,t) NEWLINE
+END
+EOF

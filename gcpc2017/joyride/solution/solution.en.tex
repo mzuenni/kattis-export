@@ -1,0 +1,24 @@
+\begin{slide}
+    \begin{block}{Problem}
+    	Given a graph $G=(V,E)$, per node a time $t_v$ and a cost $c_v$, and a time $t^*$ for all edges.
+		You are traversing the graph starting at $1$ and at every node you pass you have stay $k t_v$ time and spend $k c_v$ money with $k \geq 1$\\
+		What is the least amount of money you need to spend s.t. you arrive at $1$ after $X$ time? 
+	\end{block}
+    \begin{block}{Solution}
+        The problem is a variant of Knapsack.\\
+		The time is the ``weight'', $X$ is the size of the bucket, and $c_v$ is the ``gain'' of an edge.\\
+			Extend standard Knapsack-DP to handle the graph strcuture.
+    \end{block}
+\end{slide}
+\begin{slide}
+		Use DP over the current node $v$ and the time $t$ you can move freely from $e$.
+		\[
+				dp(v,t) = \begin{cases}
+							\infty & t < 0\\
+							c_v + min \Big(\{dp(v,t-t_v)\} \cup & \\
+							\quad \{ dp(v', t-t^*-t_v)\mid (v',v) \in E\} \Big)&\text{if } t >= 0
+				\end{cases}
+		\]
+		Additional special treatment for entering the park:\\
+		The answer is $dp(1,X-t_1) + c_v$
+\end{slide}

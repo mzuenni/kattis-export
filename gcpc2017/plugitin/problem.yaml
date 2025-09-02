@@ -1,0 +1,9 @@
+name: Plug it in
+source: GCPC 2017
+source_url: http://gcpc.nwerc.eu
+author: Moritz Fuchs - GCPC 2017 Jury
+license: cc by-sa
+keywords: medium - Matching
+
+limits:
+    time_multiplier: 1.2

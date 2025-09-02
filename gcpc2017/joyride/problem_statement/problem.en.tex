@@ -1,0 +1,47 @@
+\problemname{Joyride}
+It is another wonderful sunny day in July -- and you decided to spend your day together with your little daughter Joy.
+Since she really likes the fairy-park in the next town, you decided to go there for the day.
+Your wife (unfortunately she has to work) agreed to drive you to the park and pick you up again.
+Alas, she is very picky about being on time, so she told you exactly when she will be at the park's front entrance to pick you up and you have to be there at exactly that time.
+You clearly also don't want to wait outside, since this would make your little daughter sad -- she could have spent more time in the park!
+
+Now you have to plan your stay at the park.
+You know when you will arrive and when you will have to depart.
+The park consists of several rides, interconnected by small pavements.
+The entry into the park is free, but you have to pay for every use of every ride in the park.
+Since it is Joy's favorite park, you already know how long using each ride takes and how much each ride costs.
+When walking through the park, you obviously must not skip a ride when walking along it (even if Joy has already used it), or else Joy would be very sad.
+Since Joy likes the park very much, she will gladly use rides more than once.
+Walking between two rides takes a given amount of time.
+
+Since you are a provident parent you want to spend as little as possible when being at the park.
+Can you compute how much is absolutely necessary?
+
+\section*{Input}
+The input consists of:
+\begin{itemize}
+	\item one line with an integer $x$ ($1 \leq x \leq 1\,000$) denoting the time between your arrival and the time you will be picked up (in minutes);
+	\item one line with with three integers $n$, $m$, and $t$, where
+		\begin{itemize}
+			\item $n$ ($1 \leq n \leq 1\,000$) is the number of rides in the park;
+			\item $m$ ($1 \leq m \leq 1\,000$) is the number of pavements;
+			\item $t$ ($1 \leq t \leq 1\,000$) is the number of minutes needed to pass over a pavement from one ride to another.
+		\end{itemize}
+	\item $m$ lines each containing two integers $a$ and $b$ ($1 \leq a,b \leq n$) stating that there is a pavement between the rides $a$ and $b$.
+	\item $n$ lines each containing two integers $t$ and $p$ ($1 \leq t,p \leq 10^6$) stating that the corresponding ride takes $t$ minutes and costs $p$ Euro.
+\end{itemize}
+You always start at ride $1$ and have to return to ride $1$ at the end of your stay, since the entry is located there.
+This means that you have to use the ride $1$ at least twice (once upon entry and once upon exit).
+You can take a ride more than once, if you have arrived at it.
+
+%The input starts with a number $X$, $1 \leq X \leq 1\,000$, the time between your arrival and the time you will be picked up (in minutes).
+%The second line contains a three integers $N,M$ and $T$, $1 \leq N,M,T \leq 1\,000$, the number of rides in the park, the number of pavements, and the number of minutes needed to pass over a pavement from one ride to another.
+%You always start at ride $0$ and have to return to ride $0$ at the end of your stay, since the entry is located there.
+%This means, that you have to use the ride $0$ at least twice (once upon entry and once upon exit).
+%It is allowed to take a ride more than once, if you have arrived at it.
+%
+%The following $M$ lines each contain two integers $a$ and $b$, $0 \leq a,b < N$, stating that there is a pavement between the rides $a$ and $b$.
+%The following $N$ lines each contain two integers $t$ and $p$, $1 \leq t,p \leq 10^6$, stating that the corresponding ride takes $t$ minutes and costs $p$ Euro.
+
+\section*{Output}
+Output one line containing either a single integer, the minimum amount necessary to stay $x$ minutes in the park, or \texttt{It is a trap.} (including the period) if it is not possible to stay exactly $x$ minutes.

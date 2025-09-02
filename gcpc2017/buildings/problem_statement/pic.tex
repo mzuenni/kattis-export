@@ -1,0 +1,111 @@
+% A cone in 3D
+% Author: Marco Daniel
+\documentclass{article}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+\usepackage{tikz-3dplot}
+\begin{document}
+
+\usetikzlibrary{calc}
+
+\tdplotsetmaincoords{70}{0}
+\begin{tikzpicture}[tdplot_main_coords]
+\def\RI{2}
+\def\RII{2}
+
+% back for the colored squares
+\pgfdeclarelayer{back}
+\pgfsetlayers{back,main}
+
+\pgfmathdeclarerandomlist{MyRandomColors}{%
+    {red}%
+    % {red!25}%
+    % {magenta}%
+    % {magenta!25}%
+    % {olive}%
+    % {olive!25}%
+    % {brown}%
+    % {brown!10}%
+    % {violet}%
+    % {violet!25}%
+    % {gray}%
+    % {purple}%
+    {yellow}%
+    {orange}%
+    {orange!60}%
+    {cyan}%
+    {green}%  
+    {blue!60}
+    {blue!20}
+}%
+
+\draw[opacity=0] (\RI,0)
+\foreach \x in {0,60,180} { --  (\x:\RI) 
+    node at (\x:\RI) (R1-\x) {} 
+    node [pos=0.33] (R1-\x-one) {}
+    node [pos=0.66] (R1-\x-two) {} };
+\draw[thin] (R1-180.center)
+  \foreach \x in {240, 300, 360} { --  (\x:\RI) 
+    node at (\x:\RI) (R1-\x) {} 
+    node [pos=0.33] (R1-\x-one) {}
+    node [pos=0.66] (R1-\x-two) {} };
+% \path[fill=gray!30] (\RI,0)
+%   \foreach \x in {0,60,120,180,240,300} { --  (\x:\RI)};
+
+\begin{scope}[yshift=2cm]
+\draw[ultra thin,fill=blue!10] (\RII,0)
+  \foreach \x in {0,60,120,180,240,300,360} { --  (\x:\RII) 
+    node at (\x:\RII) (R4-\x) {} 
+    node [pos=0.33] (R4-\x-one) {} 
+    node [pos=0.66] (R4-\x-two) {} };
+\draw[thin] (\RII,0)
+  \foreach \x in {0,60,120,180,240,300,360} { --  (\x:\RII) };
+\end{scope}
+
+\begin{scope}[yshift=0.66cm]
+\draw[ultra thin] (180:\RII)
+  \foreach \x in {180,240,300,360} { --  (\x:\RII) node at (\x:\RII) (R2-\x) {}
+        node [pos=0.33] (R2-\x-one) {} 
+        node [pos=0.66] (R2-\x-two) {} 
+  };
+\end{scope}
+\begin{scope}[yshift=1.33cm]
+\draw[ultra thin] (180:\RII)
+  \foreach \x in {180,240,300,360} { --  (\x:\RII) node at (\x:\RII) (R3-\x) {}
+        node [pos=0.33] (R3-\x-one) {} 
+        node [pos=0.66] (R3-\x-two) {} 
+  };
+\end{scope}
+
+\foreach \x in {0,180,240,300} { \draw (R1-\x.center)--(R4-\x.center); };
+% \foreach \x in {60,120} { \draw[dashed] (R1-\x.center)--(R3-\x.center); };
+\foreach \x in {240, 300, 360} {
+    \draw[ultra thin] (R1-\x-one.center) -- (R4-\x-one.center);
+    \draw[ultra thin] (R1-\x-two.center) -- (R4-\x-two.center);
+}
+
+\begin{pgfonlayer}{back}
+\foreach \x in {180,240,300} {
+    \foreach \y in {1,2,3} {
+
+        \pgfmathtruncatemacro\ny{\y + 1}
+        \pgfmathtruncatemacro\nx{\x + 60}
+
+        \pgfmathrandomitem{\RandomColor}{MyRandomColors} 
+        \path [fill=\RandomColor] (R\y-\x.center) -- (R\ny-\x.center) -- (R\ny-\nx-one.center) -- (R\y-\nx-one.center);
+        \pgfmathrandomitem{\RandomColor}{MyRandomColors} 
+        \path [fill=\RandomColor] (R\y-\nx-one.center) -- (R\ny-\nx-one.center) -- (R\ny-\nx-two.center) -- (R\y-\nx-two.center);
+        \pgfmathrandomitem{\RandomColor}{MyRandomColors} 
+        \path [fill=\RandomColor] (R\y-\nx-two.center) -- (R\ny-\nx-two.center) -- (R\ny-\nx.center) -- (R\y-\nx.center);
+    }
+} 
+\end{pgfonlayer}
+
+\end{tikzpicture}
+
+\end{document}

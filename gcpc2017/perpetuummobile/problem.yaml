@@ -1,0 +1,8 @@
+name: Perpetuum Mobile
+source: GCPC 2017
+source_url: http://gcpc.nwerc.eu
+author: GCPC 2017 Jury
+license: cc by-sa
+keywords: medium - Shortest Paths, Bellman-Ford
+limits:
+    time_multiplier: 3

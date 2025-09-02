@@ -1,0 +1,12 @@
+\begin{slide}
+    \begin{block}{Problem}
+        Given a list of employees with their respective salary, decide if there is a way to save $d$ dollars by firing at most $k$ of the employees.
+    \end{block}
+    \begin{block}{Solution}
+        \begin{itemize}
+        	\item Sort all employees by their salary.
+        	\item If the accumulated salary of the $k$ best earning employees is smaller than $d$, print out "impossible".
+        	\item Otherwise: Fire employees in descending order of their salary. Stop if their accumulated weight is $>= d$.
+        \end{itemize}
+    \end{block}
+\end{slide}

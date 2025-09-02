@@ -1,0 +1,55 @@
+\problemname{Drawing Borders}
+
+Somewhere in the great North American plains live the tribes of
+chiefs \emph{Blue Eagle}, \emph{Red Beaver}, and \emph{Green Serpent}.
+Their population is scattered over numerous villages all over the
+land and conflict arises whenever members of different tribes meet
+while traveling across the plains.
+
+To put an end to the constant animosities the chiefs have decided that
+the land should be divided between the tribes so that they can avoid
+each other when moving between villages belonging to the same tribe.
+More precisely, they want to construct two border fences -- thus dividing
+the land into three regions -- such that two villages lie in the same
+region precisely when they belong to the same tribe.
+
+The villages are represented by points in the Euclidean plane that are
+colored blue, red or green, depending on the tribe, and the fences
+should be drawn in the form of two polygons. The polygons may not
+touch or intersect themselves or each other and none of the points
+may lie on their boundary. (Make sure to read the constraints in the
+Output section!)
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=8cm]{../data/sample/1.png}
+\caption{Illustration of the sample.}
+\end{figure}
+
+\section*{Input}
+
+The input consists of:
+
+\begin{itemize}
+\item one line with an integer $n$ ($3 \le n \le 100$), the number of
+villages.
+\item $n$ lines, each with three integers $x, y, c$ ($-1\,000 \le x, y \le
+1\,000, 1 \le c \le 3$), representing a village at coordinates
+$(x,y)$ of color $c$ ($1=$ blue, $2=$ red, $3=$ green). All positions
+are unique. There is at least one village of each color.
+\end{itemize}
+
+\section*{Output}
+
+If there is no solution, print \texttt{impossible}. Otherwise, print
+the two polygons in the following format:
+
+\begin{itemize}
+\item one line with an integer $m$ ($3 \le m \le 1\,000$), the number
+of vertices of the polygon.
+\item $m$ lines, each with two real numbers $x, y$ ($-3\,000 \le x, y \le
+3\,000$), the vertices of the polygon in either clockwise or
+counter-clockwise order. The numbers may be given with up to five
+decimal places (additional places will be rounded off).
+\end{itemize}
+

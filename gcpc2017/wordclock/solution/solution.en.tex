@@ -1,0 +1,41 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Given a set $S$ of at most 18 words and a rectangular grid, fill the grid
+    with letters such that every word occurs in the grid.
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    Use dynamic programming: for $S' \subseteq S$ and $s \in S'$ let
+    \begin{align*}
+      f(S',s) = & \text{ the earliest possible end position (row,column) of a text} \\
+                & \text{ containing all the words from $S'$ and ending in $s$.}
+    \end{align*}
+    \vspace{-0.5cm}
+    \begin{itemize}
+      \item A solution exists if and only if one of the positions $f(S,s)$
+        still lies in the grid.
+      \item To reconstruct the solution one needs to keep track of the best predecessor
+        states while building the DP table (see next slide).
+    \end{itemize}
+  \end{block}
+\end{slide}
+\begin{slide}
+  \begin{block}{Solution}
+    \vspace{-0.5cm} 
+    \begin{align*}
+      f(S',s) = & \text{ the earliest possible end position (row,column) of a text} \\
+                & \text{ containing all the words from $S'$ and ending in $s$.}
+    \end{align*}
+
+    The DP table can be constructed as follows:
+    \begin{itemize}
+      \item From the current state $(S',s)$ try to append every $t \notin S'$
+        to the text, maximizing overlap between $s$ and $t$. \\
+        If $t$ doesn't fit in the current line, start a new line. \\
+        The new state is $(S' \cup \{t\},t)$.
+      \item The maximal overlaps between words can be precalculated.
+        Possible pitfall: some words may be substrings of other words.
+      \item Time complexity: $\mathcal{O}(n^2 2^n)$.
+    \end{itemize}
+  \end{block}
+\end{slide}

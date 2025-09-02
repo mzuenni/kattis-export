@@ -1,0 +1,31 @@
+\begin{slide}
+    \begin{block}{Problem}
+    	You are given $N$ statements of the form \texttt{A are worse than B} and one further such statement $S=$\texttt{X are worse than Y}.\\
+			Decide whether
+			\begin{itemize}
+				\item $S$ logically follows
+				\item $\neg S$ logically follows
+				\item none of the two
+			\end{itemize}
+	\end{block}
+    \begin{block}{Solution}
+			\begin{itemize}
+				\item \texttt{are worse than} induces an ordering relation $\prec$
+				\item Use Floyd-Warshall to compute the transitive hull of the $N$ given statements, which is $\prec$
+							\end{itemize}
+
+	\end{block}
+\end{slide}
+\begin{slide}
+    \begin{block}{Solution}
+			\begin{itemize}
+					\item Check whether the order $S$ or its inverse (\texttt{Y are worse than X}, i.e. \texttt{Y} $\prec$ \texttt{X}) are in $\prec$.
+				\item If $S \in \prec$: \texttt{Fact}
+				\item Else If $\overline{S} \in \prec$: \texttt{Alternative Fact}
+				\item Else: \texttt{Pants on Fire}
+						\vspace{1cm}
+				\item Using DFS was also possible
+			\end{itemize}
+
+	\end{block}
+\end{slide}

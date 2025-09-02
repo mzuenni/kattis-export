@@ -1,0 +1,18 @@
+\begin{slide}
+    \begin{block}{Problem}
+        Given a directed graph with arc weights in $[0.0001, 5]$, 
+        decide whether the graph cointains a circle with total product 
+        $> 1$. 
+    \end{block}
+    \begin{block}{Solution}
+        \begin{itemize}
+        	\item Given a circle in the graph, let $c_i$ be
+        	      the arc weight of the $i$th arc in the circle.
+        	      We know:  $c_i > 0$ for all arcs $i$.
+        		  Then 
+        	      $$\Pi_i c_i > 1 \Longleftrightarrow -\Sigma_i \text{log}(c_i) < 0$$
+        	\item Convert arc weights $c_i$ to $-\text{log}(c_i)$ and use Bellman-Ford or Floyd-Warshall to decide whether a 
+        	negative cycles exists in the transformed graph. This is precisely the case if there is a cycle with product $>1$ in the original graph.
+        \end{itemize}
+    \end{block}
+\end{slide}

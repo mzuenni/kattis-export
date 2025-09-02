@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\usetikzlibrary{matrix}
+
+\begin{document}
+
+\tikzset{
+  lit/.style={green,font=\bfseries\sffamily},
+  drk/.style={gray,font=\sffamily}
+}
+
+\begin{tikzpicture}
+  \small
+  \matrix [matrix of nodes,fill=darkgray,inner sep=1.5pt,nodes={drk}] (m)
+  {
+    |[lit]| I & |[lit]| T & X & |[lit]| I & |[lit]| S & Q & F & J & D & S \\
+    |[lit]| Q & |[lit]| U & |[lit]| A & |[lit]| R & |[lit]| T & |[lit]| E & |[lit]| R & T & E & N \\
+    T & W & E & N & T & Y & F & I & V & E \\
+    H & A & L & F & U & |[lit]| P & |[lit]| A & |[lit]| S & |[lit]| T & O \\
+    F & I & V & E & I & G & H & T & W & O \\
+    A & O & N & E & F & S & E & V & E & N \\
+    T & W & E & L & V & E & F & O & U & R \\
+    |[lit]| T & |[lit]| H & |[lit]| R & |[lit]| E & |[lit]| E & L & E & V & E & N \\
+    T & E & N & I & N & E & Q & S & I & X \\
+    V & H & R & T & |[lit]| O & |[lit]| C & |[lit]| L & |[lit]| O & |[lit]| C & |[lit]| K \\
+  };
+  \draw[color=white] (m-5-1.north west) -- (m-5-10.north east) --
+                   (m-9-10.south east) -- (m-9-1.south west) --
+                   (m-5-1.north west);
+\end{tikzpicture}
+
+\end{document}

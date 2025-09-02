@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class UberwatchChris {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+
+		long[] ops = new long[n];
+
+		for (int i = 0; i < n; i++) {
+			ops[i] = sc.nextLong();
+		}
+
+		long[] dp = new long[n];
+
+		for (int i = m; i < n; i++) {
+			dp[i] = Math.max(dp[i - 1], dp[i - m] + ops[i]);
+		}
+		System.out.println(dp[n - 1]);
+	}
+}

@@ -1,0 +1,45 @@
+\begin{slide}
+    \begin{block}{Problem}
+    	How many possible houses are there (up to rotation) with $m$ walls consisting of $n \times n$ bricks, each colored in one of $c$ colors?
+    \end{block}
+
+    \begin{block}{Solution}
+        For each wall, there are $c^{(n \times n)}$ possible designs. 
+        \\
+        But how to deal with rotation?
+
+    \end{block}
+\end{slide}
+
+\begin{slide}
+    \begin{block}{Burnside's Lemma}
+        The number of orbits \textit{(distinct results)} for a group of operations \textit{(possible rotations)} acting on a set $X$ \textit{(the set of walls)} is exactly the average number of elements \textit{(wall designs)} fixed by each group element \textit{(rotation by a fixed $n$)}.
+
+        \[ \left|X/G\right| = \frac{1}{\left|G\right|} \sum\limits_{g \in G} \left| X ^ g \right| \]
+    \end{block}
+\end{slide}
+
+\begin{slide}
+    \begin{block}{Application}
+        Consider all rotations $\mathit{rot}_i$ rotating the house by $i$.
+        \begin{enumerate}
+            \item Since the house has $m$ walls, all designs have to have periodicity $m$ (i.e. repeat after $m$ walls).
+            \item Rotation by $i$ fixes all wall designs every $i$ walls, i.e. it fixes all designs with periodicity $i$.
+            \item $\Rightarrow$ Rotation by $i$ fixes a design iff the design has periodicity $\mathit{gcd}(i,m)$.
+            \item There are exactly $\{\text{number of wall designs}\}^{\mathit{gcd}(i,m)}$ possible designs with periodicity $\mathit{gcd}(i,m)$.
+        \end{enumerate}
+    \end{block}
+\end{slide}
+
+\begin{slide}
+    \begin{block}{Problem}
+        How many possible houses are there (up to rotation) with $m$ walls consisting of $n \times n$ bricks, each colored in one of $c$ colors?
+    \end{block}
+    \begin{block}{Solution}
+    \begin{itemize}
+        \item Let $N = c^{(n \times n)}$ be the number of wall designs.
+        \item There are exactly \[ \frac{1}{m} \sum\limits_{0 \leq i < m} N^{\mathit{gcd}(i,m)} \] possible house designs up to rotation.
+        \item Compute this number modulo $1000000007$ so it does not overflow \texttt{long}.
+    \end{itemize}
+    \end{block}
+\end{slide}

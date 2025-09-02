@@ -1,0 +1,23 @@
+\problemname{Contest Chaos}
+
+This is a story about Gregor.
+Gregor is studying computer science at a very famous university.
+When his friends told him about the upcoming \emph{GCPC}, he immediately knew he wanted to take part.
+Moreover, he would be the very best - like no one ever was - and win the whole contest.
+
+To win the GCPC, he would train himself extra hard and solve ALL the practice problems.
+He immediately started to plan his contest domination and looked up which practice contests were available.
+He even assigned them a difficulty rating, since of course harder problems meant more and better training. 
+
+Of course he wants to take part in all the contests, but unfortunately some of them overlap, so he has to decide which ones to take part in.
+Can you help him plan his schedule and win the GCPC?
+
+\section*{Input}
+The input starts with a line containing $n (1 \leq n \leq 5000)$, the amount of practice contests that take place before the GCPC.
+$n$ lines follow, one for each contest. 
+To get rid of timezone issues, Gregor already converted all the start and end times of the contests to ``hours from now''.
+Each line consists of $3$ numbers and a string, $a$ $b$ $p$ $s$ $(1 \leq a \leq b \leq 5000, 1 \leq p \leq 10000)$, where the contest named $s$ ($s$ is of length between $1$ and $30$ characters and contains only characters ``a'' to ``z'' or ``A'' to ``Z'') starts $a$ hours from now, ends $b$ hours from now and has a difficulty rating of $p$.
+Two contests overlap even if the first one ends during the same hour the second one starts.
+
+\section*{Output}
+Output one line containing the maximum combined difficulty rating of all the practice contests he can do without taking part in overlapping contests.

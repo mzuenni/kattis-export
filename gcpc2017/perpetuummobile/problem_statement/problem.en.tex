@@ -1,0 +1,59 @@
+\problemname{Perpetuum Mobile}
+The year is 1902. Albert Einstein is working in the patent office in Bern.
+Many patent proposals contain egregious errors; some even violate the law of conservation of energy.
+To make matters worse, the majority of proposals make use of non-standard 
+physical units that are not part of the metric system (or not even documented).
+All proposals are of the following form:
+
+\begin{itemize}
+	\item Every patent proposal contains $n$ energy converters.
+	\item Every converter has an unknown input energy unit associated with it.
+	\item Some energy converters can be connected: If converter $a$ can be connected to 
+	      converter $b$ such that one energy unit associated with $a$ is turned into 
+	      $c$ input units for $b$, then this is indicated by an arc 
+	      $a \overset{c}{\longrightarrow} b$ in the proposal. 
+	      The output of $a$ can be used as input for $b$ 
+	      if and only if such an arc from $a$ to $b$ exists.
+\end{itemize}
+Einstein would like to dismiss all those proposals out of hand where the energy 
+converters can be chained up in a cycle such that more energy is fed back to a converter 
+than is given to it as input, thereby violating the law of conservation of energy.
+
+Einstein's assistants know that he is born for higher things than weeding out faulty 
+patent proposals. Hence, they take care of the most difficult cases, while 
+the proposals given to Einstein are of a rather restricted form: 
+Every \textit{admissible} patent proposal given to Einstein 
+does not allow for a cycle where the total product of arc weights exceeds $0.9$.
+By contrast, every \textit{inadmissible} patent proposal given to Einstein contains a cycle 
+where the the number of arcs constituting the cycle does not exceed the number of converters defined in the proposal, 
+and the total product of arc weights is greater or equal to $1.1$. 
+
+Could you help Einstein identify the inadmissible proposals?
+\section*{Input}
+The input consists of:
+\begin{itemize}
+	\item one line with two integers $n$ and $m$, where
+		\begin{itemize}
+			\item $n$ ($2\leq n \leq 800$) is the number of energy converters;
+			\item $m$ ($0 \leq m \leq 4000$) is the number of arcs.
+		\end{itemize}
+	\item $m$ lines each containing three numbers $a_i$, $b_i$, and $c_i$, where
+		\begin{itemize}
+			\item $a_i$ and $b_i$ ($1 \leq a_i, b_i \leq n$) are integers identifying energy converters;
+			\item $c_i$ ($0 < c_i \leq 5.0$) is a decimal number
+    \end{itemize}
+    indicating that the converter $a_i$ can be connected to the converter $b_i$ such that one input unit associated with $a_i$ is converted to $c_i$ units associated with $b_i$. The number $c_i$ may have up to $4$ decimal places.
+\end{itemize}
+
+%The input starts with a single line containing two space-separated 
+%integers $n \, m$ $(2\leq n \leq 800, 0 \leq m \leq 800)$ where $n$ is the number of energy converters and $m$ is the 
+%number of arcs. Then $m$ lines follow. The $i$th line is of the form 
+%$a_i \, b_i \, c_i$ $(1 \leq a_i, b_i \leq n, 0.0001 \leq c_i \leq 5.0)$ where $a_i$ and $b_i$ are integers identifying energy converters and $c_i$ 
+%is a decimal number, indicating that the converter $a_i$ can be connected to the 
+%converter $b_i$ such that one input unit associated with $a_i$ 
+%is converted to $c_i$ units associated with $b_i$. The number $c_i$ may have up to $4$ 
+%decimal places.
+
+\section*{Output}
+
+Output a single line containing \texttt{inadmissible} if the proposal given to Einstein is inadmissible, \texttt{admissible} otherwise. 

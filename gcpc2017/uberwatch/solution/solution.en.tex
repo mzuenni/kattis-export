@@ -1,0 +1,29 @@
+\begin{slide}
+    \begin{block}{Problem}
+        A game of Überwatch is played over $n$ time slices. The player can defeat all currently visible opponents. The attack must be charged for $m$ time slices after every use and at the beginning of the game.
+        What is the maximum number of opponents that can be defeated?
+    \end{block}
+    \begin{block}{Observations}
+        The greedy strategy of firing as fast as possible might skip a time slice needed for the optimal solution. $\rightarrow$ \textcolor{red}{WA}
+        
+        Only two choices in every time slice: 
+        \begin{itemize}
+        \item Fire \\ Must not have fired for atleast $m$ time slices. Score current number of opponents.
+        \item Wait \\ Score does not change.
+        \end{itemize}        
+    \end{block}
+\end{slide}
+
+
+\begin{slide}
+    \begin{block}{Problem}
+        A game of Überwatch is played over $n$ time slices. The player can defeat all currently visible opponents. The attack must be charged for $m$ time slices after every use and at the beginning of the game.
+        What is the maximum number of opponents that can be defeated?
+    \end{block}
+    \begin{block}{Solution} 
+        Solution for time slice $t$:
+        \[solution(t) = \max(\underbrace{opponents(t) + solution(t-m)}_{\text{Fire}}, \underbrace{solution(t-1)}_{\text{Wait}})\]
+        One dimensional dynamic programming to get $O(n)$ run time.\\
+        Special case the intial charging.
+    \end{block}
+\end{slide}

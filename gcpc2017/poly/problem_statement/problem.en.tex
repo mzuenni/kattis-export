@@ -1,0 +1,24 @@
+\problemname{Water Testing}
+You just bought a large piece of agricultural land, but you noticed that -- according to regulations -- you have to test the ground water at specific points on your property once a year.
+Luckily the description of these points is rather simple.
+The whole country has been mapped using a Cartesian Coordinate System (where $(0,0)$ is the location of the Greenwich Observatory).
+The corners of all land properties are located at integer coordinates according to this coordinate system.
+Test points for ground water have to be erected on every point inside a property whose coordinates are integers.
+
+\section*{Input}
+The input consists of:
+\begin{itemize}
+	\item one line with a single integer $n$ ($3 \leq n \leq 100\,000$), the number of corner points of your property;
+	\item $n$ lines each containing two integers $x$ and $y$ ($-10^6 \leq x,y \leq 10^6$), the coordinates of each corner.
+\end{itemize}
+
+The corners are ordered as they appear on the border of your property and the polygon described by the points does not intersect itself.
+
+%The input begins with a single integer $N$ ($3 \leq N \leq 10^5$) the number of corner points of your property.
+%Thereafter follow $N$ lines, each containing two integers $x$ and $y$ ($-10^6 \leq x,y \leq 10^6$) the coordinates of each corner.
+%The corners are ordered as they appear on the border of your property.
+%
+%The polygon described by the points does not intersect itself.
+
+\section*{Output}
+The number of points with integer coordinates that are strictly inside your property.

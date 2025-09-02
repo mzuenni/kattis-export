@@ -1,0 +1,31 @@
+\begin{slide}
+    \begin{block}{Problem}
+    	Given a polygon $P=(p_1, \dots ,p_n)$ s.t. all $p_i$ are on integer coordinates.\\
+			How many integer points are strictly inside $P$?
+	\end{block}
+    \begin{block}{Solution}
+    	Use Pick's theorem.
+			\[A = I + \frac{R}{2} - 1\]
+		where
+			\begin{itemize}
+				\item $A$ - Area of $P$
+				\item $I$ - Integer points strictly inside $P$
+				\item $R$ - Integer points in the border of $P$
+			\end{itemize}
+	\end{block}
+\end{slide}
+
+
+\begin{slide}
+		\[A = I + \frac{R}{2} - 1\]
+		\begin{itemize}
+			\item Compute $A$ with any interger-safe method
+			\item $R$ can be computed using \text{gcd}
+			\begin{itemize}
+					\item each edge of the polygon is defined by a $(\Delta_x,\Delta_y) = (|p_1^x - p_2^x| , |p_1^y - p_2^y|)$ pair
+					\item we have to determine how many $k \in \mathbb{N}^+$ there are s.t. $\frac{\Delta_x}{k}$ and $\frac{\Delta_y}{k}$ are integer.
+					\item but this is just $gcd(\Delta_x,\Delta_y)$
+			\end{itemize}
+		\end{itemize}
+\end{slide}
+

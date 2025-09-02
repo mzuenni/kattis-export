@@ -1,0 +1,67 @@
+\begin{slide}
+    \begin{block}{Problem}
+        A tree of $n$ nodes and starting positions (nodes) of a squirrel and two ravens are given. On a signal of Odin, one raven flies into the air and lands again. Meanwhile, the squirrel can travel in the tree, but may not pass over a node occupied by the other raven.
+        
+        Output the minimum number of signals after which the ravens are guaranteed to have captured the squirrel.
+    \end{block}
+    \begin{block}{Possible Approaches}
+        \begin{enumerate}
+        \item Dynamic programming on possible states
+        \item Force the squirrel into the shallowest subtree
+        \item Find the `highest' node the squirrel can reach
+        \end{enumerate}
+    \end{block}
+\end{slide}
+
+\begin{slide}
+%    \begin{block}{Problem}
+%        A tree and starting positions (nodes) of a squirrel and two ravens are given. On a signal, one raven flies into the air and lands again. Meanwhile, the squirrel can travel in the tree, but may not pass over a node occupied by the other raven.
+%        
+%        Output the minimum number of signals after which the ravens are guaranteed to have captured the squirrel.
+%    \end{block}
+    \begin{block}{Approach 1: Dynamic Programming}
+        \begin{itemize}
+        \item Idea: Dynamic programming by backwards breadth-first-search on the states
+        \item The final states are when the squirrel is at the same position as a raven
+        \item To move between states, consider the possible ways for the ravens and the squirrel to travel (bearing in mind the squirrel cannot move past a raven)
+        \item Already computed states must be skipped to avoid an infinite loop
+        \item Runtime $O(n^4)$
+        \end{itemize}
+    \end{block}
+\end{slide}
+
+\begin{slide}
+%    \begin{block}{Problem}
+%        A tree and starting positions (nodes) of a squirrel and two ravens are given. On a signal, one raven flies into the air and lands again. Meanwhile, the squirrel can travel in the tree, but may not pass over a node occupied by the other raven.
+%        
+%        Output the minimum number of signals after which the ravens are guaranteed to have captured the squirrel.
+%    \end{block}
+    \begin{block}{Approach 2: DFSs on the tree}
+        \begin{itemize}
+        \item Idea: Drive the squirrel into the shallowest subtree
+        \item For every node, root the tree at this node and compute its depth
+        \item The minimum depth is the number of signals required
+        \item Runtime: $O(n^2)$
+        \end{itemize}
+    \end{block}
+\end{slide}
+
+
+\begin{slide}
+%    \begin{block}{Problem}
+%        A tree and starting positions (nodes) of a squirrel and two ravens are given. On a signal, one raven flies into the air and lands again. Meanwhile, the squirrel can travel in the tree, but may not pass over a node occupied by the other raven.
+%        
+%        Output the minimum number of signals after which the ravens are guaranteed to have captured the squirrel.
+%    \end{block}
+    \begin{block}{Approach 3: Assign heights to nodes}
+        \begin{itemize}
+        \item Idea: Node heights correspond to the number of signals required (minus $1$)
+        \item Leaves are assigned a height of $0$
+        \item A node has a height of $k$ if it becomes a leaf after all nodes of height $< k$ have been removed
+        \item The squirrel should travel to the highest node (a `center' of the tree) it can reach
+        \item Compute the highest position the squirrel can reach from its starting position
+        \item If there are two centers, add $1$ for an extra signal
+        \item Runtime: $O(n)$
+        \end{itemize}
+    \end{block}
+\end{slide}

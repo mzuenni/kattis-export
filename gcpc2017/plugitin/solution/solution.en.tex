@@ -1,0 +1,38 @@
+\begin{slide}
+    \begin{block}{Problem}
+		\begin{itemize}
+			\item Adam placed his electronics randomly into his room.
+			\item Not every device can be plugged into every socket.
+			\item How many devices can Adam power using 1 powerbar which triples 1 socket?
+		\end{itemize}
+    \end{block}
+    \begin{block}{Solution}
+		\begin{itemize}
+			\item Naive idea: Compute a maximum bipartite matching (possibly using a maximum flow algorithm) for each of the $n$ possible locations of the powerbar
+			\item This is, however, too time-consuming!
+		\end{itemize}
+    \end{block}
+\end{slide}
+
+\begin{slide}
+%    \begin{block}{Problem}
+%		\begin{itemize}
+%			\item Adam placed his electronics randomly into his room.
+%			\item Not every device can be plugged into every socket.
+%			\item How many devices can Adam power using 1 powerbar which triples 1 socket?
+%		\end{itemize}
+%    \end{block}
+    \begin{block}{Solution}
+		\begin{itemize}
+			\item Create a bipartite graph with sockets on the left, devices on the right and a connection between a socket and a device if the device can be plugged into the socket.
+			\item Compute a maximum bipartite matching without the powerbar
+			\item For each matched socket with more than 1 neighbor:
+			\begin{itemize}
+				\item Triple the socket (i.e. add 2 unoccupied copies of the socket / raise the capacity in the flow network).
+				\item Compute the maximum bipartite matching / maximum flow in the resulting graph.
+				\item Use the bipartite matching of the original graph as a starting point for the matching of the new graph!
+			\end{itemize}
+			\item Take the maximum across all computed matchings.
+		\end{itemize}
+    \end{block}
+\end{slide}

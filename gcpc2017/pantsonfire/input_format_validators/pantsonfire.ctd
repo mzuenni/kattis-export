@@ -1,0 +1,5 @@
+INT(1,200,n) SPACE INT(1,200,m) NEWLINE
+REP(n+m)
+    REGEX("[a-zA-Z]{1,30}", a) SPACE STRING("are worse than") SPACE REGEX("[a-zA-Z]{1,30}", b) NEWLINE
+    ASSERT(a != b)
+END
