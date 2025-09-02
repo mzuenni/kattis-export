@@ -1,0 +1,19 @@
+Given a sequence A of n non-negative integers, return the number of non-negative integer sequences B of length n+1 that satisfy the condition A_i = B_i + B_(i+1) for all A_i in A.
+
+Solution outline:
+Start with B_0 := 0. Set all other B_i accordingly such that the condition is satisfied; ignore the non-negativity for now.
+Now, note that when B_0 is increased by k, all evenly indexed B_(2i) have to be increased by k and all oddly indexed B_(2i+1) have to be decreased by k.
+Find the minimum B_(2i). The necessary k to make it zero -- that is, k_min := -min{B_(2i)} -- is the lowest possible value B_0 can take without making any B_(2i) negative.
+Find the minimum B_(2i+1). The necessary k to make it zero -- that is, k_max := min{B_(2i+1)} -- is the highest possible value B_0 can take without making any B_(2i+1) negative.
+Return the number of integers in the range [k_min, k_max] (set to zero if k_max < k_min).
+O(n)
+
+Difficulty estimation:
+35% unsolved
+
+Harder variant:
+Changing the non-negativity condition to positivity should make it a little harder to find and implement a solution; allowing zeroes makes the above patterns far more evident.
+
+Input variant:
+It's already a lot of input for Java, but at the same time 10^6 permits O(n log n) solutions.
+It may be preferable to change the integer list to some sort of formula that constructs the numbers.

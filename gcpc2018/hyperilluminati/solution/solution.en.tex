@@ -1,0 +1,26 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Build an $n$-dimensional step-pyramid consisting of $m$ blocks.
+  \end{block}
+  \pause
+  \begin{block}{Observation}
+    \begin{itemize}
+      \item We need to find a dimension $n$ and a step number $s$ such
+        that $$\sum_{k=1}^s k^{n-1} = m.$$
+      \item The $k^{n-1}$ grow very fast, especially for higher dimensions.
+      %\item Passing to a pyramid with one more step can be done in $\mathcal{O}(1)$.
+    \end{itemize}
+  \end{block}
+\end{slide}
+\begin{slide}
+  \begin{block}{Solution}
+    Calculate all candidate pyramids keeping the following in mind:
+    \begin{itemize}
+      \item We can stop increasing $s$ as soon as $s^{n-1} > m$.
+      \item We can stop increasing $n$ as soon as $2^{n-1} > m$.
+    \end{itemize}
+    In total, there are only $328\,373$ pyramids with two or more steps and at most $10^{16}$ blocks.
+    
+    Possible pitfall: avoid the \texttt{pow()} function in C++ and Java.
+  \end{block}
+\end{slide}

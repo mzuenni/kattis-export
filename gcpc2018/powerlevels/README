@@ -1,0 +1,9 @@
+Given two positive integer sequences A and B of equal length, find the minimum non-negative integer k such that B with k added to all elements is lexicographically greater than or equal to A.
+
+Solution outline:
+If B_0 > A_0, return 0.
+Else, compute A_0 - B_0. Traverse both sequences until A_i and B_i are not the same. If B_i > A_i or there is no such i, return A_0 - B_0. Else, return A_0 - B_0 + 1.
+O(n)
+
+Difficulty estimation:
+05% unsolved

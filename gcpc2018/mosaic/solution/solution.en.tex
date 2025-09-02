@@ -1,0 +1,25 @@
+\begin{slide}
+  \vspace{5mm}
+  \begin{block}{Problem}
+    Given a rectangular grid of numbers, color some of the cells in
+    black such that the number in each cell equals the number of
+    adjacent black cells. Cells on the boundary may not be colored.
+  \end{block}
+  \begin{overlayarea}{\textwidth}{\textheight}
+    \only<1>{
+      \centering
+      \vspace{2mm}
+      \includegraphics[width=.8\textwidth]{../problems/mosaic/problem_statement/mosaic.pdf}
+    }
+    \pause
+    \begin{block}{Solution}
+      \begin{itemize}
+        \item The solution can be reconstructed row by row.
+        \item For every cell, check if the number to the top left is positive.
+        \item If it is, put an \texttt{X} and subtract 1 from every adjacent cell.
+        \item Do a second pass to check if any non-zero numbers remain.
+        \item If there are no conflicts, output the solution.
+      \end{itemize}
+    \end{block}
+  \end{overlayarea}
+\end{slide}

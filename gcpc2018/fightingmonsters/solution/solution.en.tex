@@ -1,0 +1,26 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Given a list of numbers, are there two numbers such that
+    alternating subtraction of the two values results in a pair $(0,1)$?
+  \end{block}
+  \pause 
+  \begin{block}{Observation}
+    We calculate backwards from the final state:
+    \[
+      (0,1) \pause\leftarrow (\textcolor{red}{1},1)
+            \pause\leftarrow (1,\textcolor{red}{2})
+            \pause\leftarrow (\textcolor{red}{3},2)
+            \pause\leftarrow (3,\textcolor{red}{5})
+            \pause\leftarrow (\textcolor{red}{8},5) \dots
+    \]
+    These are Fibonacci numbers!
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item Generate Fibonacci numbers up to $10^6$.
+      \item Check if two consecutive Fibonacci numbers appear in the list.
+      \item Be careful about monsters with power 1.
+    \end{itemize}
+  \end{block}
+\end{slide}

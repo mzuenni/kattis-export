@@ -1,0 +1,7 @@
+INT(1,100000,n) NEWLINE
+REP(n)
+	FLOATP(0,100,0,5,x) SPACE FLOATP(0,100,0,5,y) NEWLINE
+	ASSERT( x > 0 && x < 100 && y > 0 && y < 100 )
+	# REGEX("([0-9]{1,2}\.[0-9]{1,5}|[0-9]{1,2})") SPACE REGEX("([0-9]{1,2}\.[0-9]{1,5}|[0-9]{1,2})") NEWLINE
+END
+EOF

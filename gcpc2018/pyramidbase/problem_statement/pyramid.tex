@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+	\node[scale=1.75] at (1,.5) {1};
+	\node[scale=1.75] at (3,.5) {2};
+	\node[scale=1.75] at (5,.5) {3};
+	\node[scale=1.75] at (2,1.5) {3};
+	\node[scale=1.75] at (4,1.5) {5};
+	\node[scale=1.75] at (3,2.5) {8};
+	\draw (0,0) rectangle (2,1); % node[anchor=center] {1};
+	\draw (2,0) rectangle (4,1);
+	\draw (4,0) rectangle (6,1);
+	\draw (1,1) rectangle (3,2);
+	\draw (3,1) rectangle (5,2);
+	\draw (2,2) rectangle (4,3);
+\end{tikzpicture}
+
+\end{document}

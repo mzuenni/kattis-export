@@ -1,0 +1,79 @@
+\begin{slide}
+  \begin{block}{Problem}
+  Given a sequence of locations inside a maze, what is the minimal distance one has
+  to travel to visit them all in given order?
+  \end{block}
+  \pause
+  \begin{block}{Observation}
+    \begin{itemize}
+      \item The number of locations is too big for multiple iterations of any search algorithm.
+      \item Since the maze has no loops, it can be seen as a tree.
+    \end{itemize}
+  \end{block}
+\end{slide}
+\begin{slide}
+
+  \begin{center}
+		\begin{tikzpicture}[scale =0.6, Tn/.style={draw,circle,minimum size=0.4cm, inner 
+      sep=0cm, thick}, every node/.style={transform shape}]
+    \draw[help lines] (-0.7,0) grid (4,3.7);
+    \draw[ultra thick] (0,0) -- (4,0) -- (4,3) -- (0,3) -- (0,0) -- (4,0);
+    \draw[ultra thick] (2,2) -- (1,2) -- (1,1) -- (2,1) -- (2,0);
+    \draw[ultra thick] (3,2) -- (4,2);
+    \draw[ultra thick] (3,1) -- (4,1);
+    \node at (-0.5,0.5) {\Huge 3};
+    \node at (-0.5,1.5) {\Huge 2};
+    \node at (-0.5,2.5) {\Huge 1};
+    \node at (0.5,3.5) {\Huge 1};
+    \node at (1.5,3.5) {\Huge 2};
+    \node at (2.5,3.5) {\Huge 3};
+    \node at (3.5,3.5) {\Huge 4};
+    \node at (6.5, 1.4) {\fontsize{70}{60} $\Rightarrow$};
+    \node[Tn] at (12,4) (a) {1,1};
+    \node[Tn, below left=6mm and 6mm of a] (b) {2,1};
+    \node[Tn, below left=6mm and 6mm of b] (c) {3,1};
+    \node[Tn, below left=6mm and 6mm of c] (d) {3,2};
+    \node[Tn, below right=6mm and 6mm of a] (e) {1,2};
+    \only<1> {
+      \node[Tn, below right=6mm and 6mm of e] (f) {1,3};
+    }
+    \only<1-> {
+      \node[Tn, Red] at (2.5,2.5) (p) {1,3};
+      \node[Tn, Red, below right=6mm and 6mm of e] (f) {1,3};
+    } 
+    \node[Tn, below left=5mm and 5mm of f] (h) {2,3};
+    \node[Tn, below left=6mm and 6mm of h] (i) {2,2};
+    \node[Tn, below right=6mm and 6mm of h] (j) {2,4};
+    \node[Tn, below= 4mm  of h] (k) {3,3};
+    \only<1> {
+      \node[Tn, below= 4mm  of k] (l) {3,4};
+      \node[Tn, below right=6mm and 6mm of f] (g) {1,4};
+    }
+    \only<1-> {
+      \node[Tn, blue, below right=6mm and 6mm of f] (g) {1,4};
+      \node[Tn, blue, below= 4mm  of k] (l) {3,4};
+      \node[Tn, blue] at (3.5,0.5) (m) {3,4};
+      \node[Tn, blue] at (3.5,2.5) (o) {1,4};
+    }
+    
+    \draw[ultra thick] (d) -- (c) -- (b) -- (a) -- (e) -- (f);
+    \only<1>{
+      \draw[ultra thick] (g) -- (f) -- (h) -- (k) --(l);
+    }
+    \only<1->{
+      \draw[blue, ultra thick] (g) -- (f) -- (h) -- (k) --(l);
+      \draw[blue, ultra thick] (m) -- (2.5,0.5) -- (p) -- (o);
+    }
+    \draw[ultra thick] (i) -- (h) -- (j);
+
+		\end{tikzpicture}
+	\end{center}
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item Transform the maze into a tree e.g. with \emph{depth first search}.
+      \item Find \emph{Lowest Common Ancestors} to calculate the distance between 
+        two consecutive locations.
+      \item $\Rightarrow$ Init: $\mathcal{O}(n \log n)$, Lookup: $\mathcal{O}(1)$
+    \end{itemize}
+  \end{block}
+\end{slide}

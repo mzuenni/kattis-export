@@ -1,0 +1,8 @@
+name: GPS
+source: GCPC 2018
+# source_url:
+author: Gregor Behnke
+# rights_owner:
+license: cc by-sa
+keywords: medium - 3D geometry
+validator_flags: float_tolerance 1e-7

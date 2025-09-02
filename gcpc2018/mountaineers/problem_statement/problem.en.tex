@@ -1,0 +1,41 @@
+\problemname{Mountaineers}
+
+The Chilean Andes have become increasingly popular as a destination
+for backpacking and hiking. Many parts of the Andes are quite remote
+and thus dangerous. Because of this, the Ministry of Tourism wants to
+help travelers plan their trips. In particular, the travelers need to know how
+high they will have to climb during their journey, as this information
+will help them decide which equipment they need to bring.
+The Ministry has tasked you to provide the aspiring mountaineers with
+this data.
+
+You are given a topographic map of a part of the Andes, represented as
+a two-dimensional grid of height values, as well as the list of
+origins and destinations.
+Mountaineers can move from each grid cell to any of the four adjacent
+cells.
+For each mountaineer find the minimal height
+that they must be able to reach in order to complete their journey.
+
+\section*{Input}
+
+The input consists of:
+\begin{itemize}
+	\item one line with three integers $m, n$ and $q$ ($1 \le m,n \le
+    500, 1 \le q \le 10^5$), where $m$ is the number of rows, $n$ is
+    the number of columns, and $q$ is the number of mountaineers;
+  \item $m$ lines, each with $n$ integers $h_1,\dots,h_n$
+    ($1 \le h_i \le 10^6$), the height values in the map;
+  \item $q$ lines, each with four integers $x_1,y_1,x_2,y_2$
+    ($1 \le x_1,x_2 \le m, 1 \le y_1,y_2 \le n$), describing a
+    mountaineer who wants to trek from $(x_1,y_1)$ to $(x_2,y_2)$.
+\end{itemize}
+
+The top left cell of the grid has coordinates $(1,1)$ and the bottom
+right cell has coordinates $(m,n)$.
+
+\section*{Output}
+
+Output $q$ integers, the minimal height for each mountaineer, in the
+same order as in the input.
+

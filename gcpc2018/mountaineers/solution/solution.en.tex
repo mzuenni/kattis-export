@@ -1,0 +1,31 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Given are some pairs of points in a topographic map. For each pair
+    find the least maximal height of a path connecting both ends.
+  \end{block}
+  \pause
+  \begin{block}{Intuition}
+    \begin{itemize}
+      \item Imagine a rising water line throughout the mountain range.
+      \item The answer for a pair is the lowest height at which it
+        becomes possible to swim from one end to the other.
+    \end{itemize}
+  \end{block}
+\end{slide}
+\begin{slide}
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item Store connected components in a union-find data structure.
+        In each component, store a list of end points.
+      \item Merge neighboring cells by increasing height.
+      \item While merging:
+        \begin{itemize}
+          \item Always merge the smaller list into the larger list.
+          \item If both ends of a pair are in the two lists, the
+            current height is the answer for that pair.
+        \end{itemize}
+      \item Total time complexity: $\mathcal{O}(k\cdot\log^2 k)$ where
+        $k = \max(m\cdot n,q)$.
+    \end{itemize}
+  \end{block}
+\end{slide}

@@ -1,0 +1,30 @@
+\problemname{Battle Royale}
+Battle Royale games are the current trend in video games and \emph{Gamers Concealed Punching Circles} (GCPC) is the most popular game of them all.
+The game takes place in an area that, for the sake of simplicity, can be thought of as a two-dimensional plane.
+Movement and positioning are a substantial part of the gameplay, but getting to a desired location can be dangerous.
+You are confident in your ability to handle the other players, however, while you are walking to your destination, there are two hazards posed by the game itself:
+\begin{itemize}
+  \item The game zone is bounded by a blue circle. Outside of this circle, there is a deadly force field that would instantly take you out of the game.
+  \item Inside the game zone, there is a red circle where you are exposed to artillery strikes. This circle is also too risky to enter.
+\end{itemize}
+
+You want to move from one spot on the map to another, but the direct path to your destination is blocked by the red circle, so you need to find a way around it.
+Can you find the shortest path that avoids all hazards by never leaving the blue or entering the red circle?
+Touching the boundaries of the circles is fine, as long as you do not cross them.
+
+\section*{Input}
+The input consists of:
+\begin{itemize}
+  \item one line with two integers $x_c,y_c$ specifying your current location;
+  \item one line with two integers $x_d,y_d$ specifying your destination;
+  \item one line with three integers $x_b,y_b,r_b$ specifying the center and radius of the blue circle;
+  \item one line with three integers $x_r,y_r,r_r$ specifying the center and radius of the red circle.
+\end{itemize}
+All coordinates have an absolute value of at most $1\,000$, and $1 \le r_b,r_r \le 1\,000$.
+The red circle is strictly inside the blue circle.
+Your current location and destination are strictly inside the blue circle and strictly outside of the red circle,
+and the direct path between them is blocked by the red circle.
+ 
+\section*{Output}
+Output the length of the shortest path that does not leave the blue or enter the red circle.
+The output must be accurate up to a relative or absolute error (whichever is lower) of $10^{-7}$.

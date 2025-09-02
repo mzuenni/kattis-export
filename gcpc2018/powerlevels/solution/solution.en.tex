@@ -1,0 +1,15 @@
+\begin{slide}
+	\begin{block}{Problem}
+    Given two integer sequences $H$ and $V$ of equal length,
+    find the minimal non-negative $d$ to add to the values in $H$
+    such that \emph{lexicographically}, $H+d \ge V$.
+	\end{block}
+	\pause
+	\begin{block}{Solution}
+		\begin{itemize}
+			\item If $H_1 > V_1$, the answer is $0$.
+			\item Otherwise, put $d := V_1 - H_1$.
+      \item If $H+d < V$, the answer is $d+1$, else it is $d$.
+		\end{itemize}
+	\end{block}
+\end{slide}

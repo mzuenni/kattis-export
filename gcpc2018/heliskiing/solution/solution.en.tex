@@ -1,0 +1,30 @@
+\begin{slide}
+    \begin{block}{Problem}
+      Given a graph of ski slopes labelled with \emph{condition measures},
+      find a path with maximal sum of these measures.
+      %John and friends want to ski the route with the largest sum of \emph{condition measures} in a DAG (Directed Acyclic Graph).
+    	%This is also called the \emph{critical path}.
+    \end{block}
+    
+    \begin{overlayarea}{\textwidth}{\textheight}
+      \only<1>{
+        \begin{center}
+          \includegraphics[width=0.8\textwidth]{../problems/heliskiing/problem_statement/sample.pdf}
+        \end{center}
+      }
+      \pause
+    \begin{block}{Solution}
+      \begin{itemize}
+        \item The graph of ski slopes is a \emph{directed acyclic graph}.
+        \item Find the \emph{longest path} between any two nodes.
+        \item Multiple graph algorithms can be used for this:
+          \begin{itemize}
+            \item Invert the measures, use Floyd-Warshall ($\mathcal{O}(n^3)$).
+            \item Add a super source, invert the measures, then use Bellman-Ford for shortest paths ($\mathcal{O}(n * m)$).
+            \item Find a topological ordering, then find the maximum for each node with dynamic programming ($\mathcal{O}(n + m)$).
+          \end{itemize}
+      \end{itemize}
+    \end{block}
+  \end{overlayarea}
+\end{slide}
+

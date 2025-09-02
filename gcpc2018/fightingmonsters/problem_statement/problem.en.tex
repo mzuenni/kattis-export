@@ -1,0 +1,59 @@
+\problemname{Fighting Monsters}
+Emma just discovered a new card game called \emph{Gwint: A wizard's game}.
+There are two types of cards: monster cards and spell cards.
+Monster cards are used to score points, while spell cards typically interact with the monsters in some way.
+%In the beginning of this two-player game each player draws 13 cards from their deck.
+%The drawn cards can each be of type "Monster" or "Spell".
+%After the initial drawing phase no new cards are drawn unless a card tells the player to do so.
+%The objective of the game is to have more total power on the board compared to the opponent after all cards have been played.
+
+On each monster card there is an integer value, the \emph{power} of the monster.
+Monsters can fight each other, and during these fights the power acts as both the strength and the health of the monster.
+The monsters take turns hitting each other until one of them dies.
+Whenever a monster $A$ hits a monster $B$, this causes $B$ to lose an amount of power equal to the power of $A$.
+Conversely, if $B$ hits $A$, $A$ loses power equal to the power of $B$ (see the example below).
+This continues until one of the two monsters has a power of zero or less, at which point this monster is considered dead.
+
+\begin{figure}[!h]
+  \centering
+  \begin{tabular}{ c @{\hskip 6mm} c c c @{\hskip 7mm} c }
+    \large{A} & & & & \large{B} \\
+    {\Huge 4} & \includegraphics[height=1cm]{monster1.pdf} & $\rightarrow$ & \includegraphics[height=1cm]{monster2.pdf} & {\Huge 7} \\
+    {\Huge 4} & \includegraphics[height=1cm]{monster1.pdf} & $\leftarrow$ & \includegraphics[height=1cm]{monster2.pdf} & {\Huge 3} \\
+    {\Huge 1} & \includegraphics[height=1cm]{monster1.pdf} & $\rightarrow$ & \includegraphics[height=1cm]{monster2.pdf} & {\Huge 3} \\
+    {\Huge 1} & \includegraphics[height=1cm]{monster1.pdf} & $\leftarrow$ & \includegraphics[height=1cm]{monster2.pdf} & {\Huge 2} \\
+    {\Huge -1} & \includegraphics[height=1cm]{monster1.pdf} & & \includegraphics[height=1cm]{monster2.pdf} & {\Huge 2} \\
+  \end{tabular}
+
+  \vspace{2mm}
+  \tiny{Images by \href{https://pixabay.com/de/users/OpenClipart-Vectors-30363}{OpenClipart-Vectors}
+  on Pixabay and from \href{https://github.com/break24/PhantomOpenEmoji}{PhantomOpenEmoji}.}
+  \begin{minipage}{0.75\textwidth}
+    \caption{A fight between monsters $A$ and $B$, starting with powers of $4$ and $7$, respectively. $A$ hits first. $B$ wins with a remaining power of $2$.}
+  \end{minipage}
+\end{figure}
+
+One of Emma's most beloved cards in the game is a spell called \emph{Fight!} which states:
+
+\begin{quote}
+Pick two monsters. They fight each other to the death.
+If the surviving monster has a power of exactly $1$ left, return this card to your hand.
+\end{quote}
+
+Of course, Emma would like to play as efficiently as possible by picking two monsters such that \emph{Fight!} is returned to her hand.
+However, there are often a lot of monsters on the board, which makes it very time consuming to figure out whether this can be done or not.
+Can you help her find two monsters she can pick so that she gets the card back?
+
+\section*{Input}
+The input consists of:
+\begin{itemize}
+	\item one line with an integer $n$ ($2 \le n \le 10^5$), the number of monsters;
+  \item one line with $n$ integers $m_1, \dots, m_n$ ($1 \leq m_i \leq 10^6$), giving the power of each monster.
+\end{itemize}
+
+\section*{Output}
+If there is no pair of monsters that Emma can pick, output \texttt{impossible}.
+Otherwise, output two distinct integers $i, j$ ($1 \le i,j \le n$),
+where $i$ is the index of the monster that starts the fight and $j$ is the index of the other monster.
+If multiple solutions exist, any of them will be accepted.
+

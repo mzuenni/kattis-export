@@ -1,0 +1,15 @@
+\begin{slide}
+    \begin{block}{Problem}
+        Given two floating point numbers representing the aspect ratio $a \times b$ of a photo, find prime numbers $p$ and $q$ such that $\frac{a}{b} = \frac{p}{q}$.
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+        	\item Multiply $a$ and $b$ by $10^5$ to make both numbers integral.
+        	\item Divide both numbers by their greatest common divisor.
+          \item Check whether the resulting two numbers are prime, e.g. using the Sieve of Eratosthenes.
+        	\item Special case: quadratic aspect ratios, i.e. $6 \times 6$.
+          \item Take care of numerical issues when using floating point arithmetics, e.g. $0.00007 \cdot 10^5 = 6.9999999999999991118\ldots$
+        \end{itemize}
+    \end{block}
+\end{slide}

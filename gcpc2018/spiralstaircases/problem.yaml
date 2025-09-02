@@ -1,0 +1,7 @@
+name: Kitchen Cable Chaos
+source: GCPC 2018
+#source_url: http://gcpc.nwerc.eu
+author: Michael Baer
+license: cc by-sa
+keywords: dp
+validator_flags: float_tolerance 1e-7

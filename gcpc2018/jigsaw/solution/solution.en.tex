@@ -1,0 +1,29 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Assemble a jigsaw puzzle from square shaped pieces with jagged edges. 
+  \end{block}
+  \vspace{-3mm}
+  \begin{overlayarea}{\textwidth}{\textheight}
+    \only<1>{
+      \centering
+      \vspace{5mm}
+      \includegraphics[width=.6\textwidth]{../problems/jigsaw/problem_statement/jigsaw.pdf}
+    }
+    \pause
+    \begin{block}{Solution 1}
+      \begin{itemize}
+        \item Pick an arbitrary piece and place it at $(0,0)$.
+        \item Run a breadth-first-search from this piece, fixing
+          coordinates and orientation of the other pieces along the way.
+        \item Check that this is a valid solution (no
+          gaps/overlaps/\dots).
+        \item Each step can be done in time $\mathcal{O}(n)$.
+      \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution 2}
+      Find a corner piece and reconstruct the solution row by row.\\
+      Be \emph{very} careful when checking the connections.
+    \end{block}
+  \end{overlayarea}
+\end{slide}

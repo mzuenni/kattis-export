@@ -1,0 +1,7 @@
+name: Battle Royale
+source: GCPC 2018
+author: Martin Tillmann
+license: cc by-sa
+keywords: geometry, circle segments, tangents
+
+validator_flags: float_tolerance 1e-7

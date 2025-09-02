@@ -1,0 +1,31 @@
+Idea:
+You are given a bunch of "monsters", each described by a single integer. This integer acts as the health as well as 
+strength of the monster. You have the ability to make two monsters fight each other. If two monsters fight, first monster1 hits monster2
+which results in monster2 losing monster1 points. After that if monster2 has > 0 points left, the roles switch, i.e. the monsters
+keep hitting each other until one of them is dead. 
+
+Example: A monster with strength 7 fights a monster with strength 11:
+m1  m2
+7   11
+7   4
+3   4
+3   1
+2   1
+2   0
+
+The goal is to find two monsters, s.t. after the fight one monster has 0 strength and the other one 1 strength left.
+
+Solution:
+In the end we want the monsters to have strengths 0 and 1. This means that before the last hit, their strengths must have been 1 and 1.
+Before that they must have been 1 and 2, before that 3 and 2. This gives the Fibonacci-sequence.
+=> Put all numbers into a set, iterate the Fibonacci sequence up to the max. in the set and check if two consecutive Fibonacci numbers
+are in the set. The case where >= 2 monsters of strength 1 are given needs to be handled separately.
+
+Constraints:
+1 <= number of monsters <= 10^5
+1 <= strength of monster <= 10^8
+
+Difficulty:
+Easy
+I expect > 90% to solve this problem.
+ 

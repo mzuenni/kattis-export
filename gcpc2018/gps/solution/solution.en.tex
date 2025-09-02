@@ -1,0 +1,32 @@
+\begin{slide}
+    \begin{block}{Problem}
+			Given a point $\vec x$ on a sphere of radius $r$ and a point $\vec y$ outside the sphere, compute whether the line $\overline{\vec x \vec y}$ intersects the sphere and if not, output $|\overline{\vec x \vec y}|$.
+    \end{block}
+	\pause
+	\begin{block}{Solution, part II}
+		Assume $\vec x$ and $\vec y$ are given in cartesian coordinates $(x,y,z)$.\\
+		To check whether the line $\overline{\vec x \vec y}$ intersects the sphere:
+		\begin{itemize}
+			\item Compute closest point $\vec p$ on the line to $\vec 0 = (0,0,0)$ (vector projection, ``Lot fällen'').
+				You can use your 2D-Formula for this. It is also correct in higher dimensions.
+			\item Check whether $|\vec p|$ is larger than $r$. If not, the line will intersect the sphere.
+		\end{itemize}
+		Alternatively, check on which side of the tangential plane $\vec y$ lies (normal vector of the plane is $\vec x$) using dot product.
+	\end{block}
+\end{slide}
+
+\begin{slide}
+	\begin{block}{Solution, part I}
+		Points are not given in cartesian coordinates ...\\ \pause
+		1. $\vec x$: Given in terms of geographic coordinates ($\ell_o, \ell_a$).
+These are (similar to) polar coordinates -- their conversion is known.\\ \pause
+		2. $\vec y$: Circle that intersects the XY-plane at (at least) two points with an angle $\psi$. One of the points is at longitude $\phi$. The point is where one has covered $x$\% of the circle from $\phi$.\\ \pause
+		Compute the coordinate stepwise:
+		\begin{itemize}
+			\item<5-> Start with circle in equatorial plane of correct radius. Find point on $x$\% of the circle.
+			\item<6-> Rotate in YZ-plane by $\psi$. Note that the orbit intersection is still at longitude 0
+			\item<7-> Rotate in XY-plane by $\phi$.
+		\end{itemize}
+	\end{block}
+\end{slide}
+

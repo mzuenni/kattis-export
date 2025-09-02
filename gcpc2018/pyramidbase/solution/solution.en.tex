@@ -1,0 +1,32 @@
+\begin{slide}
+	\begin{block}{Problem}
+		Given a non-negative integer sequence $A$, find the number of possible non-negative integer sequences $B$ such that $A_i = B_i + B_{i+1}$ for all pairs of adjacent numbers in $B$.
+	\end{block}
+	\pause
+	\begin{block}{Insights}
+		\begin{itemize}
+			\item $B_1$ uniquely determines the rest of the sequence.
+      \item If $B_1$ increases, each odd-numbered element increases
+        and each even-numbered element decreases.
+    \end{itemize}
+	\end{block}
+	\pause
+  \begin{block}{Solution}
+		\begin{itemize}
+			\item Put $B_1 := 0$ and compute the resulting sequence.
+      \item Find the minimum odd- and even-numbered elements.
+			\item The range of answers is $[-\min\{B_{2i+1}\}, \min\{B_{2i}\}]$.
+      \item Time complexity: $\mathcal{O}(n)$.
+		\end{itemize}
+	\end{block}
+\end{slide}
+%\begin{slide}
+%	\begin{block}{Alternative}
+%		\begin{itemize}
+%			\item Assign to each $B_i$ a range $[0, min\{A_{i-1}, A_i\}]$.
+%			\item Using a worklist algorithm, keep adjusting the elements' ranges so they are consistent with the respective adjacent ranges.
+%			\item Randomize the initial order of the elements inside the worklist to avoid quadratic complexity.
+%		\end{itemize}
+%		$\mathcal{O}(n \log n)$
+%	\end{block}
+%\end{slide}

@@ -1,0 +1,8 @@
+Aufgabe: buildingstaircases
+Schwierigkeit: 30% (%-ungelöst)
+
+Input: Zahlen x_i, Zielwert Z
+Aufgabenstellung:
+	- Jede Zahl darf um bis zu 10 größer gemacht werden
+	- Finde Teilmenge, deren Summe (nach evtl. Vergrößerung) genau Z ergibt
+Lösung: Memoization, Rekursion (z.B. mit possible(item, mindestRest, maximalRest) -> dp[ITEM][Z][Z])
