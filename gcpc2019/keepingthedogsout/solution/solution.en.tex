@@ -1,0 +1,19 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Given quadratic pieces whose side lengths are powers of two. Find $a$ and $b$ so that they can be arranged in a rectangle of size $a \times b$.
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item Calculate sum of area of all pieces
+      \item Assume $a \leq b$ and try out all possible $a$ with a simple loop.
+      \item Check if all pieces of size $\geq 2^i$ fit, for decreasing $i$:
+      \begin{itemize}
+        \item Round $a$ and $b$ down to multiples of $2^i$.
+        \item Calculate area sum of all pieces of size $\geq 2^i$.
+        \item If the sum is larger than the rounded-down rectangle, a rectangle of size $a \times b$ is not possible.
+      \end{itemize}
+      \item If the previous check did not find any conflict, it is always possible to arrange the pieces in a rectangle of size $a \times b$.
+    \end{itemize}
+  \end{block}
+\end{slide} 

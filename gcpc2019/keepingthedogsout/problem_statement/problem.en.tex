@@ -1,0 +1,36 @@
+\problemname{Keeping the Dogs Out}
+
+Your best friend keeps telling you about her neighbour's annoying dogs -- apparently, they constantly lay waste to her garden and leave smelly ``gifts''.
+Today, she has decided to start working on a solution: building a wall to keep them out.
+
+Of course the wall must have the same height in all places (i.e. be rectangular), and it cannot have any holes that would let the dogs through.
+Your friend does not really care about the wall's exact dimensions, though.
+
+She has already bought the stones she plans to use (and she wants to use all of them!) and sorted them by size.
+All of them have the same width, but the length and height may vary. For each stone however, its length is equal to its height and both are a power of two.
+The width of the wall must be equal to the width of the stones, i.e. you may not rotate the stones and you may not put two stones behind each other.
+
+Given the side lengths and quantities of the stones, determine if it is possible to build a wall using all available stones, and if so, what length and height such a wall might have.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.45\textwidth]{sample.png}
+  \caption{Illustration of the first sample.}
+\end{figure}
+
+\section*{Input}
+
+The input consists of:
+\begin{itemize}
+	\item One line with an integer $n$ ($0 \leq n \leq 25$), indicating that the largest stone has a side length of $2^n$.
+  \item One line with $n + 1$ integers $m_0, \dots, m_n$ ($0 \le m_i \le 10^{15}$ for each $i$, $m_n \geq 1$), where $m_i$~describes the number of stones of side length $2^i$.
+\end{itemize}
+
+It is guaranteed that the combined area of all stones is at most $10^{15}$.
+
+
+\section*{Output}
+
+If it is possible to build a rectangular wall without any holes, output one line with two integers, the length and height of a possible wall that can be built.
+Otherwise, output \texttt{impossible}.
+If multiple solutions exist, output any of them.

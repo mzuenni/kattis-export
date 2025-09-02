@@ -1,0 +1,31 @@
+\problemname{Historical Maths}
+The history of Numeristan is quite remarkable. As we all know the maharajahs of Numeristan were
+a superstitious bunch. Every year they consulted their chief magicians about their lucky number and
+all calculations during this year had to be done in a positional numeral system\footnote{
+  A positional numeral system of base $b$ only contains the digits $0, 1, \ldots, b-1$.
+  An integer $n$ has one or more digits $d_i$. Each digit contributes to the total value of $n$
+  with its position $i$ and its own value, according to the formula $n=\sum_{i=0}^{\infty} d_i\cdot b^{i}$.
+  Leading digits of value $0$ are usually omitted. For instance, the integer $512$
+  in base $13$ has the total value of $5\cdot 13^2 + 1\cdot 13^1 + 2\cdot 13^0$.
+  Well known and used positional numeral systems are the binary system (which is also the positional numeral system
+  with the smallest valid base), the decimal system as well as the hexadecimal system.
+} with this lucky number as the base. Naturally this lead to a lot of confusion throughout the years. On the
+flip side it makes determining the year of ancient documents really easy for historians.
+
+Recently an old manuscript was discovered which only features a simple multiplication of two numbers.
+As there are no other clues about the year of origin, some historians have asked you for
+help to determine the base of the system the calculation was performed in.
+
+\section*{Input}
+The input consists of three lines, each describing a positive integer with no leading zeroes. Each line consists of:
+\begin{itemize}
+\item One integer $n$ ($1 \le n \le 1\,000$), the number of digits of the currently described integer.
+\item $n$ integers $d_{n-1}, \ldots, d_0$ ($0 \le d_i \le 2^{30}$ for each $i$, $d_{n-1} \ne 0$), the digits of the integer.
+  The most significant digit is $d_{n-1}$, the least significant digit is $d_0$.
+\end{itemize}
+The first two lines correspond to the factors, the third line to the product of the multiplication.
+
+\section*{Output}
+
+Output a possible base the multiplication was performed in. If there are multiple possible bases, you may
+output any of them. If no possible base exists, output \texttt{impossible}.

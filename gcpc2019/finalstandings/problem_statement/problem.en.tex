@@ -1,0 +1,32 @@
+\problemname{Final Standings}
+The GCPC 2019 is finally over.
+You have worked for five hours and have solved as many problems as possible.
+However, you still do not know which place you have got, since the scoreboard is still frozen.
+Of course you think that you and your team have won GCPC 2019.
+
+
+As there is always a lengthy pause between the end of the contest and unfreezing the scoreboards (someone has to print the certificates and someone has to re-compile the solution slides), you want to use your time to determine how probable it is that your team has won GCPC 2019.
+
+You know the final scoreboard, that is, for all teams which problems they have solved prior to the freeze and which problems they have attempted during the freeze.
+Also you know from last year how good each team is and you trust your own estimates of each problem's difficulty.
+To be precise, if a team with strength $s \in [0,1]$ has attempted to solve a problem with difficulty $d \in [0,1]$, you assume that the probability of solving the problem is $s\cdot d$.
+
+As your team was very quick in solving the simple problems this year, you assume that a team can only have a higher place than you, if they have solved more problems (you assume that you will always win the tie-break).
+
+
+\section*{Input}
+\begin{itemize}
+	\item The first line of input contains two integers $t$ and $p$ ($1\leq t,p \leq 100$), the number of teams and the number of problems in the contest. The teams are numbered $1$ to $t$ and the problems are numbered $1$ to $p$. Your team is team $t$.
+	\item The second line contains $t-1$ real numbers $s_1, \ldots, s_{t-1}$ ($0 \leq s_i \leq 1$ for each $i$), where $s_i$ is the strength of team $i$.
+	\item The third line contains $p$ real numbers $d_1, \ldots, d_p$ ($0 \leq d_j \leq 1$ for each $j$), where $d_j$ is the difficulty of problem~$j$.
+	\item Then follow $t-1$ lines describing the state of the problems for the other teams.
+    Every such line contains $p$ characters $c_1, \ldots, c_p$, where $c_j$ in the $i$th line describes the state of problem $j$ for team~$i$ and is~\texttt{X}~if
+    the team has solved the problem before the freeze,~\texttt{?}~if the team submitted a program for this problem after the freeze, and~\texttt{-}~otherwise.
+	\item The last line of input describes the problems your team solved with $p$ characters, each being either \texttt{X} or \texttt{-}.
+\end{itemize}
+
+All real numbers in the input have at most six decimals. 
+
+
+\section*{Output}
+Output a single real number, the probability that your team won GCPC 2019. Your answer should have an absolute or relative error of at most $10^{-6}$.

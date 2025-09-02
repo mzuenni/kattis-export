@@ -1,0 +1,9 @@
+INT(1, 50, n) NEWLINE
+REP(n)
+    REGEX("[a-zA-Z]+", s) NEWLINE
+    ASSERT(STRLEN(s) > 0 && STRLEN(s) <= 250)
+END
+REP(n)
+    REGEX("[a-zA-Z]+", s) NEWLINE
+    ASSERT(STRLEN(s) > 0 && STRLEN(s) <= 250)
+END

@@ -1,0 +1,22 @@
+Task:
+Figure out whether a set of squares can be packed into any rectangular region.
+The side lengths of the squares are powers of 2.
+
+
+Complexity and Limits:
+
+The sum of the areas of the squares is a.
+Runtime: O(sqrt(a) log a)
+Limits: 1 <= a <= 10^{15}
+        (This allows a largest square of size 2^24)
+
+
+Solution:
+Calculate the sum of the areas of all squares.
+Try all possible rectangles of the appropriate size. There are less than sqrt(a) options.
+Now iterate over the squares sizes, starting with the largest.
+All squares of size 2^i and larger fit exactly if the rectangle with its side lengths rounded down to multiples of 2^i has a large enough area to fit the squares of this size and all larger squares.
+
+
+Difficulty:
+60%

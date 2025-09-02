@@ -1,0 +1,11 @@
+name: Bouldering
+source: GCPC 2019
+source_url: https://gcpc.nwerc.eu
+author: Christian Müller
+license: cc by-sa
+keywords: medium - Graph, Geometry, Dynamic Programming
+validation: default
+validator_flags: float_tolerance 1e-6
+
+limits:
+    time_multiplier: 1.5

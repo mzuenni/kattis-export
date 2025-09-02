@@ -1,0 +1,70 @@
+\problemname{Dungeon Crawler}
+
+In the famous video game Wizards \& Wyvern, the protagonist finds himself in some kind of maze structure and has to find a way out.
+Each level is constructed with several caves, platforms, rooms or other kind of interesting spots that are connected with paths of different types.
+In each spot, there is a single distinguishable and unique artefact that can be activated by the hero.
+To escape from one level, the player has to activate the correct artefacts in the correct order.
+ Riddles hidden inside the maze help him to solve the level.
+
+\illustration{0.38}{img}{Overview of the first sample case.}
+You hate riddles and therefore obtained a map of a single level and its solution from the internet.
+You only need to find out whether this map represents the current level you are in.
+
+
+While wandering around from spot to spot, the player can see the artefact in his current spot as well as all paths leading away from it.
+The game implements 26 different types of paths such as paved roads (\texttt{P}), bridges (\texttt{B}) or dirt roads (\texttt{D}).
+In each spot all paths leading away are of different types.
+
+	
+
+This is an interactive problem.
+You do not know your initial position but you can always decide which path to follow. For each spot you visit, you are provided with the name of the artefact there and the types of paths leading away.
+Your task is to find out whether this level matches the one on your map.
+\vspace{-5mm}
+\section*{Interaction Protocol}
+\vspace{-2mm}
+Your submission will be interacting with a special program called the \emph{grader}.
+This means that the output of your submission is sent to the grader and the output of the grader is sent to the standard input of your submission.
+This interaction must follow a specific protocol:
+
+
+The grader starts with the description of your map:
+\begin{itemize}
+	\item One integer $n$ ($2 \le n \le 1\,000$), the number of spots on the map.
+	\item $n$ lines, the $i$th of which contains an integer $k$ followed by $k$ pairs $t_1~m_1,\dots,t_k~m_k$, describing the paths leading away from spot $i$.
+    Each path is given by its type $t_j$ ($t_j$ is an uppercase letter) and destination $m_j$ ($1\le m_j\le n, m_j \ne i$).
+\end{itemize}
+All paths are bidirectional and appear twice in the input, once for each side.
+You can safely assume that all spots are reachable from any position in the maze.
+
+Then, the game proceeds in turns. In each turn, the grader sends you the description of your current spot, in the following format:
+\begin{itemize}
+	\item One line with a lowercase string $a$ ($1 \le |a| \le 20$) and an uppercase string $s$ ($1 \le |s| \le 26$), the name of the artefact you see at this spot and the description of the paths leading away. No two spots will have the same artefact. All letters in $s$ are distinct and uppercase with no particular order. The order can vary when entering the same spot again.
+\end{itemize}
+Your submission must respond with one of the following:
+\begin{itemize}
+	\item \texttt{W} $\,c$ -- you want to walk along the path of type $c$, where $c$ is a valid uppercase character.
+  \item \texttt{R} $\,i$ -- you are sure the level corresponds to the map. The integer \texttt{$i$} ($1\le i\le n$) should be the number of the spot on the initial map that you believe you are currently in.
+	\item \texttt{R ambiguous} -- the map matches the level, but the matching is not unique.
+	\item \texttt{R no} -- the level does not correspond to your map.
+\end{itemize}
+\textit{Continue on next page ...}
+\pagebreak
+
+After every valid response starting with \texttt{W}, the grader gives you the description of the new spot you are currently in. You are not allowed to do more than $250\,000$ walks.
+After a response starting with \texttt{R}, the game ends. When you send an invalid response, the game ends and your submission will be judged as ``Wrong Answer''.
+After each command you send, you should \emph{flush} the standard
+output to ensure that it is sent to the game. For example, you can
+use \texttt{fflush(stdout)} in C++, \texttt{System.out.flush()} in
+Java, and \texttt{sys.stdout.flush()} in Python.
+
+\displaysample{dungeoncrawler/problem_statement/1}
+\displaysample{dungeoncrawler/problem_statement/2}
+\displaysample{dungeoncrawler/problem_statement/3}
+
+\vspace{4mm}
+In the example interactions above, the output of the grader is on the
+left and one possible correct output of a submission is on the right.\\
+The empty lines on both sides only serve to emphasise the
+chronological order of requests and answers. The grader will never
+output any empty lines.

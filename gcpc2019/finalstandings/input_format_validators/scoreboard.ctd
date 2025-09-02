@@ -1,0 +1,30 @@
+INT(1, 100, t) SPACE
+INT(1, 100, p) NEWLINE
+
+# Other teams
+REP(t-1, SPACE)
+  FLOATP(0, 1, 0, 6)
+END
+NEWLINE
+
+# All problems
+REP(p, SPACE)
+  FLOATP(0, 1, 0, 6)
+END
+NEWLINE
+
+# Other teams in the scoreboard
+REP(t-1)
+  REP(p, SPACE)
+    REGEX("-|\?|X")
+  END
+  NEWLINE
+END
+
+# Our team in the scoreboard (no '?'s)
+REP(p, SPACE)
+  REGEX("-|X")
+END
+NEWLINE
+
+EOF

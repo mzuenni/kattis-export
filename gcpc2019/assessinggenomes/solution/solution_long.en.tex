@@ -1,0 +1,59 @@
+\begin{slide}
+	\begin{block}{Problem}
+		Given two sets of $n$ DNA strands, determine their repetition score (length of the smallest repeating substring).
+		Then, find a perfect matching, minimising the squared difference of the matched pairs' repetition scores.
+	\end{block}
+\end{slide}
+
+\begin{slide}
+	\begin{itemize}
+		\item Two sub-problems: (i)~Repetition score, (ii)~Matching.
+	\end{itemize}
+	\begin{block}{Solution (i)}
+		\begin{itemize}
+			\item Simple brute-force approach sufficient:
+			\begin{itemize}
+				\item
+					Let $s$ be some string of length $k$.
+					For each $i$ from $1$ to $k / 2$, if $i$ divides $k$, check if $s[1:i]^{k/i} = s$.
+				\item Important: Its sufficient to check all substrings of the form $s[1:i]$ (instead of $s[j:i]$).
+			\end{itemize}
+			\item Neat simplification, based on the following observations:
+			\begin{enumerate}
+				\item A string consists of the same pattern repeated multiple times if and only if the string is a non-trivial rotation of itself.
+				\item If $\mathsf{x}$ and $\mathsf{y}$ are strings of the same length, then $\mathsf{x}$ is a rotation of $\mathsf{y}$ if and only if $\mathsf{x}$ is a substring of $\mathsf{yy}$.
+			\end{enumerate}
+			\item Pseudocode: $\mathsf{score} = (s + s).\mathsf{find}(s, 1, 2 \cdot \mathsf{len}(s) - 1)$
+		\end{itemize}
+	\end{block}
+\end{slide}
+
+
+\begin{slide}
+	\begin{block}{Solution (ii)}
+		\begin{itemize}
+			\item One could use the Hungarian method (also called Munkres algorithm) for optimal matching (rather complex, but $O(n^3)$).
+			\item Much simpler $O(n \log n)$ solution (for Euclidean distance):
+			\begin{itemize}
+				\item Let $u, v \in \mathbb{R}^n$ two arrays.
+				\item Sorting and then computing the squared difference ($\sum_{i \in \{1, ..., n\}} (\mathrm{sort}(u)_i - \mathrm{sort}(v)_i)^2$) yields minimal distance.
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Proof sketch}
+		\tiny
+		\begin{itemize}
+			\item Assume w.l.o.g. that $u$ is sorted, but $v$ is not.
+			\item Assume for contradiction that $d = \sum (u_i - v_i)^2$ is minimal.
+			\item Then there exists indices $i < j$, such that $v_i > v_j$ but $u_i < u_j$.
+			\item Set $k_u = u_j - u_i$, $k_v = v_i - v_j$, both $> 0$ by assumption.
+			\item We have $d = x + (u_i - v_i)^2 + ((u_i + k_u) - (v_i - k_v))^2$.
+			\item Swapping $v_i$ with $v_j$ yields $d' = x + (u_i - (v_i - k_v))^2 + ((u_i + k_u) - v_i)^2$
+			\item Then $d - d' = \dots = 2 k_u k_v > 0$, contradiction.
+		\end{itemize}
+	\end{block}
+\end{slide}
+
+% https://stackoverflow.com/questions/55823298/how-do-i-check-if-a-string-is-entirely-made-of-the-same-substring
+% https://stackoverflow.com/questions/54041397/given-two-arrays-find-the-permutations-that-give-closest-distance-between-two-a

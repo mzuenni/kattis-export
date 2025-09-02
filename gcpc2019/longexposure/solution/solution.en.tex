@@ -1,0 +1,54 @@
+\begin{slide}
+	%\vspace{-10mm}
+	\centering
+	\raisebox{-.5\height}{\includegraphics[scale=.8]{../problems/longexposure/solution/samplein}}
+	\hspace{1mm}
+	->
+	\hspace{1mm}
+	\raisebox{-.5\height}{\includegraphics[scale=.8]{../problems/longexposure/solution/sampleans}}
+	\begin{block}{Problem}
+		A white surface with $n$ black rectangles is rotated around its origin fast.
+		A photo is taken of the entire rotation.
+		Determine the `black' surface area of the photo (parts covered by rectangles throughout the entire rotation)
+		as well as the `grey' surface area (parts covered by rectangles through some but not all of the rotation).
+	\end{block}
+\end{slide}
+\begin{slide}
+	\centering
+	\includegraphics[scale=1.25]{../problems/longexposure/solution/diags}
+	\vspace{-47mm}
+	\begin{block}{Solution (Variant 1)}
+		\begin{itemize}
+			\item As a circle's radius increases, the number of $1 \times 1$ squares intersected by its outline only increases for every new integer.
+			\item Number of intersected $1 \times 1$ squares for radius $r$ is $8 \cdot \lfloor r \rfloor + 4$.
+			\item Squares can be grouped by the `diagonal' they lie on.
+		\end{itemize}
+	\end{block}
+\end{slide}
+\begin{slide}
+	\centering
+	\includegraphics[scale=1.25]{../problems/longexposure/solution/intervals}
+	\vspace{-47mm}
+	\begin{block}{Solution (Variant 1)}
+		\begin{itemize}
+			\item Each rectangle is essentially a set of intervals, one interval per affected diagonal.
+			\item For every integer radius, use the interval entry and exit points (up to the next integer)
+			      to compare the covered diagonals to the required number of $1 \times 1$ squares.
+			\item Add surface areas of the resulting black and grey `rings' to the respective total.
+		\end{itemize}
+	\end{block}
+\end{slide}
+\begin{slide}
+	\begin{block}{Solution (Variant 2)}
+		\begin{itemize}
+			\item Do coordinate compression, creating an approximately $n \times n$ grid.
+			\item Each rectangle covers some fields in the grid. Mark those as black. All unmarked fields are white. ($O(nwh)$)
+			\item Fields reach minimal/maximal distance to the centre at a vertex or at x = 0 or y = 0. Thus, we can calculate the distance interval this field covers.
+			\item Sort and merge black and white intervals ($O(n^2 \log(n))$ for $n^2$ intervals). If black and white intervals overlap, the overlapping part is grey.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Optimization}
+		The second step can be optimized to run in $O(n^2 \log(n))$ using a sweepline approach with a segment tree. This was not required.
+	\end{block}
+\end{slide} 

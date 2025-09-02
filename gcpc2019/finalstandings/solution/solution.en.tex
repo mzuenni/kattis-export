@@ -1,0 +1,20 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Given a frozen contest scoreboard, find the probability that your
+    team won, assuming you know for each pending submission the
+    probability that it was accepted.
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    \begin{itemize}
+      \item For a team $i$ and number of problems $k$, let $f(i,k)$ be
+        the probability that the team solved exactly $k$ problems.
+      \item The values of $f(i,k)$ can be computed with dynamic
+        programming (DP): consider the problems one at a time and
+        update the probabilities.
+      \item For each team, find the probability that it does not solve
+        more problems than you.
+      \item The final answer is the product of those probabilities.
+    \end{itemize}
+  \end{block}
+\end{slide} 

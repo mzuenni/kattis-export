@@ -1,0 +1,22 @@
+\begin{slide}
+  \begin{block}{Problem}
+    Scale a bouldering wall without running out of stamina.
+  \end{block}
+  \pause
+  \begin{block}{Observation}
+    $s$, the required stamina, is at most $h \times w \times 9 = 5\,625$
+  \end{block}
+\end{slide} 
+
+\begin{slide}
+  \begin{block}{Solution}
+  \begin{itemize}
+    \item Build graph nodes from the reachable holds of the wall
+    \item Copy every node $s$ times to count the remaining stamina at this hold.
+    \item For an edge from hold $u$ to $v$ taking $t$ units of stamina,
+          insert an edge from any copy of node $u$ to the copy of node $v$ with
+          exactly $t$ less stamina remaining.  
+    \item Use Dijkstra's algorithm for shortest paths.
+  \end{itemize}
+\end{block}
+\end{slide}

@@ -1,0 +1,23 @@
+REGEX("[^\n]*",seperator) NEWLINE
+IF(seperator == "--Level--")
+	INT(2,1000,n) SPACE INT(1,n) NEWLINE
+	REP(n)
+		INT(1,26,k)
+		REP(k)
+			SPACE REGEX("[A-Z]") SPACE INT(1,n)
+		END
+		NEWLINE
+	END
+ELSE
+	ASSERT(seperator == "--Level:infinite--")
+END
+REGEX("[^\n]*",seperator) NEWLINE
+ASSERT(seperator == "---Map---")
+INT(2,1000,nmap) NEWLINE
+REP(nmap)
+	INT(1,26,k)
+	REP(k)
+		SPACE REGEX("[A-Z]") SPACE INT(1,nmap)
+	END
+	NEWLINE
+END

@@ -1,0 +1,10 @@
+name: Insertion Order
+source: GCPC 2019
+source_url: https://gcpc.nwerc.eu
+author: Paul Wild
+license: cc by-sa
+
+validation: custom
+
+limits:
+    time_multiplier: 3
