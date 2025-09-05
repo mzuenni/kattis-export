@@ -21,7 +21,7 @@ int main() {
 	}
 	
 	int best = INT_MAX;
-	for (int attempt = 0; attempt < 1000000; attempt++) {
+	for (int attempt = 0; attempt < 10000000; attempt++) {
 		random_shuffle(score[0],score[0]+n);
 		int sum = 0;
 		for (int i = 0; i < n; i++) {
