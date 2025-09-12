@@ -6,3 +6,6 @@ author: Paul Wild
 license: cc by-sa
 
 validation: custom
+
+limits:
+  time_multiplier: 1.5

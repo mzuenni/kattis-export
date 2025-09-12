@@ -5,3 +5,6 @@ author: Michael Baer
 license: cc by-sa
 keywords: dp
 validator_flags: float_tolerance 1e-7
+
+limits:
+  time_multiplier: 2.5

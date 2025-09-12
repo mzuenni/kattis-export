@@ -4,3 +4,6 @@ source: GCPC 2018
 author: Alexander Dietsch
 # rights_owner:
 license: cc by-sa
+
+limits:
+  time_multiplier: 2.5

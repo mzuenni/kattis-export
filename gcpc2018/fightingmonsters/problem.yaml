@@ -4,3 +4,6 @@ author: Moritz Fuchs
 license: cc by-sa
 keywords: number theory, fibonacci numbers
 validation: custom
+
+limits:
+  time_multiplier: 1.3
