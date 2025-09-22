@@ -48,7 +48,7 @@ int main(){
 	std::mt19937 eng(rd());
 	std::uniform_int_distribution<> distr(0, N-1);
 
-	FOR(i, 0, 50000000){
+	FOR(i, 0, 5000000){
 		int a = distr(eng);
 		int b = distr(eng);
 		if(a == b) continue;

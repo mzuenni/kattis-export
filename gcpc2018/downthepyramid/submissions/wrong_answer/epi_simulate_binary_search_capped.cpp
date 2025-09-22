@@ -51,7 +51,7 @@ ll find_border_top(vl &numbers, ll bottom, ll top) {
 }
 
 ll find_poss(vl &numbers, ll bottom, ll top) {
-  ll counter = 0, counter_stop = 10000;
+  ll counter = 0, counter_stop = 1000;
   queue<pll> q;
   q.push({bottom, top});
   while(!q.empty()) {
