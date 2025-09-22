@@ -1,11 +1,13 @@
 name: Bouldering
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Christian Müller
 license: cc by-sa
-keywords: medium - Graph, Geometry, Dynamic Programming
 validation: default
 validator_flags: float_tolerance 1e-6
 
 limits:
-    time_multiplier: 1.5
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: 5a2088c5-72aa-44e8-af47-10331aaf5c9d

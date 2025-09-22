@@ -1,8 +1,14 @@
 name: Assessing Genomes
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Tobias Meggendorfer
 license: cc by-sa
 keywords: medium
 
 validation: default
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: 0932a4dd-763c-4799-b442-8bb38cdc9cc2

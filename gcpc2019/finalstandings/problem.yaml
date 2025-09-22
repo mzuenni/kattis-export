@@ -1,7 +1,13 @@
 name: Final Standings
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Gregor Behnke
 license: cc by-sa
 
 validator_flags: float_tolerance 1e-6
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: 1f04c656-989d-43e9-978f-b4e6334d49f7

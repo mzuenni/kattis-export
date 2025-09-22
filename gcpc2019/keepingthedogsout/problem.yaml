@@ -1,7 +1,13 @@
 name: Keeping the Dogs Out
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Julian Baldus
 license: cc by-sa
 
 validation: custom
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: a85f1820-737b-42f2-9d82-50ce216149db

@@ -1,6 +1,12 @@
 name: Historical Maths
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Alexander Dietsch
 license: cc by-sa
 validation: custom
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: 5e83e945-a7cb-4b22-afe4-c77113aa9a9c

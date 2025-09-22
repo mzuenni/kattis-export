@@ -1,7 +1,13 @@
 name: Long-Exposure Photography
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Philipp Reger
 license: cc by-sa
 
 validator_flags: float_tolerance 1e-6
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: 9914a750-b24d-4957-9e16-e00d995373d0

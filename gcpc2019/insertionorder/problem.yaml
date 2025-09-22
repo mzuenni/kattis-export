@@ -1,10 +1,13 @@
 name: Insertion Order
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Paul Wild
 license: cc by-sa
 
 validation: custom
 
 limits:
-    time_multiplier: 3
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: b3f6d18c-251d-450e-9c31-5ea9ad5f8d09

@@ -1,5 +1,11 @@
 name: Colourful Chameleons
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Gregor Schwarz
 license: cc by-sa
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+uuid: 021a1d9a-3910-42b5-bc98-06b9f3527bd9

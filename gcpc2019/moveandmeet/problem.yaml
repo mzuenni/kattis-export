@@ -1,7 +1,10 @@
 name: Move & Meet
-source: GCPC 2019
+source: German Collegiate Programming Contest (GCPC) 2019
 source_url: https://gcpc.nwerc.eu
+rights_owner: author
 author: Philipp Reger
 license: cc by-sa
 
 validation: custom
+
+uuid: bbf139f0-6ec6-47b4-9bc6-778d42c3a237
