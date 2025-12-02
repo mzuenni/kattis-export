@@ -1,0 +1,50 @@
+solution: /submissions/accepted/maarten-precision-15.cpp
+version: 2025-08  # use this version of the generators framework
+
+test_group.yaml:
+  # One or more of:
+  # case_sensitive
+  # space_change_sensitive
+  # float_absolute_tolerance eps
+  # float_relative_tolerance eps
+  # float_tolerance eps
+  output_validator_args: [float_tolerance, "1e-9"]
+
+data:
+  sample:
+    data:
+      # Some small examples showing to help understanding of the problem.
+      - '':
+          in: "2025"
+      - '':
+          in: "123456789"
+
+  secret:
+    data:
+      - min:
+          in: "1"
+      - max:
+          in: "1000000000"
+
+      - 1k:
+          in: "1000"
+      - 1M:
+          in: "1000000"
+      - pi:
+          in: "314159265"
+
+      - up-to-10:
+          generate: generator {seed} -d 2..10
+          count: 3
+
+      - up-to-1k:
+          generate: generator {seed} -d 11..1000
+          count: 20
+
+      - up-to-1M:
+          generate: generator {seed} -d 1001..1000000
+          count: 20
+
+      - up-to-1G:
+          generate: generator {seed} -d 1000001..1000000000
+          count: 20
