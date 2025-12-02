@@ -1,0 +1,98 @@
+solution: /submissions/accepted/weyand.py
+#visualizer: /visualizers/asy.sh
+
+data:
+  sample:
+    data:
+      - "":
+          in: "8"
+          ans: "3"
+      - "":
+          in: "5"
+          ans: "2"
+      - "":
+          in: "6"
+          ans: "5"
+
+  secret:
+    data:
+      - just3: { in: "3" }
+      - just4: { in: "4" }
+      # - just5: { in: '5' }
+      # - just6: { in: '6' }
+      - just7: { in: "7" }
+      # - just8: { in: "8" }
+      - just9: { in: "9" }
+      - just10: { in: "10" }
+      - just11: { in: "11" }
+      - just12: { in: "12" }
+      - just13: { in: "13" }
+      - just14: { in: "14" }
+      - just15: { in: "15" }
+      - just16: { in: "16" }
+      - just17: { in: "17" }
+      - just18: { in: "18" }
+      - just19: { in: "19" }
+      - just20: { in: "20" }
+
+      - prime_gap_exclusive: { in: "436273290" }
+      - prime_gap_inclusive: { in: "436273291" } # the next smaller prime is 436.273.009
+      - maximal: { in: "1000000000" }
+
+      - small:
+          generate: rand.py {seed} 21 1000
+          count: 10
+
+      - medium:
+          generate: rand.py {seed} 1000 1000000
+          count: 10
+
+      - large:
+          generate: rand.py {seed} 1000000 500000000
+          count: 10
+
+      - large:
+          generate: rand.py {seed} 500000000 999999999
+          count: 10
+
+      - pow2sub1: { in: "536870911" }
+      - pow2: { in: "536870912" }
+      - pow2add1: { in: "536870913" }
+
+      - pow2sub1: { in: "268435455" }
+      - pow2: { in: "268435456" }
+      - pow2add1: { in: "268435457" }
+
+      - pow3sub1: { in: "387420488" }
+      - pow3: { in: "387420489" }
+      - pow3add1: { in: "387420490" }
+
+      - factorialprimesub1: { in: "479001598" }
+      - factorialprime: { in: "479001599" }
+      - factorial12: { in: "479001600" }
+
+      - factorialdoublesub1: { in: "958003197" }
+      - factorialdouble: { in: "958003198" }
+      - factorialdoubleadd1: { in: "958003199" }
+
+      - primorialsub1: { in: "223092869" }
+      - primorial: { in: "223092870" }
+      - primorialadd1: { in: "223092871" }
+
+      - compositesub1: { in: "2162159" }
+      - composite: { in: "2162160" }
+      - compositeadd1: { in: "2162161" }
+
+      - compositesub1: { in: "735134399" }
+      - composite: { in: "735134400" }
+      - compositeadd1: { in: "735134401" }
+
+      - semiprimesub1: { in: "909591252" }
+      - semiprime: { in: "909591253" }
+      - semiprimeadd1: { in: "909591254" }
+
+  invalid_answer:
+    data:
+      too_large:
+        in: "99"
+        ans: "100"

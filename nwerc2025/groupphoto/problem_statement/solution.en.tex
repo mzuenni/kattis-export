@@ -1,0 +1,46 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+		Given a permutation, reorder as few elements as possible to make it
+		mountain-shaped (first increasing then decreasing) in $\mathcal{O}(n \log n)$.
+    \end{block}
+    \pause
+    \begin{block}{First insight}
+		If we place elements from smallest to largest, each element will go to
+		one of the borders.
+
+		This leads to a quadratic DP with state space
+		\[(\text{Num elements placed on the left so far, Num elements placed on the right so far}).\]
+
+		Transition value is $0$ if element is misplaced, and $1$ if it stays where it is.
+    \end{block}
+\end{frame}	
+\begin{frame}
+    \frametitle{\problemtitle}
+	\begin{block}{Visualizing the DP state space}
+
+		\begin{columns}
+			\begin{column}[T]{0.5\textwidth}
+
+				\uncover<1->{Need to find path from top left to bottom right that
+			\begin{itemize}
+				\item only moves down and right, and
+				\item hits as many arrows as possible.
+			\end{itemize}}
+
+			\uncover<2->{Key insight: there are at most $2n$ arrows!}
+
+
+			\uncover<3->{Possible approaches:
+			\begin{itemize}
+				\item Rephrase DP as Longest Increasing Subsequence.
+				\item Quickly simulate DP using segment tree or ordered set.
+			\end{itemize}}
+		\end{column}
+		\begin{column}[T]{0.4\textwidth}
+			\includegraphics[width=0.9\textwidth]{007-overwrite-modified.pdf}
+		\end{column}
+		\end{columns}
+	\end{block}
+	\uncover<4->{\solvestats}
+\end{frame}

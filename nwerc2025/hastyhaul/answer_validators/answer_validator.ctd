@@ -1,0 +1,3 @@
+REGEX("[a-z]+", s)
+NEWLINE
+EOF

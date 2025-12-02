@@ -1,0 +1,112 @@
+solution: /submissions/accepted/nils.py
+#visualizer: /visualizers/asy.sh
+version: 2025-02 # use this version of the generators framework
+
+# Explanation of generators:
+# long-intervals.py: people leave at 0..n, and come back at n..2n in random order.
+# - todo: choose k much smaller than n-1.
+# gaps.py: each person is always gone (from i to LARGE+i), apart from a gap of size 1
+# - todo: variable size gaps of exponentially distributed length
+# rand.py:
+# 1. predetermine all interval start/ends
+# 2. at each point in time: try `weight` random people and if they are inside
+#    make them leave
+# 3. otherwise make an outside person come in.
+# - todo: change the probability of making a person leave.
+# multitest.py: for fixed n and k, generate many small random possible testcases and concatenate them
+
+data:
+  sample:
+    data:
+      - "":
+          in: |
+            3 2 5
+            3 0 9
+            1 2 18
+            2 4 7
+            3 12 22
+            2 14 20
+          ans: "01110"
+      - "":
+          in: |
+            2 1 2
+            1 2 4
+            2 1 3
+
+      - "":
+          in: |
+            2 1 3
+            1 1 5
+            2 2 3
+            2 4 6
+
+  secret:
+    data:
+      - "anti-backtrack": ragnar.cpy 1475835201
+      - "anti-backtrack": ragnar.cpy 136955910
+      - gaps:
+          generate: gaps.py {seed} 50000 49999
+      - "anti-backtrack": ragnar.cpy 1714354697
+      - "":
+          in: |
+            1 1 2
+            1 0 1
+            1 999999999 1000000000
+      - nested-anti-weird: nested-anti-weird.py {seed} 33333
+
+      - "anti-backtrack": ragnar.cpy 755451641
+      - "":
+          in: |
+            1 1 1
+            1 0 1000000000
+      - multitest: multitest.py {seed} 3 1 100000 20
+      - "anti-backtrack": ragnar.cpy 349666232
+      - multitest: multitest.py {seed} 10 5 100000 40
+      - gaps:
+          generate: gaps.py {seed} 50000 50000
+      - "anti-paul-quadratic": ragnar.cpy 1398966215
+      - multitest: multitest.py {seed} 5 2 100000 20
+      - two-people: twopeople.py {seed} 100000 100
+      - multitest: multitest.py {seed} 10 2 100000 80
+      - multitest: multitest.py {seed} 4 2 100000 8
+
+      - two-people: twopeople.py {seed} 100000 40000
+      - two-people: twopeople.py {seed} 100000 3
+      - long-intervals-one-key: long-intervals.py {seed} 1
+      - "":
+          in: |
+            3 2 5
+            1 3 8
+            2 1 4
+            2 6 9
+            3 2 5
+            3 7 10
+      - long-intervals: long-intervals.py {seed} 99999
+      - "":
+          in: |
+            3 1 5
+            1 3 8
+            2 1 4
+            2 6 9
+            3 2 5
+            3 7 10
+      - "anti-paul-quadratic": ragnar.cpy 1406351507
+      - random_max: rand.py {seed} 100000 100000 100000 20000
+      - random_small:
+          generate: rand.py {seed} 20 5 1000 5
+          count: 5
+      - random_medium:
+          generate: rand.py {seed} 1000 100 100000 200
+          count: 5
+      - random_large:
+          generate: rand.py {seed} 10000 10000 100000 200
+          count: 5
+      - random_large_few_keys:
+          generate: rand.py {seed} 10000 100 100000 200
+          count: 5
+      - multitest:
+          generate: multitest.py {seed} 4 2 100000 16
+          count: 4
+      - ragnar:
+          generate: ragnar.cpy {seed}
+          count: 50

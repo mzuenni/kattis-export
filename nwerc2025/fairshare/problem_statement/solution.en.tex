@@ -1,0 +1,29 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}
+   	    %Given $n$ people each with amount of cash $a_i$ and share of the bill $b_i$, choose a person $i$ which does not pay more than $b_i$ if they pay the bill and get all cash from the others.
+            \item There are $n$ people who each have $a_i$ cash and a bill of $b_i$.
+            \item Choose a person $i$ which does not pay more than $b_i$ if they pay the bill and get all cash from others.
+
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Observation}
+        \begin{itemize}
+            \item The $i$th person can pay, if: $(\sum_{j = 1}^n b_j) - (\sum_{j = 1}^n a_j) + a_i \leq b_i$.
+            \item This is equivalent to: $(\sum_{j = 1}^n b_j) - (\sum_{j = 1}^n a_j) \leq b_i - a_i$
+            %\item The problem can be reformulated to: find $i$ such that $\sum_{j = 1}^n b_j - \sum_{j = 1}^n a_j \leq b_i - a_i$
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Precompute $S = (\sum_{j = 1}^n b_j) - (\sum_{j = 1}^n a_j)$.
+        \item For each $i$ check whether $S \leq b_i - a_i$.
+        \item Runtime: $\mathcal{O}(n)$.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

@@ -1,0 +1,119 @@
+solution: /submissions/accepted/sol.cpp
+version: 2025-04  # use this version of the generators framework
+
+data:
+  sample:
+    data:
+      - '':
+          in: |
+            42
+          ans: |
+            4
+            10 20 10 2
+      - '':
+          in: |
+            40
+      - '': echo.py 5
+      - '':
+          in: |
+            52
+          ans: |
+            2
+            2 50
+
+  secret:
+    data:
+      - multiple-100-5600: echo.py 5600
+      - paul: echo.py 9844
+      - needs-5: echo.py (random.seed(1092322285), randrange(1, 10_000))[1]
+      - multiple-100-4800: echo.py 4800
+      - multiple-100-4100: echo.py 4100
+      - smallest: echo.py 2
+      - needs-10: echo.py (random.seed(1566231281), randrange(1, 10_000))[1]
+      - needs-50: echo.py (random.seed(1832062097), randrange(1, 1000))[1]
+
+      - paul: echo.py 9804
+      - smallest: echo.py 1
+      - needs-100: echo.py (random.seed(1982911384), randrange(1, 1000))[1]
+      - smallest: echo.py 3
+      - multiple-100-4600: echo.py 4600
+      - multiple-100-5800: echo.py 5800
+      - multiple-100-4500: echo.py 4500
+      - multiple-100-5100: echo.py 5100
+      - multiple-100-5300: echo.py 5300
+      - multiple-100-5500: echo.py 5500
+      - multiple-100-5700: echo.py 5700
+      - multiple-100-5900: echo.py 5900
+      - multiple-100-4300: echo.py 4300
+      - multiple-100-4700: echo.py 4700
+      - multiple-100-4900: echo.py 4900
+      - '':
+          generate: echo.py 4+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 40+1000*{count} #40 is sample
+          count: 9
+      - '':
+          generate: echo.py 44+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 400+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 404+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 440+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 444+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 1000+1000*({count}-1)
+          count: 10
+      - '':
+          generate: echo.py 1200+1000*({count}-1)
+          count: 9
+      - '':
+          generate: echo.py 1204+1000*({count}-1)
+          count: 9
+      - '':
+          generate: echo.py 1240+1000*({count}-1)
+          count: 9
+      - '':
+          generate: echo.py 1244+1000*({count}-1)
+          count: 9
+      - small:
+          generate: echo.py (random.seed({seed}), randrange(1, 1000))[1]
+          count: 10
+      - large:
+          generate: echo.py (random.seed({seed}), randrange(1, 10_000))[1]
+          count: 50
+      - large-close-to-max:
+          generate: echo.py (random.seed({seed}), randrange(9900, 10_000))[1]
+          count: 10
+  invalid_output:
+    data:
+      typo:
+        in: "4"
+        ans: "splittable"
+        out: "splitable"
+      empty:
+        in: "4"
+        ans: "splittable"
+        out: ""
+      invalid_note:
+        in: "42"
+        ans: "4\n10 20 10 2"
+        out: "2\n21 21"
+      wrong_sum:
+        in: "42"
+        ans: "4\n10 20 10 2"
+        out: "2\n20 20"
+
+  valid_output:
+    data:
+      wrong_case:
+        in: "4"
+        ans: "splittable"
+        out: "SpLiTtAbLe"

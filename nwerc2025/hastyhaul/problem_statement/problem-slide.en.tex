@@ -1,0 +1,21 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.70\textwidth}
+            \begin{itemize}
+              \item You need to find a strategy with no risk for moving furniture around in the registration room.
+              \item The room has at most $64$ slots to place furniture, at least one slot has furniture, at least one slot is empty.
+              \item This strategy must be such that if it is applied twice, you return to the original state. It must also not have any state as a fixed point.
+              \item The possible states of a room with $n$ slots and $k$ pieces of furniture can be represented as a bitstring of $n$ bits and $k$ ones.
+              \item The strategy is thus a perfect matching on this set of states, if one exists.
+              \item This is a multi-pass problem with up to $10\,000$ test cases per run.
+            \end{itemize}
+        \end{column}
+
+        \illustration{0.25}{tables-small.jpg}{
+            The registration area at NWERC 2024. \\
+            Photo by Maarten Sijm
+        }
+    \end{columns}
+\end{frame}

@@ -1,0 +1,45 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}  
+            \item Given $n \leq 2 \cdot 10^5$ axis-aligned lines in 2D.
+            \item Horizontal lines do not touch horizontal ones, same for vertical.
+            \item Move one line to form a square.
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{minipage}[t]{0.8\textwidth}
+            \begin{itemize}
+                \item If there exist a rectangle, it is always possible.
+                \item If there are more than $2n$ intersections, there exists a rectangle.
+                \item We only look for U-shapes, where the new line is moved to the top.
+                \item For a horizontal line look at its intersections.
+                \item Fix the smaller of the two vertical lines.
+                \item We only need to check the closest taller vertical line to the left and right.
+            \end{itemize}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.15\textwidth}
+            \vspace{-0.5cm}
+            \includegraphics[width=0.7\linewidth]{figure1}
+            \includegraphics[width=0.7\linewidth]{figure2}
+        \end{minipage}
+        
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Implementation}
+        \begin{itemize}
+            \item For simplicity, try all four $90$ degree rotations separately.
+            \item Calculate all intersections via a sweepline, quit if there are too many.
+            \item Iterate over horizontal lines, sort intersecting vertical lines by decreasing height.
+            \item Sweepline over the vertical line, lookup the neighboring lines in a set.
+            \item Check if there already are upper horizontal lines at the correct height.
+            \item Check which length are currently used and if the remaining longest one is enough.
+            \item Careful: you may need to move one of the upper horizontal lines.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

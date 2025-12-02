@@ -1,0 +1,60 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+
+    \begin{columns}
+        \begin{column}[T]{.70\textwidth}
+            \begin{itemize}
+                \item You are given a permutation $(a_i)_{1 \le i\le n}$ of the numbers $1$ to $n \leq 5\cdot 10^5$.
+				\item You want to turn it into a ``mountain-shaped'' permutation $(b_i)_{1 \le i\le n}$,
+					meaning it is first increasing and then decreasing.
+				\item You want to keep as many indices of the permutation the same,
+                    so maximize the number of $i$ such that $a_i = b_i$.
+				\item What is the smallest number of indices that need to change?
+            \end{itemize}
+
+			\begin{figure}
+				\centering
+	
+				% Thank you ChatGPT
+				\begin{tikzpicture}[ bar/.style={draw, fill}, scale=0.55]
+				
+				\def\n{6}
+				\def\width{1}
+				\def\height{0.5}
+				
+				\def\A{1,6,4,3,2,5}
+				\def\B{5,6,4,3,2,1}
+				
+				\begin{scope}[shift={(0,0)}]
+				  \foreach [count=\i] \x in \A {
+				    \draw[bar] (\i*\width, 0) rectangle ++(\width, \x*\height);
+				  }
+				\end{scope}
+				
+				\draw[-{Latex[length=10mm,width=6mm]}, thick]
+				  (\width*\n+2,1.5) -- ++(3,0);
+				
+				\begin{scope}[shift={( \width*\n+5,0)}]
+				  \foreach [count=\i] \x in \B {
+					  \draw[bar] (\i*\width, 0) rectangle ++(\width, \x*\height);
+				  }
+				\end{scope}
+				
+				\end{tikzpicture}
+
+        \vspace{0.5em}
+        \small
+        Illustration of Sample 1, where it's optimal to swap the first and last element. \\
+        The answer is therefore $2$.
+			\end{figure}
+
+
+        \end{column}
+
+        \illustration{0.25}{pexels-pnw-prod-7625047-small.jpg}{
+            Illustration of Sample Input 1.
+            Free Pexels License by~PNW~Production on \href{https://www.pexels.com/photo/people-supporting-each-other-7625047/}{Pexels}
+        }
+    \end{columns}
+
+\end{frame}

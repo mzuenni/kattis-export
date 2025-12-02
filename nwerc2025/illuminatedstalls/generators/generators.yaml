@@ -1,0 +1,267 @@
+solution: /submissions/accepted/lucas.cpp
+#solution: /submissions/accepted/submission.py
+version: 2025-02 # use this version of the generators framework
+
+#testdata.yaml:
+# One or more of:
+# case_sensitive
+# space_change_sensitive
+# float_absolute_tolerance eps
+# float_relative_tolerance eps
+# float_tolerance eps
+#output_validator_args:
+
+data:
+  sample:
+    data:
+      # Some small examples showing to help understanding of the problem.
+      # Or to preserve newlines:
+      - "":
+          in: |
+            5
+            4
+            0 0 0 1
+            0 1 1 1
+            1 0 1 1
+            0 0 1 0
+            4
+            0 0 0 4
+            0 4 4 4
+            4 0 4 4
+            10 10 10 14
+            5
+            0 0 0 4
+            0 4 4 4
+            3 1 4 1
+            4 0 4 4
+            10 10 10 13
+            5
+            0 0 0 4
+            0 4 4 4
+            4 0 4 4
+            3 0 4 0
+            10 10 10 13
+            9
+            1 3 6 3
+            2 1 2 8
+            2 7 8 7
+            4 6 6 6
+            6 7 6 8
+            5 5 7 5
+            6 2 6 4
+            7 3 11 3
+            9 1 9 5
+          ans: "yes\nyes\nno\nyes\nyes\n"
+
+  secret:
+    data:
+      - one-u: oneU --seed {seed} --min_n 6 --max_n 7
+      - one-u: oneU --seed {seed} --min_n 8 --max_n 10
+
+      - manyintersections: manyintersections.py 10000 1 200000
+      - 4-3rd-twice: 4-3-twice.py 199996 1 0
+      - manual-u:
+          copy: manual/manual-u
+      - 4-3rd-twice: 4-3-twice.py 199996 1 1
+      - anti-lucas-bug6:
+          copy: manual/anti-lucas-bug6
+
+      - manyintersections: manyintersections.py 200000 1 10000
+
+      - valley: valley.py 200000 0 199997
+      - manual:
+          copy: manual/manual1
+      - 4-3rd-twice: 4-3-twice.py 199996 1 2
+      - fuzz: random-interesting.py 10 10 1897448329
+      - valley: valley.py 200000 1 199996
+      - manyintersections: manyintersections.py 10000 200000 1
+      - 4-3rd-twice: 4-3-twice.py 199996 1 3
+
+      - grid2: grid2.py 200000 1000000000
+      - valley: valley.py 200000 13871 172412
+      - grid-coprime: grid-coprime.py 60000 1000000000
+      - spiral: spiral.py 200000 200000 0
+      - fuzz:
+          copy: fuzz/fuzz1
+      # - fuzz: incremental --seed 828660591 --mx 10
+      #
+      - 6-5th-intersections: 6-5th-intersections.py 199996
+      - manyintersections: manyintersections.py 200000 10000 10000
+      - comb-hook: comb-hook.py 200000 0 0
+      - 4-3rd-intersections: 4-3rd-intersections.py 200000
+      - manyintersections: manyintersections.py 200000 4999 4999
+      - comb-hook-tight: comb-hook.py 200000 0 1
+      - manyintersections: manyintersections.py 200000 10000 1
+      - 4-3rd-intersections-small: 4-3rd-intersections.py 98
+
+      - 4-3rd-twice: 4-3-twice.py 199996 0 0
+      - vlad: vlad.py
+
+      - www-breaker-yes:
+          generate: www-breaker-yes.py {seed}
+          count: 5
+
+      - 4-3rd-twice: 4-3-twice.py 199996 0 1
+      - valley: valley.py 200000 99998
+
+      - 4-3rd-twice: 4-3-twice.py 199996 0 2
+      - 4-3rd-twice: 4-3-twice.py 199996 0 3
+      - comb: comb.py 200000 0
+      - spiral-skew: spiral.py 200000 200000 1
+      - comb: comb.py 200000 1
+      - yidi-simplified-worst: yidi-simplified-worst-case.py 0 0
+      - yidi-simplified-worst: yidi-simplified-worst-case.py 0 1
+      - yidi-simplified-worst: yidi-simplified-worst-case.py 1 0
+      - yidi-simplified-worst: yidi-simplified-worst-case.py 1 1
+      - n-intersections:
+          copy: manual/n-intersections
+      - many-no: many-no --seed {seed} --n 200000 --box 10 --max 5 --chunk 20
+      - many-no: many-no --seed {seed} --n 200000 --box 25 --max 7 --chunk 40
+      - many-no: many-no --seed {seed} --n 200000 --box 40 --max 10 --chunk 50
+
+      - staircase: staircase.py 200000 -1
+
+      - anderthalb-n-no: anderthalb-n-intersections.py
+      - 3-half-twice:
+          generate: 3-half-twice.py {seed}
+          count: 5
+      - 3-half-twice: 3-half-twice.py 0
+
+      - spiral-small: spiral.py 100 100 0
+      - tree-small: tree.py 100 0
+      - tree: tree.py 200000 0
+      - tree-tight-small: tree.py 100 1
+      - tree-tight: tree.py 200000 1
+      - comb-hook-small: comb-hook.py 100 0 0
+      - comb-hook-small: comb-hook.py 100 1 0
+      - comb-hook-tight-small: comb-hook.py 100 0 1
+      - comb-hook-tight-small: comb-hook.py 100 1 1
+      - comb-hook: comb-hook.py 200000 1 0
+      - comb-hook-tight: comb-hook.py 200000 1 1
+
+      - not-neighboring:
+          copy: manual/not-neighboring
+      - unit-square:
+          in: |
+            2
+            4
+            0 0 0 1
+            0 1 1 1
+            1 0 1 1
+            0 0 1 0
+            4
+            0 0 0 2
+            0 2 1 2
+            1 0 1 2
+            0 0 1 0
+      - unit-square-shifted:
+          in: |
+            2
+            4
+            999999999 999999999 1000000000 999999999
+            999999999 999999999 999999999 1000000000
+            999999999 1000000000 1000000000 1000000000
+            1000000000 999999999 1000000000 1000000000
+            4
+            99999999 999999999 100000000 999999999
+            99999999 999999999 99999999 1000000000
+            99999999 1000000000 100000000 1000000000
+            100000000 999999999 100000000 1000000000
+      - max-square:
+          in: |
+            2
+            4
+            0 0 1000000000 0
+            1000000000 0 1000000000 1000000000
+            0 1000000000 1000000000 1000000000
+            0 0 0 1000000000
+            4
+            0 0 10000000 0
+            10000000 0 10000000 1000000000
+            0 1000000000 10000000 1000000000
+            0 0 0 1000000000
+      - hashtag:
+          in: |
+            2
+            4
+            0 1 3 1
+            0 2 3 2
+            1 0 1 3
+            2 0 2 3
+            4
+            0 1 9 1
+            0 2 9 2
+            3 0 3 3
+            6 0 6 3
+
+      - grid-small: grid.py 100
+      - grid: grid.py 200000
+      - grid2-small: grid2.py 100 100
+      - grid-coprime-small: grid-coprime.py 20 110
+      - hairy-u: hairy-u.py
+
+      - staircase: staircase.py 200000 5
+      - staircase: staircase.py 200000 6
+      - staircase: staircase.py 200000 199979
+      - staircase: staircase.py 200000 199980
+      - staircase: staircase.py 200000 99999
+      - staircase: staircase.py 200000 100000
+      - 4-3rd-twice-small: 4-3-twice.py 88 0 0
+      - spiral-small-skew: spiral.py 100 100 1
+      - comb-small: comb.py 100 0
+      - comb-small: comb.py 100 1
+      - vlad-worst: vlad-worst.py
+      - www-breaker: www-breaker.py
+      - all-horizontal: all-horizontal.py {seed} 0
+      - all-horizontal: all-horizontal.py {seed} 1
+
+      - random-small:
+          generate: random --seed {seed} --min_n 8 --max_n 20 --mx 15
+          count: 10
+      - random-interesting:
+          generate: random-interesting.py 10 10 {seed}
+          count: 10
+
+      - incremental-small:
+          generate: incremental --seed {seed} --n 100 --mx 10
+          count: 10
+      - incremental-false:
+          generate: incremental --seed {seed} --n 2500 --mx 50 --possible 0 --len1 10
+          count: 10
+      - incremental-true:
+          generate: incremental --seed {seed} --n 2500 --mx 50 --possible 1 --len1 10
+          count: 10
+
+      - 4-3rd-yes:
+          generate: 4-3-yes.py 200000 {seed}
+          count: 5
+
+      - uneven-comb: uneven-comb.py
+
+  invalid_input:
+    # Add invalid test cases to ensure that input_validators correctly rejects them.
+    data: []
+      #invalid_test_case_input:
+      #  in: "<invalid input>"
+
+  invalid_answer:
+    # Add valid test cases with invalid answers to ensure that the answer_validators correctly rejects them.
+    # (The output validator is also called with these)
+    data: []
+      #invalid_test_case_answer:
+      #  in: "<valid input>"
+      #  ans: "<invalid answer>"
+
+  invalid_output:
+    # Add valid test cases with answer and invalid team output to ensure that the output_validator correctly rejects them.
+    data: []
+      #invalid_test_case_output:
+      #    in: "<valid input>"
+      #    ans: "<valid answer>"
+      #    out: "<invalid output>"
+
+  valid_output:
+    # Add valid test cases with answer and team output to ensure that the output_validator correctly accepts them.
+    data: []
+  fuzz:
+    data:

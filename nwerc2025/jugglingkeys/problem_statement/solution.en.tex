@@ -1,0 +1,33 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+    	Given $n$ people sharing an apartment with $k$ keys going on $q$ trips, find who needs to take a key such that no one arrives to an empty apartment without a key.
+    \end{block}
+    \pause
+    \begin{block}{Observation}
+        A trip only needs a key if it ends when the apartment is empty.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\problemtitle}
+	\begin{block}{Problem}
+    	Given $n$ people sharing an aparment with $k$ keys going on $q$ trips, find who needs to take a key such that no one arrives to an empty apartment without a key.
+    \end{block}
+    \begin{block}{Solution}
+    	\begin{itemize}
+        \item Simulate while keeping track of the number of people in the apartment.
+        	\begin{itemize}
+        	\item Loop through a sorted array of all arrivals and departures.
+        	\item If a person arrives to an empty apartment, they should have taken a key. \pause
+        	\end{itemize}
+        \item Do a second simulation while keeping track of the number of keys in the apartment.
+        	\begin{itemize}
+        	\item If this ever becomes negative, output ``\texttt{impossible}''. \pause
+        	\end{itemize}
+        \item Runtime: $\mathcal{O}(n \log n)$.
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

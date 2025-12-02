@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix,backgrounds}
+
+\begin{document}
+\begin{tikzpicture}
+  \matrix (m) [matrix of nodes,
+                nodes={minimum size=5mm, anchor=center, inner sep=0pt},
+                row sep=-\pgflinewidth,
+                column sep=-\pgflinewidth]
+  {
+    I & K & I & I & T \\ 
+    K & K & T & K & T \\ 
+    I & T & I & T & I \\ 
+    K & T & T & K & I \\ 
+  };
+\end{tikzpicture}
+\end{document}
+

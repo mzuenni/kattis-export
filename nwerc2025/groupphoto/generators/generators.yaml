@@ -1,0 +1,253 @@
+solution: /submissions/accepted/author.cpp
+#solution: /submissions/accepted/submission.py
+#visualizer: /visualizers/asy.sh
+version: 2025-02 # use this version of the generators framework
+
+#testdata.yaml:
+# One or more of:
+# case_sensitive
+# space_change_sensitive
+# float_absolute_tolerance eps
+# float_relative_tolerance eps
+# float_tolerance eps
+#output_validator_args:
+
+data:
+  sample:
+    data:
+      - "":
+          in: |
+            6
+            1 6 4 3 2 5
+      - "":
+          in: |
+            5
+            4 3 2 1 5
+      - "":
+          in: |
+            4
+            1 2 4 3
+
+      - "":
+          in: |
+            10
+            1 2 7 4 5 6 3 8 9 10
+
+      # Or to preserve newlines:
+      #- '':
+      #    in: |
+      #      1 2
+      #      3 4
+      #    ans: |
+      #      3
+      #      7
+
+  secret:
+    data:
+      - max: rand_shuffle.py {seed} 500000 10000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 1 1 10000
+      - interleave: interleave.py 250000 normal
+      - interleave: interleave.py 250000 inv
+      - max: rand_shuffle.py {seed} 500000 200000
+      - max: rand_shuffle.py {seed} 500000 498500
+      - interleave-rand: interleave_rand.py {seed} 27 2 1 2
+      - desc: asc-desc.py 0 500000 normal
+      - max: rand_shuffle.py {seed} 500000 400000
+      - overwrite:
+          generate: rand.py 704301811 10
+      - max: rand_shuffle.py {seed} 500000 499200
+      - max: rand_shuffle.py {seed} 500000 450000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 2 1 20000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 1 2 200000
+      - ascdesc: asc-desc.py 100000 400000 inv
+      - interleave-rand-max: interleave_rand.py {seed} 500000 2 2 150000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 3 1 30000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 3 2 100000
+        # Quite a lot of swaps here, to hide the planted lists very well.
+      - max: rand_shuffle.py {seed} 500000 1000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 1 1 250000
+      - max: rand_shuffle.py {seed} 500000 50000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 2 1 300000
+      - max: rand_shuffle.py {seed} 500000 100000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 2 2 1000000
+      - max: rand_shuffle.py {seed} 500000 100
+      - max: rand_shuffle.py {seed} 500000 499700
+      - maximaleven:
+          generate: maximal_even.py 250000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 1 2 800000
+      - asc: asc-desc.py 500000 0 normal
+      - interleave-rand-max: interleave_rand.py {seed} 500000 1 1 2000000
+      - max: rand_shuffle.py {seed} 500000 0
+      - interleave-rand-max: interleave_rand.py {seed} 500000 2 2 2500000
+
+      # You can re-use the input validator by symlinking it as `generator` in
+      # this directory. Below is some inspiration for test cases.
+      #
+      # Use `-X` to set the value of variable `X`, as provided to the `read_*` functions.
+      # Use `min` and `max` to set variables to their minimum and maximum
+      # allowed values.
+      #- min: generator {seed} -n min -k min -ai min
+      #- max: generator {seed} -n max -k max -ai max
+      # Leave a variable out to pick a uniform random value.
+      #- random_a: generator {seed} -n max
+      # Provide an explicit list of values:
+      #- binary: generator {seed} -ai 0,1
+      # Provide probabilities for each value:
+      #- mostly_0: generator {seed} -ai 0:0.99,1:0.01
+      # Uniform random values in range:
+      #- small_a: generator {seed} -n 10 -ai 1..100
+      # Use a geometric distribution (see validation.h for more):
+      #- geometric: generator {seed} -n 100 -k 123 -ai geometric(0.1)
+
+      # Manual cases can be added like this:
+      #- copied:
+      #    copy: manual/testcase
+      # They should be written to somewhere inside generators/ and will be
+      # copied into data/.
+      # You can also dump them in data/secret and run `bt generate --add-unlisted`.
+
+      # Typically, small test cases are more likely to find bugs/edge cases.
+      # When the limit on n is 1000, do something like:
+      #- small: generator {seed} -n 1
+      #- small: generator {seed} -n 2
+      #- small: generator {seed} -n 3
+      #- small: generator {seed} -n 7
+      #- small: generator {seed} -n 13
+      #- medium: generator {seed} -n 85
+      #- medium: generator {seed} -n 103
+      #- medium: generator {seed} -n 243
+      #- large: generator {seed} -n 991
+      #- large: generator {seed} -n 999
+      #- large: generator {seed} -n 1000
+
+      # Many testcases with the same parameter can be generated like this:
+      #- large:
+      #    generate: generator {seed:1} -n 1000
+      #    count: 10
+
+      - max: rand_shuffle.py {seed} 500000 5
+      - interleave-rand: interleave_rand.py {seed} 501 2 1 0
+      - maximalodd:
+          generate: maximal_odd.py 250000
+      - interleave-rand: interleave_rand.py {seed} 503 1 2 0
+      - ascdesc: asc-desc.py 250000 250000 inv
+      - interleave-rand: interleave_rand.py {seed} 504 2 2 0
+      - ascdesc: asc-desc.py 250000 250000 normal
+      - interleave-rand: interleave_rand.py {seed} 506 1 1 10
+      - interleave-rand: interleave_rand.py {seed} 507 2 1 20
+      - interleave-rand: interleave_rand.py {seed} 510 2 2 50
+      - max: rand_shuffle.py {seed} 500000 490000
+      - max: rand_shuffle.py {seed} 500000 495000
+      - max: rand_shuffle.py {seed} 500000 498000
+        # Around here the answer is still to move pretty much all but the fixed 1000
+      - max: rand_shuffle.py {seed} 500000 499000
+      - max: rand_shuffle.py {seed} 500000 499500
+      - max: rand_shuffle.py {seed} 500000 499900
+
+      - interleave-rand-max: interleave_rand.py {seed} 500000 3 2 1500000
+      - interleave-rand-max: interleave_rand.py {seed} 500000 3 1 500000
+      - interleave-rand: interleave_rand.py {seed} 511 3 2 60
+
+      - interleave-rand: interleave_rand.py {seed} 23 1 2 0
+      - interleave-rand: interleave_rand.py {seed} 28 3 1 3
+      - interleave-rand: interleave_rand.py {seed} 31 3 2 6
+      - interleave-rand: interleave_rand.py {seed} 500 1 1 0
+      - interleave-rand: interleave_rand.py {seed} 505 3 2 0
+      - interleave-rand: interleave_rand.py {seed} 24 2 2 0
+      - interleave-rand: interleave_rand.py {seed} 508 3 1 30
+      - interleave-rand: interleave_rand.py {seed} 29 1 2 4
+      - interleave-rand: interleave_rand.py {seed} 26 1 1 1
+      - custom:
+          in: |
+            7
+            1 2 6 4 5 7 3
+      - interleave-rand: interleave_rand.py {seed} 502 3 1 0
+      - asc: asc-desc.py 10 0 normal
+      - interleave-rand: interleave_rand.py {seed} 20 1 1 0
+      - interleave-rand: interleave_rand.py {seed} 509 1 2 40
+      - interleave-rand: interleave_rand.py {seed} 21 2 1 0
+      - interleave-rand: interleave_rand.py {seed} 22 3 1 0
+      - interleave-rand: interleave_rand.py {seed} 25 3 2 0
+      - interleave-rand: interleave_rand.py {seed} 30 2 2 5
+      - tiny:
+          in: |
+            1
+            1
+      - ascdesc: asc-desc.py 10 10 normal
+      - ascdesc: asc-desc.py 1000 1000 normal
+      - ascdesc: asc-desc.py 10 10 inv
+      - ascdesc: asc-desc.py 1000 1000 inv
+      - desc: asc-desc.py 0 10 normal
+      - interleave: interleave.py 5 normal
+      - interleave: interleave.py 5 inv
+      - small:
+          generate: rand.py {seed} 1+{count}
+          count: 10
+      - medium:
+          generate: rand.py {seed} 10*{count}
+          count: 10
+      - medium:
+          generate: rand.py {seed} 200*{count}
+          count: 5
+      - medium:
+          generate: rand.py {seed} 2000*{count}
+          count: 5
+      - large:
+          generate: rand.py {seed} 20000*{count}
+          count: 5
+      - large:
+          generate: rand.py {seed} 100000*{count}
+          count: 5
+      - max:
+          generate: rand.py {seed} 500000
+          count: 3
+      - small:
+          generate: rand_shuffle.py {seed} 20 0
+          count: 4
+      - small:
+          generate: rand_shuffle.py {seed} 20 3
+          count: 4
+      - small:
+          generate: rand_shuffle.py {seed} 20 5
+          count: 4
+      - small:
+          generate: rand_shuffle.py {seed} 20 10
+          count: 4
+      - medium:
+          generate: rand_shuffle.py {seed} 1000 0
+          count: 2
+      - medium:
+          generate: rand_shuffle.py {seed} 1000 5
+          count: 2
+      - medium:
+          generate: rand_shuffle.py {seed} 1000 500
+          count: 2
+
+      # Plant a solutio, then shuffle a subset of the given size.
+  invalid_input:
+    # Add invalid test cases to ensure that input_validators correctly rejects them.
+    data: []
+      #invalid_test_case_input:
+      #  in: "<invalid input>"
+
+  invalid_answer:
+    # Add valid test cases with invalid answers to ensure that the answer_validators correctly rejects them.
+    # (The output validator is also called with these)
+    data: []
+      #invalid_test_case_answer:
+      #  in: "<valid input>"
+      #  ans: "<invalid answer>"
+
+  invalid_output:
+    # Add valid test cases with answer and invalid team output to ensure that the output_validator correctly rejects them.
+    data: []
+      #invalid_test_case_output:
+      #    in: "<valid input>"
+      #    ans: "<valid answer>"
+      #    out: "<invalid output>"
+
+  valid_output:
+    # Add valid test cases with answer and team output to ensure that the output_validator correctly accepts them.
+    data: []
+  fuzz:
+    data: []

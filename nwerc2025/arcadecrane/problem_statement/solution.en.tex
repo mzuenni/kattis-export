@@ -1,0 +1,27 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+      Given an unsorted sequence of the numbers $1,\dots,n$, sort it using operations of the following kind:
+      cut three consecutive values from the sequence and paste them somewhere else.
+    \end{block}
+    \only<1>{
+      \centering
+      \vspace{1em}
+      \includegraphics[width=0.65\textwidth]{figure.pdf}
+    }
+    \pause
+    \begin{block}{Solution}
+      \begin{itemize}
+        \item While there are more than $5$ numbers, locate the largest one and move it to the back.
+        \item This can be achieved in at most $2$ steps and reduces the problem size by $1$.
+        \item For the last $5$ numbers, either:
+          \begin{itemize}
+            \item perform some graph search through the remaining $5! = 120$ permutations; or
+            \item just do random steps until the sequence is sorted.
+          \end{itemize}
+        \item Total number of steps $\lesssim 2n + 160$
+      \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

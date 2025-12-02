@@ -1,0 +1,155 @@
+solution: /submissions/accepted/paul.py
+
+data:
+  sample:
+    data:
+      - '':
+          in: 4 5 6 7 7
+          ans: |
+            IKIIT
+            KKTKT
+            ITITI
+            KTTKI
+      - '':
+          in: 3 3 1 7 1
+          ans: |
+            III
+            KIT
+            III
+
+  secret:
+    data:
+      - random-min:
+          generate: generator {seed:2} -h 3 -w 3
+          count: 5
+      - random-very-small:
+          generate: generator {seed} -h 3..5 -w 3..5
+          count: 20
+      - random-small:
+          generate: generator {seed} -h 3..10 -w 3..10
+          count: 20
+      - random:
+          generate: generator {seed}
+          count: 10
+      - random-max:
+          generate: generator {seed} -h 100 -w 100
+          count: 5
+
+      - narrow:
+          generate: generator {seed} -h 95..100 -w 3..6
+          count: 5
+      - wide:
+          generate: generator {seed} -h 3..6 -w 95..100
+          count: 5
+
+      - fuzz: generator 1389080725 -h 3..10 -w 3..10
+      - fuzz: generator 1709116453 -h 3..10 -w 3..10
+      - fuzz: generator 1029419029 -h 3..10 -w 3..10
+      - fuzz: generator 1547031926 -h 3..10 -w 3..10
+      - fuzz: generator 47736320 -h 3..10 -w 3..10
+      - fuzz: generator 392401366
+      - fuzz: generator 1478491688 -h 3 -w 3
+      - fuzz: generator 438551552 -h 3..10 -w 3..10
+      - fuzz: generator 507576437 -h 100 -w 100
+      - fuzz: generator 54853635 -h 100 -w 100
+      - fuzz: generator 830162868 -h 100 -w 100
+      - fuzz: near-h-or-w.py 100 100 100 100 1 2138391633
+      - fuzz: near-h-or-w.py 100 100 100 100 1 842520334
+      - fuzz: near-h-or-w.py 100 100 100 100 1 1278969832
+
+      - hand: { in: '14 14 151 27 18' }
+      - hand: { in: '6 13 20 12 46' }
+
+      - extreme: extreme.py 32 65 0 {seed}
+      - extreme: extreme.py 73 11 1 {seed}
+      - extreme: extreme.py 59 27 2 {seed}
+      - extreme: extreme.py 66 28 3 0
+      - extreme: extreme.py 94 61 4 0
+      - extreme: extreme.py 20 89 5 0
+      - extreme: extreme.py 100 100 0 {seed}
+      - extreme: extreme.py 100 100 1 {seed}
+      - extreme: extreme.py 100 100 2 {seed}
+      - extreme: extreme.py 100 100 3 0
+      - extreme: extreme.py 100 100 4 0
+      - extreme: extreme.py 100 100 5 0
+
+      - skewed:
+          generate: skewed.py {seed}
+          count: 15
+
+      # Don't need near-w equivalents for these because of the square shape:
+      - near-h: near-h-or-w.py 100 100 100 100 0 {seed}
+      - near-h:
+          # Having exactly h copies of I is the most useful to kill submissions:
+          generate: near-h-or-w.py 100 100 100 100 1 {seed}
+          count: 10
+      - near-h: near-h-or-w.py 100 100 100 100 2 {seed}
+      
+      - near-h: near-h-or-w.py 50 100 50 100 0 {seed}
+      - near-h:
+          generate: near-h-or-w.py 50 100 50 100 1 {seed}
+          count: 4
+      - near-h: near-h-or-w.py 50 100 50 100 2 {seed}
+      - near-w: near-h-or-w.py 50 100 50 100 3 {seed}
+      - near-w:
+          generate: near-h-or-w.py 50 100 50 100 4 {seed}
+          count: 4
+      - near-w: near-h-or-w.py 50 100 50 100 5 {seed}
+
+  invalid_input:
+    data:
+      empty:
+        in: ''
+      newline:
+        in: "\n"
+      random:
+        in: YVRtr&*teTsRjs8ZC2%kN*T63V@jJq!d
+      not_printable_1:
+        in: "\x7F"
+      not_printable_2:
+        in: "â\x82¬"
+      unicode:
+        in: ¯\_(ツ)_/¯
+
+  invalid_output:
+    data:
+      miscount:
+        in: 3 3 3 3 3
+        ans: |
+          KKK
+          ITT
+          TII
+        out: |
+          KKK
+          KII
+          ITT
+      wrong-letter:
+        in: 3 3 3 3 3
+        ans: |
+          KKK
+          ITT
+          TII
+        out: |
+          KKK
+          IZI
+          TTT
+      no-kit:
+        in: 3 3 3 3 3
+        ans: |
+          KKK
+          ITT
+          TII
+        out: |
+          III
+          KKK
+          TTT
+      too-many-kits:
+        in: 3 3 3 3 3
+        ans: |
+          KKK
+          ITT
+          TII
+        out: |
+          KKK
+          III
+          TTT

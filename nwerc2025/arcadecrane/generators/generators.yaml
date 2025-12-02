@@ -1,0 +1,95 @@
+solution: /submissions/accepted/paul-zip.py
+
+data:
+  sample:
+    data:
+      - '':
+          in: |
+            5
+            3 5 2 1 4
+          ans: |
+            3
+            2 1
+            3 1
+            2 3
+      - '':
+          in: |
+            6
+            6 5 4 3 2 1
+          ans: |
+            4
+            1 3
+            2 4
+            3 4
+            1 3
+      - '':
+          in: |
+            9
+            9 2 8 5 4 6 7 3 1
+          ans: |
+            5
+            2 6
+            5 1
+            2 7
+            5 3
+            1 3
+      - '':
+          in: |
+            5
+            1 2 3 4 5
+          ans: |
+            1
+            2 2
+
+  secret:
+    data:
+      - random_small:
+          generate: random-case.py 5 10 {seed}
+          count: 10
+      - random_small:
+          generate: random-case.py 10 20 {seed}
+          count: 10
+      - random:
+          generate: random-case.py 20 100 {seed}
+          count: 10
+      - random:
+          generate: random-case.py 100 1000 {seed}
+          count: 10
+      - random-max:
+          generate: random-case.py 1000 1000 {seed}
+          count: 10
+      # - sorted: sorted.py 5 0
+      - sorted: sorted.py 5 1
+      - sorted: sorted.py 6 0
+      - sorted: sorted.py 7 0
+      - sorted: sorted.py 7 1
+      - sorted: sorted.py 387 0
+      - sorted: sorted.py 284 1
+      - sorted: sorted.py 999 0
+      - sorted: sorted.py 999 1
+      - sorted: sorted.py 1000 0
+      - sorted: sorted.py 1000 1
+      - fuzz: random-case.py 1000 1000 2086651778
+      - fuzz: random-case.py 1000 1000 337107188
+      - hill: hill-or-valley.py 20 1 {seed}
+      - hill: hill-or-valley.py 142 1 {seed}
+      - hill: hill-or-valley.py 1000 1 {seed}
+      - valley: hill-or-valley.py 21 0 {seed}
+      - valley: hill-or-valley.py 218 0 {seed}
+      - valley: hill-or-valley.py 1000 0 {seed}
+      - small-cyclic-shifts: small-cyclic-shifts.py 33 {seed}
+      - small-cyclic-shifts: small-cyclic-shifts.py 333 {seed}
+      - small-cyclic-shifts: small-cyclic-shifts.py 876 {seed}
+      - small-cyclic-shifts:
+          generate: small-cyclic-shifts.py 1000 {seed}
+          count: 5
+      - adjacent-swaps: adjacent-swaps.py 10 2 {seed}
+      - adjacent-swaps: adjacent-swaps.py 73 12 {seed}
+      - adjacent-swaps: adjacent-swaps.py 535 109 {seed}
+      - adjacent-swaps: adjacent-swaps.py 999 222 {seed}
+      - adjacent-swaps: adjacent-swaps.py 1000 444 {seed}
+      - adjacent-swaps: adjacent-swaps.py 1000 789 {seed}
+      - adjacent-swaps: adjacent-swaps.py 1000 2345 {seed}
+      - permutations:
+          generate: permutations.py {seed}
+          count: 7

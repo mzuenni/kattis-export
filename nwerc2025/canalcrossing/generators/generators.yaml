@@ -1,0 +1,113 @@
+solution: /submissions/accepted/sol.cpp
+
+data:
+  sample:
+    type: directory
+    data:
+      - "":
+          copy: manual/sample1
+      - "":
+          copy: manual/sample2
+
+  secret:
+    type: directory
+    data:
+      - random-sol-p0.01: 
+            generate: random-sol.py {seed} 100000 500000 0.01
+            count: 3
+      - random-sol-p0.1: 
+            generate: random-sol.py {seed} 100000 500000 0.1
+            count: 3
+      - random-sol-p0.5: 
+            generate: random-sol.py {seed} 100000 500000 0.5
+            count: 3
+      - random-sol-p0.9: 
+            generate: random-sol.py {seed} 100000 500000 0.9
+            count: 3
+      - random-sol-p0.9: 
+            generate: random-sol.py {seed} 100000 500000 0.99
+            count: 3
+      - minimal:
+          copy: manual/minimal
+      - double-triangle:
+          in: |
+            5
+            1 2 1
+            1 3 2
+            1 4 4
+            1 5 8
+            2
+            2 3
+            4 5
+      - max_length: max_length.py
+      - max_bridges: max_bridges.py
+
+      - random: random --n 10 --m 5 --lim 10 --seed 7
+      - random: random --n 10 --m 5 --lim 15 --seed 9
+      - random: random --n 10 --m 5 --lim 20 --seed 10
+      - random: random --n 1000 --m 2000
+      - random: random --n 10000 --m 20000
+      - random: random --n 100000 --m 200000
+      - random:
+          generate: random --n 100000 --m 500000 --seed {seed:0}
+          count: 10
+      - random2: random2 --n 10 --m 5 --lim 10 --seed 7
+      - random2: random2 --n 10 --m 5 --lim 15 --seed 9
+      - random2: random2 --n 10 --m 5 --lim 20 --seed 10
+      - random2: random2 --n 1000 --m 2000
+      - random2: random2 --n 10000 --m 20000
+      - random2: random2 --n 100000 --m 200000
+      - random2:
+          generate: random2 --n 100000 --m 500000 --seed {seed:0}
+          count: 10
+      - fuzz: random --n 100000 --m 500000 --seed 336857951
+      - fuzz: random --n 100000 --m 500000 --seed 796953274
+      - one_bridge: random2 --n 100000 --m 1
+      - packed:
+          generate: random2 --n 100 --m 1000 --seed {seed:0}
+          count: 10
+      - sparse:
+          generate: random2 --n 100000 --m 1 --seed {seed:0}
+          count: 5
+      - star: star.py {seed:0} 100000 100000
+      - star_sparse: star.py {seed:0} 100000 100
+      - star_dense:
+          generate: star.py {seed:0} 100000 500000
+          count: 3
+      - double_star: double-star.py {seed:0} 100000 100000
+      - double_star_sparse: double-star.py {seed:0} 100000 100
+      - double_star_dense:
+          generate: double-star.py {seed:0} 100000 500000
+          count: 3
+    
+
+      - line:
+          generate: line.py {seed} 100000 500000
+          count: 5
+      - binary-tree:
+          generate: binary-tree.py {seed} 100000 500000
+          count: 3
+      - comb:
+          generate: comb.py {seed} 100000 500000
+          count: 5
+      - broom:
+          generate: broom.py {seed} 100000 500000
+          count: 3
+
+
+  invalid_input:
+    data:
+      - bridge_is_street:
+          in: |
+            2
+            1 2
+            1
+            2 1
+      - double_bridge:
+          in: |
+            3
+            1 2
+            2 3
+            2
+            1 3
+            3 1

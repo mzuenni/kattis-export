@@ -1,0 +1,68 @@
+solution: /submissions/accepted/author.cpp
+
+data:
+  sample:
+    data:
+      - "":
+          in: |
+            3
+            elton jose bowie eagles elvis wham nat joni bruce minnie
+            elton madonna wham elvis andy donny madonna aha chuck judy
+            madonna heart whitney chuck joni wham john yoko nsync stevie
+      - "":
+          in: |
+            3
+            maria a b wham c d e f maria wham
+            wham g h maria i j k l wham m
+            n o p q r s t u v maria
+      - "":
+          in: |
+            2
+            b a b d e a e a b a
+            b b b e d a d a a a
+  secret:
+    data:
+      - random:
+          generate: random --seed {seed}
+          count: 5
+      - oneartist: random --seed {seed} --a 1
+      - onelist: random --seed {seed} --n 1
+      - maxlist: random --seed {seed} --n 100 --a 1000
+      - random_few_artists:
+          generate: random --seed {seed} --a 2
+          count: 3
+      - random_many_artists:
+          generate: random --seed {seed} --a 3000
+          count: 3
+      - tied: random --seed {seed:6} --n 100 --a 100 --tiedNum 100 --occurrence 10
+      - tied: random --seed {seed} --n 100 --a 9 --tiedNum 7 --occurrence 112
+      - tied:
+          generate: random --seed {seed} --n 100 --tiedNum
+          count: 10
+      - tiedclose:
+          generate: random --seed {seed} --n 100 --tiedNum --close
+          count: 10
+      - tied_small:
+          generate: random --seed {seed} --maxn 20 --tiedNum
+          count: 10
+      - tiedclose_small:
+          generate: random --seed {seed} --maxn 20 --tiedNum --close
+          count: 10
+      - tie_wins:
+          in: |
+            2
+            tie tie tie tie tie tie tie tie tie tie
+            tie tie tie tie tie tie tie tie tie tie
+      - tie:
+          in: |
+            2
+            other tie other tie other tie other tie other tie
+            tie other tie other tie other tie other tie other
+      - tie_loses:
+          in: |
+            2
+            other tie other tie other tie other tie other tie
+            xxx other tie other tie other tie other tie other
+      - tie-breakers:
+          generate: tie-breaker.py {count} 9
+          count: 9

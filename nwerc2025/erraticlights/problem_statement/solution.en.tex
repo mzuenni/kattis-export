@@ -1,0 +1,59 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Every time you touch one of the $n \leq 100$ light bulbs, it randomly selects a new colour (red/green/blue),
+        each with equal probability.
+        What is the expected number of times you need to touch a light bulb
+        to make all of them have the same colour?
+    \end{block}
+    \pause
+    \begin{block}{The easy cases}
+        \begin{itemize}
+            \item If all lights are equal, output $0$.
+            \pause
+            \item If there are only two different colours initially,
+                change the least-occurring colours to the most-occurring ones.
+                This takes expected $3x$ touches (where $x$ is the initial count of the least-occurring colour).
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Solution for three different colours}
+        Say the number of occurrences of each colour are $a \leq b \leq c$.
+        \begin{itemize}
+            \item Change the coloured light with the fewest occurrences to one of the other two.
+                Disregarding which colour they change into, this takes expected $\frac32 a$ touches.
+            \pause
+            \item After this, there are $2^a$ possible ways in which these first $a$ lights turned into the other two colours of lights (exhaustive search is too slow, because $a$ is up to $33$).
+            \pause
+            \item Only the \emph{number} of lights in each colour is relevant, so we combine them.
+                Say that $i$ of the $a$ lights turned into colour $b$, this happens $\binom ai$ times.
+                Change the minimum of the two remaining colours to the final colour,
+                this takes expected 3 touches each.
+            \pause
+            \item The final expected number of touches is:
+                $$
+                    {\textstyle \frac32} a +
+                    \frac{1}{2^a}
+                    \sum_{i=0}^{a} {\textstyle \binom ai} 3 \min(b + i, c + (a - i))
+                $$
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Alternative solutions}
+        \begin{itemize}
+            % TODO Remove this comment after the alternative solutions are explained well enough.
+            \item Dynamic Programming, anything up to $\mathcal O(n^3)$ will pass. % TODO explain?
+            \pause
+            \item Simulate backwards for $1000$-ish steps, and output the expected number of occurrences of $(a, b, c)$.
+            % TODO Are there more?
+        \end{itemize}
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

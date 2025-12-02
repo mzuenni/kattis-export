@@ -1,0 +1,20 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        % TODO: Remove this comment when you're done writing the solutions.
+        Given $n$ top-10 lists, which artist appears most often?
+        If there is a tie, output who is most often number 1.
+        If there is a tie, output who is most often number 2 and so on.
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Count the appearances for each artist.
+            \item Count for each artist and for each $k$ how many number $k$ hits they have.
+            \item Find the best artist, do the tiebreaking according to the rules.
+        \end{itemize}
+        Runtime: $\mathcal O(n)$
+    \end{block}
+    \pause
+    \solvestats
+\end{frame}

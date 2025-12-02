@@ -1,0 +1,56 @@
+\documentclass{standalone}
+\usepackage{emoji}
+\setemojifont{Noto Color Emoji}[Renderer=Harfbuzz]
+\usepackage{tikz}
+\usetikzlibrary{matrix,backgrounds}
+
+\begin{document}
+
+\newcommand{\twobytwo}[7]{
+   \matrix (#1) [matrix of nodes,
+                 nodes={minimum size=5mm, anchor=center, inner sep=0pt,draw},
+                 row sep=-\pgflinewidth,
+                 column sep=-\pgflinewidth,
+                 ampersand replacement=\&
+                 ] at (#2, #3)
+   {
+     #4 \& #5 \\ 
+     #6 \& #7 \\
+   };
+}
+
+\newcommand{\onebythree}[6]{
+   \matrix (#1) [matrix of nodes,
+                 nodes={minimum size=5mm, anchor=center, inner sep=0pt,draw},
+                 row sep=-\pgflinewidth,
+                 column sep=-\pgflinewidth,
+                 ampersand replacement=\&
+                 ] at (#2, #3)
+   {
+     #4 \& #5 \& #6 \\ 
+   };
+}
+
+\begin{tikzpicture}
+
+% \draw[thick, red, fill=red!20] (0,0) -- (2,1) -- (1,2) -- cycle;
+
+  \twobytwo{a}{0}{2}{\emoji{chair}}{\emoji{chair}}{-}{-}
+  \twobytwo{b}{2}{2}{\emoji{chair}}{-}{\emoji{chair}}{-}
+  \twobytwo{c}{4}{2}{\emoji{chair}}{-}{-}{\emoji{chair}}
+  \twobytwo{d}{0}{0}{-}{\emoji{chair}}{\emoji{chair}}{-}
+  \twobytwo{e}{2}{0}{-}{\emoji{chair}}{-}{\emoji{chair}}
+  \twobytwo{f}{4}{0}{-}{-}{\emoji{chair}}{\emoji{chair}}
+
+  \draw[<->,red,line width=0.8] (a.south) -- (d.north);
+  \draw[<->,red,line width=0.8] (b.east) -- (c.west);
+  \draw[<->,red,line width=0.8] (e.east) -- (f.west);
+
+  \onebythree{g}{7}{2}{\emoji{chair}}{\emoji{chair}}{-}
+  \onebythree{h}{7}{1}{\emoji{chair}}{-}{\emoji{chair}}
+  \onebythree{i}{7}{0}{-}{\emoji{chair}}{\emoji{chair}}
+
+\end{tikzpicture}
+
+\end{document}
+

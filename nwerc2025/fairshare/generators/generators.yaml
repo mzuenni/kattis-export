@@ -1,0 +1,98 @@
+solution: /submissions/accepted/weyand.cpp
+#visualizer: /visualizers/asy.sh
+version: 2025-02  # use this version of the generators framework
+
+data:
+  sample:
+    data:
+      - '':
+          in: |
+            3
+            4 3
+            5 4
+            1 3
+
+      - '':
+          in: |
+            5
+            1 4
+            8 1
+            1 4
+            2 5
+            4 6
+      - '':
+          in: |
+            8
+            4 3
+            5 8
+            7 2
+            1 9
+            6 3
+            2 6
+            5 7
+            8 6
+
+  secret:
+    data:
+      - equal-pay: { copy: manual/equal-pay }
+      - just-first: { copy: manual/just-first }
+      - just-last: { copy: manual/just-last }
+      - just-mid: { copy: manual/just-mid }
+      - 2nmask:
+          generate: 2nmask.py {count}
+          count: 15
+      - max: max.py 100000 1000
+      - antifloat: antifloat.py 100000 1000
+      - all-equal: all_equal.py 5 42
+      - all-equal: all_equal.py 100 42
+      - planted-small: planted.py {seed} 10 10
+      - planted-large:
+          generate: planted.py {seed} 100 50
+          count: 5
+      - much-cash:
+          generate: rand.py {seed} 100 1000 10
+          count: 5
+      - expensive-restaurant:
+          generate: rand.py {seed} 100 10 1000
+          count: 5
+      - few-large:
+          generate: rand.py {seed} 10 1000 1000
+          count: 10
+      - random20:
+          generate: rand.py {seed} 100000 20 20
+          count: 10
+      - random1000:
+          generate: rand.py {seed} 100000 1000 1000
+          count: 10
+      - one-solution: one-solution.py {seed} 100000 0 
+      - one-solution: one-solution.py {seed} 100000 1
+      - one-solution: one-solution.py {seed} 100000 99998
+      - one-solution: one-solution.py {seed} 100000 99999
+      - one-solution:
+          generate: one-solution.py {seed} 100000
+          count: 3
+      - symmetric-diffs: symmetric-diffs.py {seed} 100000
+      - symmetric-diffs: symmetric-diffs.py {seed} 99999
+      - symmetric-diffs: symmetric-diffs.py {seed} 99998
+      - symmetric-diffs: symmetric-diffs.py {seed} 99997
+      - symmetric-diffs: symmetric-diffs.py {seed} 99996
+      - symmetric-diffs: symmetric-diffs.py {seed} 99995
+      
+      - normal: normal_gen.py 100000 500 100 0 1 {seed}
+      - normal: normal_gen.py 100000 500 100 0 150 {seed}
+      - normal: normal_gen.py 100000 500 100 -10 10 {seed}
+      - normal: normal_gen.py 100000 500 100 10 10 {seed}
+      
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 0 1 {seed}
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 0 10 {seed}
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 0 100 {seed}
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 0 150 {seed}
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 -10 1 {seed}
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 10 1 {seed}
+      - normal-normalized: normal_normalized_gen.py 100000 500 100 10 34 {seed}
+      
+      - exp-normalized: exp_normalized_gen.py 100000 500 100 1 {seed}
+      - exp-normalized: exp_normalized_gen.py 100000 500 100 3 {seed}
+      - exp-normalized: exp_normalized_gen.py 100000 500 100 10 {seed}
+      - exp-normalized: exp_normalized_gen.py 100000 500 100 30 {seed}
+      - exp-normalized: exp_normalized_gen.py 100000 500 100 100 {seed}
