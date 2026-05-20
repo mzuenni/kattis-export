@@ -6,7 +6,7 @@ author: Michael Baer
 license: cc by-sa
 
 validation: custom interactive
-uuid: 63f70b96-1797-4bf2-9b28-9c0a87794488
+uuid: "63f70b96-1797-4bf2-9b28-9c0a87794488"
 
 limits:
     time_multiplier: 2

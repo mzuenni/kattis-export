@@ -11,4 +11,4 @@ validation: default
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
-uuid: 0932a4dd-763c-4799-b442-8bb38cdc9cc2
+uuid: "0932a4dd-763c-4799-b442-8bb38cdc9cc2"

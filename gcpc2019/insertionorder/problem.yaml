@@ -10,4 +10,4 @@ validation: custom
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
-uuid: b3f6d18c-251d-450e-9c31-5ea9ad5f8d09
+uuid: "b3f6d18c-251d-450e-9c31-5ea9ad5f8d09"
