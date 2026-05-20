@@ -2,6 +2,7 @@ name: Expired License
 source: German Collegiate Programming Contest (GCPC) 2018
 author: Gregor Schwarz
 license: cc by-sa
-keywords: easy - Number Theory,Prime Sieve,Greatest Common Divisor
+keywords: number-theory prime-sieve greatest-common-divisor prime sieve gcd
+uuid: "67f7b1a1-a831-450d-b1d2-2163ee8404a0"
 limits:
   time_multiplier: 1.7

@@ -4,6 +4,6 @@ source: German Collegiate Programming Contest (GCPC) 2018
 author: Paul Wild
 # rights_owner:
 license: cc by-sa
-
+uuid: "47de5e9e-cf20-4efd-acd5-10af993f64c7"
 limits:
   time_multiplier: 3

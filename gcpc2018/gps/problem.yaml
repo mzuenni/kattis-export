@@ -4,8 +4,8 @@ source: German Collegiate Programming Contest (GCPC) 2018
 author: Gregor Behnke
 # rights_owner:
 license: cc by-sa
-keywords: medium - 3D geometry
+keywords: 3d geometry
 validator_flags: float_tolerance 1e-7
-
+uuid: "674b84c4-67bf-4bb1-befb-f60ceac5a216"
 limits:
   time_multiplier: 2

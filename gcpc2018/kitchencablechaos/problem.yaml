@@ -3,8 +3,8 @@ source: German Collegiate Programming Contest (GCPC) 2018
 #source_url: http://gcpc.nwerc.eu
 author: Michael Baer
 license: cc by-sa
-keywords: dp
+keywords: dp dynamic-programming
 validator_flags: float_tolerance 1e-7
-
+uuid: "e4560613-1563-4b19-9641-e4e1c24364bf"
 limits:
   time_multiplier: 2.5

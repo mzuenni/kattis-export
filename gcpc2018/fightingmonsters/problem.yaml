@@ -2,8 +2,8 @@ name: Fighting Monsters
 source: German Collegiate Programming Contest (GCPC) 2018
 author: Moritz Fuchs
 license: cc by-sa
-keywords: number theory, fibonacci numbers
+keywords: number-theory fibonacci-numbers fibonacci
 validation: custom
-
+uuid: "d2862f7a-26ee-49fc-8a45-edb315b0765f"
 limits:
   time_multiplier: 1.3

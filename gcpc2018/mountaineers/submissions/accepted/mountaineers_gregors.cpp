@@ -1,6 +1,7 @@
 #include <iostream>
 #include <set>
 #include <algorithm>
+#include <vector>
 using namespace std;
 const int MAX_C = 500*500;
 const int MAX_Q = 1e5;
