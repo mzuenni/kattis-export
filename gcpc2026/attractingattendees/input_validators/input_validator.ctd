@@ -1,0 +1,14 @@
+INT(1, 2*10^5, n) SPACE INT(1, 2*10^5, m) SPACE INT(1, 2*10^5, c) NEWLINE
+SET(sumk=0)
+REP(m)
+    INT(1, n, k) NEWLINE
+    REPI(i, k, SPACE)
+        INT(1, n, b[i])
+    END
+    ASSERT(UNIQUE(b))
+    UNSET(b)
+    NEWLINE
+    SET(sumk=sumk+k)
+END
+ASSERT(sumk<=5*10^5)
+EOF

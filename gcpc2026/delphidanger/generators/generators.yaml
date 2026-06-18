@@ -1,0 +1,61 @@
+solution: /submissions/accepted/sol-erik.cpp
+version: 2025-12
+
+data:
+  sample:
+    data:
+      "1":
+        in: |
+          5 3
+          1 2 2
+          1 3 0
+          4 5 2
+        ans: |
+          possible
+          3
+      "2":
+        in: |
+          4 3
+          1 2 3
+          2 4 4
+          1 4 2
+        ans: |
+          impossible
+  secret:
+    data: 
+      - minimal:
+          in: |
+            2 1
+            2 1 1000000000
+      - '': { copy: manual/1 }
+      - random: random --seed {seed} --n 15 --m 20 --bipartite
+      - random: random --seed {seed} --n 20 --m 25 --bipartite
+      - random: random --seed {seed} --n 150 --m 200 --bipartite
+      - random: random --seed {seed} --n 200 --m 250 --bipartite
+      - random: random --seed {seed} --n 200000 --m 10000 --bipartite
+      - random: random --seed {seed} --n 200000 --m 20000 --bipartite
+      - random:
+          generate: random --seed {seed} --n 200000 --m 400000 --bipartite
+          count: 4
+      - random: random --seed {seed} --n 200000 --m 400000 --t 10 --bipartite
+      - random: random --seed {seed} --n 200000 --m 400000 --t 100 --bipartite
+      - random: random --seed {seed} --n 200000 --m 400000 --t 1000 --bipartite
+
+      - random: random --seed {seed} --n 3 --m 3 --t 1 --odd_cycle
+      - random: random --seed {seed} --n 13 --m 13 --t 3 --odd_cycle
+      - random: random --seed {seed} --n 133 --m 133 --t 10 --odd_cycle
+      - random: random --seed {seed} --n 1337 --m 1337 --t 100 --odd_cycle
+      - random: random --seed {seed} --n 200000 --m 10001 --odd_cycle
+      - random: random --seed {seed} --n 200000 --m 50001 --odd_cycle
+      - random: random --seed {seed} --n 199999 --m 199999 --odd_cycle
+      - random: random --seed {seed} --n 200000 --m 400000 --odd_cycle
+
+      - binary:
+          generate: binary --seed {seed} --n 200000
+          count: 4
+      - line:
+          generate: line --seed {seed} --n 200000
+          count: 4
+      - pair:
+          generate: pair --seed {seed} --n 200000
+          count: 2

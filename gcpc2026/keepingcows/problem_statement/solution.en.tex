@@ -1,0 +1,48 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}
+            \item Place corner-fences into a $100 \times 100$ grid.
+            \item Create a connected fenced area of exactly $1 \leq a \leq 5000$ cells.
+        \end{itemize}
+    \end{block}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item There are many different constructions of varying implementation difficulty.
+            \item Determine minimum $h$ with $(h-1) \cdot 80 \geq a$ (one extra row).
+            \item Fence a $h \times 80$ rectangle area.
+        \end{itemize}
+        \center
+        \includegraphics[width=0.3\textwidth]{figure3.pdf}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Case $h = 2$}
+        \begin{itemize}
+            \item If $h = 2$, then $a \leq 80$, and place a (blue) block as shown below.
+            \item Notice that left component is odd, right is even.
+            \item Move middle block left or right to increase the relevant component by $2$.
+            \item All $a \leq 80$ are achievable this way.
+        \end{itemize}
+        \center
+        \includegraphics[width=0.3\textwidth]{figure1.pdf}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Case $h > 2$}
+        \begin{itemize}
+            \item By construction, our rectangle has $80 \leq x \leq 160$ cells too much.
+            \item Place the right piece (blue) to reduce field by $3$.
+            \item Place the left piece (red) to reduce field by $4$.
+            \item Use up to $3$ blue pieces, and then as many red pieces as necessary.
+            \item One can (easily) show that $80 \leq x \leq 160$ reduction is always possible.
+        \end{itemize}
+        \center
+        \includegraphics[width=0.3\textwidth]{figure2.pdf}
+    \end{block}
+    % \solvestats
+\end{frame}

@@ -1,0 +1,143 @@
+solution: /submissions/accepted/jannik.hs
+#solution: /submissions/accepted/submission.py
+version: 2025-12  # use this version of the generators framework
+
+#test_group.yaml:
+  # One or more of:
+  # case_sensitive
+  # space_change_sensitive
+  # float_absolute_tolerance eps
+  # float_relative_tolerance eps
+  # float_tolerance eps
+  #output_validator_args:
+
+data:
+  sample:
+    data:
+      - '':
+          in: |
+            1
+            0 0
+            1 1
+      - '':
+          in: |
+            2
+            0 0
+            2 2
+            1 1
+            3 3
+      - '':
+          in: |
+            2
+            1 3
+            2 1
+            2 4
+            4 3
+      - '':
+          in: |
+            2
+            2 1
+            1 3
+            2 4
+            4 3
+      - '':
+          in: |
+            3
+            1 1
+            3 1
+            2 4
+            1 3
+            3 3
+            2 0
+      - '':
+          in: |
+            3
+            -1 -1
+            -2 -2
+            -2 1
+            0 0
+            1 -1
+            1 2
+      - '':
+          in: |
+            3
+            -1 -1
+            -2 -2
+            -2 1
+            0 1
+            1 -1
+            1 2
+  secret:
+    data:
+      - manual:
+          in: |
+            2
+            -1000000 -1000000
+            -999999 1000000
+            1000000 1000000
+            -1000000 1000000
+      - random-tiny:
+          generate: random --seed {seed} --n 2
+          count: 3
+      - random-small:
+          generate: random --seed {seed} --n 10
+          count: 10
+      - random-medium:
+          generate: random --seed {seed} --n 100
+          count: 10
+      - random-large:
+          generate: random --seed {seed} --n 1000
+          count: 10
+      - random-huge:
+          generate: random --seed {seed} --n 100000
+          count: 10
+      - random2-small:
+          generate: random2 --seed {seed} --n 10
+          count: 10
+      - random2-medium:
+          generate: random2 --seed {seed} --n 100
+          count: 10
+      - anti-round:
+          generate: anti-round.py {seed} 49999
+          count: 10
+      - anti-float-sort:
+          generate: anti-float_sort.py {seed} 100000
+          count: 5
+      - anti-desc-dist:
+          generate: anti-desc-dist --seed {seed}
+          count: 5
+      - line: line.py 0 100000 4j+7 3j+4
+      - line: line.py {seed} 100000 4j+7 3j+4 shuffle
+      - line: line.py {seed} 100000 4j+7 3j+4 reverseB
+      - line: line.py {seed} 100000 4j+7 3j+4 shuffle reverseB
+      - line: line.py {seed} 100000 4j+7 3j+4 shuffle shuffleB
+
+  invalid_input:
+    # Add invalid test cases to ensure that input_validators correctly rejects them.
+    data: []
+      #invalid_test_case_input:
+      #  in: "<invalid input>"
+
+  invalid_answer:
+    # Add valid test cases with invalid answers to ensure that the answer_validators correctly rejects them.
+    # (The output validator is also called with these)
+    data: []
+      #invalid_test_case_answer:
+      #  in: "<valid input>"
+      #  ans: "<invalid answer>"
+
+  invalid_output:
+    # Add valid test cases with answer and invalid team output to ensure that the output_validator correctly rejects them.
+    data: []
+      #invalid_test_case_output:
+      #    in: "<valid input>"
+      #    ans: "<valid answer>"
+      #    out: "<invalid output>"
+
+  valid_output:
+    # Add valid test cases with answer and team output to ensure that the output_validator correctly accepts them.
+    data: []
+      #valid_test_case_output:
+      #    in: "<valid input>"
+      #    ans: "<valid answer>"
+      #    out: "<valid output>"

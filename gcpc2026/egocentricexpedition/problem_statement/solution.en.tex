@@ -1,0 +1,47 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        \begin{itemize}
+            \item Find the area of a hidden arbitrarily rotated square.
+            \item Ask two query directions and receive the distances from square center to edge.
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Query two directions $45$ degrees apart, i.e. $(0, 1)$ and $(1, 1)$.
+            \item Assume the two points in those directions lie on one side of the square.
+            \item Calculate minimum distance $d$ to that side (line), the answer is $(2d)^2$.
+            \item Why is this correct?
+        \end{itemize}
+        \vspace{-1cm}
+        \center
+        \includegraphics[height=3cm]{figure1.pdf}
+    \end{block}
+    % \solvestats
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Why is this correct?
+            \item Note that a square has $90$ degree rotation symmetry.
+            \item Specifically, direction $(-1, 1)$ gives the same distance as $(1, 1)$.
+            \item Notice that either $(0, 1)$ and $(1, 1)$ lie on the same side, or $(0, 1)$ and $(-1, 1)$.
+            \item So assuming $(0, 1)$ and $(1, 1)$ on same side results in correct area.
+        \end{itemize}
+        \center
+        \includegraphics[height=4cm]{figure2.pdf}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Wrong Solution}
+        \begin{itemize}
+            \item Just using two very close directions does not work, with given constraints, there can always be a corner in between.
+        \end{itemize}
+    \end{block}
+    % \solvestats
+\end{frame}

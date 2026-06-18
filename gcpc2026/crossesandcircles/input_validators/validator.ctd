@@ -1,0 +1,5 @@
+INT(-59, 59, deltarow) SPACE
+INT(-42, 42, deltacol) ASSERT(deltarow != 0 || deltacol != 0) SPACE
+REGEX("(COUNTER|WEIRD|BLOCK)", strategy) SPACE
+INT(0, 100, selector) NEWLINE
+EOF

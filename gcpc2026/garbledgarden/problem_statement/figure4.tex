@@ -1,0 +1,45 @@
+\documentclass[tikz]{standalone}
+\input{garden-template.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \path[use as bounding box] (-0.8,-0.9) rectangle (8.5,3);
+
+  \gardenGround{-0.5}{8.3}
+
+  \node[anchor=south] at (0.2,-0.3) {
+    \includegraphics[height=2.2cm]{hyacinth.png}
+  };
+  \stemtag{0.2}{0.12}{1}{1}{-1}
+
+  \node[anchor=south,xscale=-1] at (1.7,-0.3) {
+    \includegraphics[height=2cm]{hyacinth.png}
+  };
+  \stemtag{1.7}{0.12}{1}{1}{-1}
+
+  \node[anchor=south,xscale=-1] at (3.1,-0.6) {
+    \includegraphics[height=3cm]{hydrangea.png}
+  };
+  \stemtag{3.3}{0.12}{1.55}{3}{1}
+
+  \node[anchor=south] at (4.6,-0.6) {
+    \includegraphics[height=2.8cm]{hydrangea.png}
+  };
+  \stemtag{4.8}{0.12}{1.35}{3}{1}
+
+  \hole{6.3}{1.0}
+
+  \flowerpotwithflower{7.8}{0.85}{1.0}{
+    \node[anchor=south] at (0.1,-0.4) {
+      \includegraphics[scale=0.07]{tulip.pdf}
+    };
+    \stemtag{0}{0.12}{1.28}{5}{-1}
+  }
+
+  \draw[-{Latex[length=3mm]},thick,blue!70!black]
+    (7.3,2.0) to[bend right=30] (6.3,0.4);
+
+\end{tikzpicture}
+
+\end{document}

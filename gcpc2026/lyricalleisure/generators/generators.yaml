@@ -1,0 +1,71 @@
+solution: /submissions/accepted/andreas.cpp
+#solution: /submissions/accepted/submission.py
+version: 2025-12  # use this version of the generators framework
+
+
+data:
+  sample:
+    data:
+      '1':
+        in: 6 5
+        ans: banana
+      '2':
+        in: 4 1
+        ans: abca
+      '3':
+        in: 6 6
+        ans: Hannah
+      '4':
+        in: 4 3
+        ans: GCPC
+
+  secret:
+    data:
+      - one:
+          in: 1 1
+      - two-one:
+          in: 2 1
+      - two-two:
+          in: 2 2
+      - three-one:
+          in: 3 1
+      - three-two:
+          in: 3 2
+      - three-three:
+          in: 3 3
+      - four-two:
+          in: 4 2
+      - four-four:
+          in: 4 4
+      - large-one:
+          in: 4999 1
+      - large-two:
+          in: 4999 2
+      - large-three:
+          in: 4999 3
+      - large-large:
+          in: 4999 4998
+      - large-large:
+          in: 4999 4999
+      - large-one:
+          in: 5000 1
+      - large-two:
+          in: 5000 2
+      - large-three:
+          in: 5000 3
+      - large-large:
+          in: 5000 4999
+      - large-large:
+          in: 5000 5000
+      - large-n-small-k:
+          generate: rand.py {seed} 300 5000 2 30
+          count: 10
+      - large-n-large-k:
+          generate: rand.py {seed} 300 5000 300 5000
+          count: 5
+      - random-small:
+          generate: rand.py {seed} 5 20
+          count: 10
+      - random-large:
+          generate: rand.py {seed} 300 5000
+          count: 10

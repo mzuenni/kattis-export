@@ -1,0 +1,138 @@
+solution: /submissions/accepted/yidi.cpp
+version: 2025-12  # use this version of the generators framework
+
+data:
+  sample:
+    data:
+      - '':
+          in: |
+            3
+            2 3 1
+          ans: |
+            1
+            3
+            1 3 2
+
+      - '':
+          in: |
+            5
+            3 1 3 5 1
+          ans: |
+            1
+            3
+            4 1 5
+
+      - '':
+          in: |
+            4
+            2 1 4 3
+          ans: |
+            2
+            4
+            1 2 3 4
+            2
+            2 4
+
+  secret:
+    data:
+      - old-sample:
+          in: |
+            6
+            3 2 1 3 2 1
+      - min:
+          in: |
+            2
+            1 2
+      - min:
+          in: |
+            2
+            2 1
+      - min:
+          in: |
+            2
+            1 1
+      - min:
+          in: |
+            2
+            2 2
+
+      - random-tiny:
+          generate: random --seed {seed} --n 5
+          count: 5
+      - random-small:
+          generate: random --seed {seed} --n 11
+          count: 5
+      - random-medium:
+          generate: random --seed {seed} --n 291
+          count: 5
+      - random-large:
+          generate: random --seed {seed} --n 5000
+          count: 5
+      - many:
+          generate: many --seed {seed} --n 5000 --gs 10
+          count: 5
+      - many:
+          generate: many --seed {seed} --n 5000 --gs 100
+          count: 5
+      - many:
+          generate: many --seed {seed} --n 5000 --gs 1000
+          count: 5
+
+      - permutation:
+          generate: random-permutation --seed {seed} --n {count}
+          count: [6, 10, 13, 99, 501, 931, 4999, 5000]
+
+      - permutation-cycles: 
+          generate: permutation-cycles --seed {seed} --n 5000 --cycles 1
+          count: 5
+      - permutation-cycles: 
+          generate: permutation-cycles --seed {seed} --n 5000 --cycles 2
+          count: 3
+      - permutation-cycles: 
+          generate: permutation-cycles --seed {seed} --n 5000 --cycles {count}
+          count: [3, 4, 5, 10, 100, 2489, 4999]
+
+      - one-cycle: 
+          generate: one-cycle --seed {seed} --n 5000 --k 100 --cyclesize {count}
+          count: [2, 3, 7, 499, 524, 4997, 4999, 5000]
+      - one-cycle: 
+          generate: one-cycle --seed {seed} --n 5000 --k 5000 --cyclesize {count}
+          count: [2, 3, 7, 499, 524, 4997, 4999, 5000]
+
+      - similar-cycles:
+          generate: similar-cycles --seed {seed} --n 5000 --cyclesize {count}
+          count: [2, 3, 4, 5, 6, 7, 10, 200, 217, 357, 384, 500]
+
+      - sorted: sorted.py 5000 0
+      - sorted: sorted.py 4999 1
+      - sorted: sorted.py 5000 1
+
+  invalid_input:
+    # Add invalid test cases to ensure that input_validators correctly rejects them.
+    data: []
+      #invalid_test_case_input:
+      #  in: "<invalid input>"
+
+  invalid_answer:
+    # Add valid test cases with invalid answers to ensure that the answer_validators correctly rejects them.
+    # (The output validator is also called with these)
+    data: []
+      #invalid_test_case_answer:
+      #  in: "<valid input>"
+      #  ans: "<invalid answer>"
+
+  invalid_output:
+    # Add valid test cases with answer and invalid team output to ensure that the output_validator correctly rejects them.
+    data: []
+      #invalid_test_case_output:
+      #    in: "<valid input>"
+      #    ans: "<valid answer>"
+      #    out: "<invalid output>"
+
+  valid_output:
+    # Add valid test cases with answer and team output to ensure that the output_validator correctly accepts them.
+    data: []
+      #valid_test_case_output:
+      #    in: "<valid input>"
+      #    ans: "<valid answer>"
+      #    out: "<valid output>"

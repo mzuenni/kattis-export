@@ -1,0 +1,29 @@
+INT(1, 10000, t) NEWLINE
+
+SET(eps = 1e-20)
+
+REP(t, NEWLINE)
+    FLOAT(0, 50, x, FIXED) SPACE FLOAT(0, 50, y, FIXED)
+    SET(area = (x*x + y*y) * 2)
+
+    ASSERT(x*x + y*y <= 50*50 + eps) # should be checked below but doesnt hurt to have
+
+    # ASSERT(area % 1 < eps)
+    # checktestdata does not have float mod or rounding
+    # so we binary search instead
+    SET(l = 1)
+    SET(r = 5001)
+    WHILE(l + 1 < r)
+        SET(m = (l + r) / 2)
+        IF(area < m - eps)
+            SET(r = m)
+        ELSE
+            SET(l = m)
+        END
+    END
+
+    SET(diff = area - l)
+    ASSERT(diff > -eps && diff < eps)
+END
+NEWLINE
+EOF

@@ -1,0 +1,44 @@
+\begin{frame}
+	\frametitle{\problemtitle}
+	\begin{block}{Problem}
+		Given an undirected graph.
+		Is there a path from vertex $1$ to vertex $n$ that is exactly one edge longer than a shortest path?
+	\end{block}
+
+	\pause
+	\begin{block}{Solution 1}
+		\begin{itemize}
+			\item Let $D = \mathrm{dist}(1, n)$.
+			\item \textbf{Observation:} Any path from $1$ to $n$ of length $D + 1$ must contain an edge $\{u, v\}$ such that the prefix from $1$ to $u$ and the suffix from $v$ to $n$ are shortest paths (possibly $u = 1$ or $v = n$).
+			\item Otherwise, the path would have length at least $D + 2$.
+			\pause
+			\item Therefore it suffices to check whether there exists an edge $\{u, v\}$ with
+			$$ \mathrm{dist}(1, u) + 1 + \mathrm{dist}(v, n) = D + 1.$$
+			\item To check this efficiently, precompute all distances from $1$ and from $n$ using two BFSs.
+			\item Time complexity: $\mathcal O(n + m)$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\problemtitle}
+	\begin{block}{Problem}
+		Given an undirected graph.
+		Is there a path from vertex $1$ to vertex $n$ that is exactly one edge longer than a shortest path?
+	\end{block}
+
+	\begin{block}{Solution 2}
+		\begin{itemize}
+			\item Use two states $(v, 0)$ and $(v, 1)$ per vertex.
+			\item States $(u, i)$ and $(v, j)$ are connected iff there is an edge $\{u, v\}$.
+			\pause
+			\item Run a BFS on these states starting from $(1, 0)$, with the following restriction:
+			\begin{itemize}
+				\item States $(v, 1)$ can only be visited if reached at distance exactly one longer than the distance to $(v, 0)$.
+			\end{itemize}
+			\pause
+			\item Finally, check if $(n, 1)$ is visited.
+			\item Time complexity: $\mathcal O(n + m)$.
+		\end{itemize}
+	\end{block}
+\end{frame}

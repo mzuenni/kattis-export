@@ -1,0 +1,235 @@
+solution: /submissions/accepted/yidi.cpp
+version: 2025-08  # use this version of the generators framework
+
+#test_group.yaml:
+  # One or more of:
+  # case_sensitive
+  # space_change_sensitive
+  # float_absolute_tolerance eps
+  # float_relative_tolerance eps
+  # float_tolerance eps
+  #output_validator_args:
+
+data:
+  sample:
+    data:
+      - "":
+          in: "4"
+          ans: |
+            4 4
+            O##O
+            #..#
+            #..#
+            O##O
+
+      - "":
+          in: "9"
+          ans: |
+            7 9
+            O##OO##.#
+            #..###O#O
+            #......#.
+            O##O.##O.
+            #..##O...
+            O##O.....
+            ...#.....
+  secret:
+    data:
+      - tiny:
+          generate: stdout.py {count}
+          count: [1, 2, 3, 5, 6, 7, 8]
+      - tiny:
+          generate: stdout.py {count}
+          count: 10..=100
+
+      - medium:
+          generate: genRandom.py {seed:5} 101 249
+          count: 20
+      
+      - large:
+          generate: genRandom.py {seed} 250 4999
+          count: 20
+
+      - anti-almost-rectangle:
+          generate: stdout.py {count}
+          count: [2709, 3849, 3852, 4099, 4159, 4160, 4163, 4190, 4195, 4519, 4783, 4897]
+      
+      - max:
+          in: "5000"
+
+  invalid_input:
+    data:
+
+  invalid_answer:
+    data:
+      - wrong_case:
+          in: "4"
+          ans: |
+            4 4
+            o##O
+            #..#
+            #..#
+            O##o
+
+
+  invalid_output:
+    data:
+      - invalid_dimension:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            3 101
+            O#...................................................................................................
+            #.O..................................................................................................
+            .O#..................................................................................................
+      - invalid_chars:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            3 3
+            #O.
+            #.O
+            ?O#
+      - swapped_dimensions:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            4 3
+            O#..
+            #.#.
+            .#O.
+      - trailing_row:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            3 3
+            O#.
+            #.#
+            .#O
+            ...
+      - component_outside:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            4 5
+            .#.#.
+            #O.O#
+            #O.O#
+            .#.#.
+      - wrong_count:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            3 3
+            O#.
+            #.#
+            .##
+      - unsat:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            3 4
+            O#.O
+            #.##
+            .#O#
+      - unsat:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            8 8
+            O#....#.
+            #.#...O#
+            .#O...#.
+            ..#..#..
+            .#O##O#.
+            #O#OO#O#
+            .#O##O#.
+            ..##O#..
+      - corner-side-nonsense:
+          in: "20"
+          ans: |
+            6 10
+            O##O#O#O#O
+            #.##.#.#.#
+            O#O#.....#
+            #.......#O
+            #.#.#.#..#
+            O#O#O#O##O
+
+          out: |
+            8 8
+            ########
+            #......#
+            #.OOOO.#
+            #.OO.O.#
+            #.O.OO.#
+            #.OOOO.#
+            #......#
+            ########
+
+
+
+
+  valid_output:
+    data:
+      - valid_dimension:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            3 100
+            O#..................................................................................................
+            #.#.................................................................................................
+            .#O.................................................................................................
+      - sat:
+          in: "1"
+          ans: |
+            3 3
+            O#.
+            #.#
+            .#O
+          out: |
+            8 8
+            O#......
+            #.#.....
+            .#O.....
+            ..#..#..
+            .#O##O#.
+            #O#OO#O#
+            .#O##O#.
+            ..#..#..

@@ -1,0 +1,63 @@
+solution: /submissions/accepted/weyand.cpp
+version: 2025-12  # use this version of the generators framework
+
+data:
+  sample:
+    data:
+      - '':
+         in: |
+           4
+           pickup apples
+           pickup oranges
+           dropoff oranges
+           dropoff apples
+         ans: 'yes'
+      - '':
+         in: |
+           6
+           pickup gcpc
+           pickup teams
+           dropoff gcpc
+           pickup jury
+           dropoff teams
+           dropoff gcpc
+         ans: 'no'
+      - dropoff_first: { in: "2\ndropoff books\npickup books\n" }
+      - same_twice: { in: "4\npickup balloon\ndropoff balloon\npickup balloon\ndropoff balloon\n" }
+      - one_dropoff: { in: "1\ndropoff fft\n" }
+      - anti_jannik: { in: "4\npickup timelimit\npickup correct\ndropoff timelimit\ndropoff correct\n" }
+
+  secret:
+    data:
+      - min_input_no: { in: "1\npickup a\n" }
+      - min_input_no: { in: "1\ndropoff a\n" }
+      - min_input_yes: { in: "2\npickup a\ndropoff a\n" }
+      - two_pickup: { in: "2\npickup a\npickup a\n" }
+      - two_dropoff: { in: "2\ndropoff b\ndropoff c\n" }
+      - double_pickup: { in: "3\npickup a\npickup a\ndropoff a\n" }
+      - double_dropoff: { in: "3\npickup a\ndropoff a\ndropoff a\n" }
+      - same_twice: { in: "4\npickup a\ndropoff a\npickup a\ndropoff a\n" }
+      - dropoff_first_hidden: { in: "4\npickup b\ndropoff a\npickup a\ndropoff b\n" }
+      - large_item: { in: "2\npickup aaaaaaaaaaaaaaaaaaaa\ndropoff aaaaaaaaaaaaaaaaaaaa\n" }
+      - nested_delivery: { in: "4\npickup a\npickup a\ndropoff a\ndropoff a\n" }
+      - odd: { in: "3\npickup a\npickup b\ndropoff a\n" }
+      - odd: { in: "3\npickup b\npickup a\ndropoff a\n" }
+
+      - random_no_small:
+         generate: rand.py {seed} 10 0
+         count: 5
+      - random_yes_small:
+         generate: rand.py {seed} 10 1
+         count: 5
+      - random_yes_medium:
+         generate: rand.py {seed} 1000 1
+         count: 5
+      - random_yes_large:
+         generate: rand.py {seed} 10000 1
+         count: 5
+      - random_no_max:
+         generate: rand.py {seed} 100000 0 10 
+         count: 3
+      - random_yes_max:
+         generate: rand.py {seed} 100000 1 10 
+         count: 3

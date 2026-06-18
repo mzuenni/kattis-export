@@ -1,0 +1,40 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Given two sets of points $A$ and $B$. Determine whether there is a symmetry line separating $A$ and $B$, i.e., mirroring $A$ along that line results in $B$
+    \end{block}
+    \begin{block}{Solution}
+    \begin{minipage}[t]{0.55\textwidth}
+        \begin{itemize}
+            \item<2-> Compute the Center of Mass (COM) for both sets: $c_A=\left(\sum_{p\in A}p\right)/|A|$
+            \item<3-> If there is a symmetry line, it
+                \begin{itemize}
+                    \item goes through $(c_A + c_B) / 2$, and
+                    \item is perpendicular to $c_A - c_B$
+                \end{itemize}
+            \item<4>[$\rightarrow$] Check that
+                \begin{itemize}
+                    \item $c_A\neq c_B$,
+                    \item mirroring $A$ results in $B$, and
+                    \item all points in $A$ lie strictly one side of the mirror line
+                \end{itemize}
+        \end{itemize}
+        \vspace{-1.5cm}
+        \visible<5->{
+        Possible pitfalls:
+        {\small
+        \begin{itemize}
+            \item Rounding after mirroring without checking for integer coordinates
+            \item Sorting for comparing the mirrored $A$ with $B$
+            \item Missing one of the checks above
+            \item \texttt{float} instead of (\texttt{long}) \texttt{double}
+        \end{itemize}
+        }
+        }
+    \end{minipage}
+    \begin{minipage}[t]{0.35\textwidth}
+        \centering\vspace{-0.7\baselineskip}
+        \includegraphics[width=\textwidth]{../statement/figure.pdf}
+    \end{minipage}
+    \end{block}
+\end{frame}

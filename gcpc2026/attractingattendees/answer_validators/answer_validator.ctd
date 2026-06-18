@@ -1,0 +1,11 @@
+REGEX("(im)?possible", ans) NEWLINE
+SET(n=2*10^5)
+IF(ans == "possible")
+    INT(1, n, k) NEWLINE
+    REPI(i, k, SPACE)
+        INT(1, n, b[i])
+    END
+    ASSERT(UNIQUE(b))
+    NEWLINE
+END
+EOF

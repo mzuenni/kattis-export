@@ -1,0 +1,13 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+  \begin{block}{Problem}
+        Given a directed tree, find a minimal subset of nodes, such that every node has distance less than $k$ to this subset.
+    \end{block}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item<+-> Solve the problem greedily. Consider a node with maximum depth $u$.
+            \item<+-> Walk up $k-1$ steps to the node $v$ and add $v$ to the subset.
+            \item<+-> Remove the subtree rooted at $v$ and repeat all the steps.
+        \end{itemize}
+    \end{block}
+\end{frame}

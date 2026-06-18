@@ -1,0 +1,52 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \only<1-2>{\begin{block}{Problem}
+        \begin{itemize}
+            \item Given $2n$ recruits with attack $a_i$, defense $d_i$, and home city $c_i$.
+            \item Assign them into $n$ pairs, maximize sum over fighting power.
+            \item Fighting power of a pair (i, j) is $
+\begin{cases}
+    a_i + d_j, & \text{if } c_i \neq c_j,\\
+    a_i + d_j + c_i, & \text{if } c_i = c_j
+\end{cases}
+$
+        \end{itemize}
+    \end{block}}
+    \pause
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item Instead of pairing, partition recruits into two groups of $n$, attacking and defending.
+            \item Without city bonus, it is optimal to sort by $a_i - d_i$ and split in half.
+            \item Therefore, for all recruits of one city, sort by $a_i - d_i$.
+            \vspace{0.2cm}
+
+            \only<3->{
+            \item Initially, split each city in half to maximize city bonus.
+            \item If there is an odd number of recruits, ignore the middle one.
+            \item Use middle ones to fill both groups to $n$.
+            \pause
+            \vspace{0.2cm}
+            \item For each recruit, calculate attack-defense difference to move to other group.
+            \item Subtract $c_i$ city bonus if they were not middle one.
+            \item As long as it is worth it, swap the best recruit of both groups.
+            \item The resulting partition is optimal, calculate the answer.
+            }
+        \end{itemize}
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Proof Sketch}
+        \begin{itemize}
+            \item We start with optimal city bonus.
+            \item Whenever we move one (not middle), we lose one city bonus pairing.
+            \pause
+            \vspace{0.2cm}
+            \item If a recruit from a city $c$ moves from group A to B, no one from $c$ will move from B to A.
+            \item The middle always moves before any other from their city moves.
+            \item Notice that for each city, the recruits are always at an optimal assignment (no swap is better).
+            \item If a better optimal solution were to exist, at least two of different cities are swapped.
+            \item At the end of our process, no two such people can exist.
+        \end{itemize}
+    \end{block}
+\end{frame}

@@ -1,0 +1,16 @@
+\begin{frame}{\problemtitle}
+	\begin{block}{Problem}
+		Construct a string of length $n$ with longest palindromic substring of length $k$.
+	\end{block}
+	\pause
+	\begin{block}{Solution}
+		\begin{itemize}
+			\item Repeat character \texttt{"a"} $k$ times as palindromic substring.
+			\item Fill suffix with \texttt{bcdbcdbcd}...
+			\item Python golf: \texttt{("a"*k+"bcd"*n)[:n]}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+

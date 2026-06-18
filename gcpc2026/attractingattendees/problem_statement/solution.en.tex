@@ -1,0 +1,23 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+    	Given $n$ bands and $m$ fans and connections between them, select some of them such that:
+    	\begin{itemize}
+    		\item each band is connected to at least $c$ fans
+    		\item each fan is connected to at least half of the bands they were initially connected to
+    	\end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Solution}
+    	\begin{itemize}
+    		\item initially consider all bands and fans
+    		\pause
+    		\item if a band has less than $c$ fans left you must discard it
+    		\item if a fan has less than half of its bands remaining you must discard them
+    		\pause
+    		\item if nothing must be discarded the remaining bands and fans are a valid solution
+    		\pause
+    		\item[] \textcolor{gray}{(this is actually the largest possible solution)}
+    	\end{itemize}
+    \end{block}
+\end{frame}

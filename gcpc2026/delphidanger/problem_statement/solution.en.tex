@@ -1,0 +1,21 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Find $n$ infinite binary strings $s_i$, which satisfy prophecies of the form
+        \begin{itemize}
+            \item $s_u[t] \neq s_v[t]$ 
+            \item $t$ is the smallest index with the above property
+        \end{itemize}
+        Minimize the number of $1$'s in those strings.
+    \end{block}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item<+-> Iterate over $t$ in decreasing order and process all prophecies with the current $t$
+            \item<+-> The restrictions $s_u[t] \neq s_v[t]$ can be satisfied iff the graph formed by the edges $(u,v)$ is bipartite
+            \item<+-> Greedily assign a $1$ to the smaller part of each component.
+            \item<+-> Strings have to be identical for all further prophecies $\rightarrow$ merge each connected components into a single node
+            \item<+-> Complexity: $\mathcal{O}(m\log m+n)$ for sorting and checking bipartiteness
+        \end{itemize}
+    \end{block}
+    % \solvestats
+\end{frame}

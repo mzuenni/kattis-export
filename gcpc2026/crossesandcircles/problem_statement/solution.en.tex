@@ -1,0 +1,14 @@
+\begin{frame}
+    \frametitle{\problemtitle}
+    \begin{block}{Problem}
+        Win tic-tac-toe on a large ($59\times42$) grid when going first.
+    \end{block}
+    \begin{block}{Solution}
+        \begin{itemize}
+            \item<+-> Play the first move somewhere with enough space around it, for example near the center.
+            \item<+-> After the judge's first move, choose a direction such that the adjacent cell and both completion cells are still free.
+            \item<+-> Play the adjacent cell in that direction.
+            \item<+-> The two possible completion cells are now two different winning threats. The judge can block at most one, so play the other one.
+        \end{itemize}
+    \end{block}
+\end{frame}

@@ -1,0 +1,6 @@
+INT(2, 5000, n) NEWLINE
+REP(n, SPACE)
+    INT(1, n, ti)
+END
+NEWLINE
+EOF

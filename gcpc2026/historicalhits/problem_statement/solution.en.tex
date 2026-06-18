@@ -1,0 +1,40 @@
+\begin{frame}{\problemtitle}
+  \begin{block}{Problem}
+	Find the expected number of correct guesses in a single player game of Hitster (random card order).
+	\begin{itemize}
+		\item $n \leq 3000$ songs, release year $a_i$, guess $b_i$
+		\item $a_i$ are distinct!
+	\end{itemize}
+	\end{block}
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{../statement/sample3.pdf}
+	\end{center}
+\end{frame}
+
+\begin{frame}{\problemtitle}
+	\begin{block}{Solution}
+		\begin{itemize}
+			\item Suppose that card $i$ is drawn first.
+			\pause
+			\item Cards $j$ with $a_i$ between $a_j$ and $b_j$ are guessed incorrectly.
+			\pause
+			\item Two independent subproblems: cards with $a_j, b_j < a_i$ and cards with $a_j, b_j > a_i$.
+			\pause
+			\item[$\leadsto$] $\operatorname{dp}(\ell, r) = $ expected value with cards $a_i, b_i \in (\ell, r)$.
+			\pause
+			\item Computation (where $S(\ell, r) = \{i \mid a_i, b_i \in (\ell, r)\}$):
+			\begin{align*}
+				\operatorname{dp}(\ell, r) = \frac{1}{|S(\ell, r)|}\sum_{i \in S(\ell, r)}  1 + \operatorname{dp}(\ell, a_i) + \operatorname{dp}(a_i, r)
+			\end{align*}
+			\pause
+			\item $O(n^3) \leadsto $ too slow
+			\pause
+			\item Optimize to $O(n^2)$ using prefix sums / sweepline techniques.
+			\item For fixed $\ell$ and increasing $r$ maintain the sum $\sum_{i \in S(\ell, r)} \operatorname{dp}(\ell, a_i)$.
+			\pause
+			\item Challenge: Solve the problem with duplicate $a_i$ allowed.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
