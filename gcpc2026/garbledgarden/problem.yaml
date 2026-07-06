@@ -1,7 +1,7 @@
 # Specification: https://icpc.io/problem-package-format/spec/2025-09.html
 name: Garbled Garden
 uuid: 8ee7605a-5d3e-8a5d-2639-6e07bdb49c51
-source: German Collegiate Programming Contest 2026
+source: German Collegiate Programming Contest (GCPC) 2026
 license: cc by-sa
 
 # limits:

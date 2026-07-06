@@ -1,7 +1,7 @@
 # Specification: https://icpc.io/problem-package-format/spec/2025-09.html
 name: Keeping Cows
 uuid: 8ee7605a-6455-8d54-3769-6822fd156620
-source: German Collegiate Programming Contest 2026
+source: German Collegiate Programming Contest (GCPC) 2026
 license: cc by-sa
 
 # limits:

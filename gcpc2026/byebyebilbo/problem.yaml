@@ -1,7 +1,7 @@
 # Specification: https://icpc.io/problem-package-format/spec/2025-09.html
 name: Bye Bye Bilbo
 uuid: 8ee7605a-1df3-84a0-3fe2-bc7f23d55bf6
-source: German Collegiate Programming Contest 2026
+source: German Collegiate Programming Contest (GCPC) 2026
 license: cc by-sa
 
 # limits:
