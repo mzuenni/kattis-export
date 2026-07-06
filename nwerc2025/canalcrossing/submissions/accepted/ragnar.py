@@ -2,7 +2,7 @@
 
 import sys
 
-sys.setrecursionlimit(10**7)
+sys.setrecursionlimit(5*10**5)
 
 n = int(input())
 es = [[] for _ in range(n)]
