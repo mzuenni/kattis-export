@@ -1,4 +1,4 @@
-from fractions import gcd
+from math import gcd
 
 def extended_gcd(aa, bb):
     lastremainder, remainder = abs(aa), abs(bb)
@@ -16,7 +16,7 @@ def modinv(a, m):
     return x % m
 
 mod = 1000000007
-n,m,c = map(int, raw_input().split())
+n,m,c = list(map(int, input().split()))
 types = pow(c,n*n, mod)
 
 res = 0

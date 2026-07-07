@@ -1,6 +1,7 @@
 name: Buildings
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: Christian Mueller, GCPC 2017 Jury
+author: Christian Mueller
 license: cc by-sa
-keywords: hard - Burnsides Lemma
+keywords: burnsides-lemma
+uuid: "3a8c5ec5-67a2-424a-9f06-7ed86bf744c2"
