@@ -1,7 +1,8 @@
 name: You Are Fired!
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
 author: Gregor Schwarz
 license: cc by-sa
-keywords: very easy - ad-hoc
+keywords: greedy sort
 validation: custom
+uuid: "5cea8020-931e-42e2-b4d5-49cb14830ee3"

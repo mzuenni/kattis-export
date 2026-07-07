@@ -1,9 +1,8 @@
-
-n,d,k = map(int, raw_input().split())
+n,d,k = list(map(int, input().split()))
 l = list()
 
 for i in range(n):
-    x = raw_input().split()
+    x = input().split()
     l.append((int(x[1]),x[0]))
 
 l.sort(reverse=True)
@@ -19,4 +18,4 @@ if s < d:
 else:
     print(len(fired))
     for x in fired:
-        print("%s, YOU ARE FIRED!"%x)    
+        print("%s, YOU ARE FIRED!"%x)
