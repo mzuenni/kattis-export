@@ -1,8 +1,9 @@
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 # source_url:
-author: GCPC 2017 Jury
+author: Paul Wild
 # rights_owner:
 license: cc by-sa
 name: Word Clock
 validation: custom
-keywords: very hard - DP
+keywords: bitmask dynamic-programming
+uuid: "aae4b29d-ac26-4a06-9a90-d3301e121f35"
