@@ -40,8 +40,8 @@ int n;
 vi adj[2000];
 bool v[2000];
 
-bool dfs(int rat, int rav){
-	if (v[rat]) return 0;
+void dfs(int rat, int rav){
+	if (v[rat]) return;
 	v[rat] = true;
 	FORIT(j,adj[rat]) if (*j != rav) dfs(*j,rav);
 }
@@ -91,4 +91,5 @@ int main(){
 	}
 	
 	cout << min(bestP(r,h) , min ( bestP(r,m) , bestP(-1,-1) ) ) << endl;
+    return 0;
 }

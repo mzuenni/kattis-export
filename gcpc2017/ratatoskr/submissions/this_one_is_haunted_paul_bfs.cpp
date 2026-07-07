@@ -102,4 +102,6 @@ int main() {
 	
 	assert(st[0][R1][R2][S]->visited);
 	cout << st[0][R1][R2][S]->game_duration << endl;
+
+    return 0;
 }

@@ -1,0 +1,7 @@
+name: Ratatöskr
+source: German Collegiate Programming Contest (GCPC) 2017
+source_url: http://gcpc.nwerc.eu
+author: Markus Blumenstock
+license: cc by-sa
+keywords: depth-first-search dynamic-programming graph-diameter tree
+uuid: "75668352-3e7a-47d0-b6e2-0d29afd4ac5d"
