@@ -1,11 +1,11 @@
-#!/bin/python2
+#!/usr/bin/env python3
 
-n, d = map(int, raw_input().split())
+n, d = list(map(int, input().split()))
 d -= 10 # now distance between the end points
 
 vs = []
 for _ in range(n):
-	vs += [int(raw_input())]
+	vs += [int(input())]
 
 dp = []
 for _ in range(n+1):

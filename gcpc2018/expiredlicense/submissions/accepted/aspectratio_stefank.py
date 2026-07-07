@@ -1,5 +1,6 @@
 import fractions
 import sys
+from math import gcd
 
 def isPrime(x):
     i = 2
@@ -8,10 +9,10 @@ def isPrime(x):
         i = i + 1
     return x != 1
 
-n = int(raw_input())
+n = int(input())
 
-for i in xrange(n):
-    a, b = map(fractions.Fraction, raw_input().split())
+for i in range(n):
+    a, b = list(map(fractions.Fraction, input().split()))
 
     c = a / b;
     d, e = c.numerator, c.denominator

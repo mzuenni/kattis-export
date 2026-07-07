@@ -1,16 +1,16 @@
-#!/bin/python2
+#!/usr/bin/env python3
 
 # @EXPECTED_RESULT@ WRONG_ANSWER
 #
 # using dp[item][dist] = best(smallest)
-# Value is the smallest number (therefor best overlap) to achieve the (unoverlapped) distance of dist
+# Value is the smallest number (therefore best overlap) to achieve the (unoverlapped) distance of dist
 # Fail: For some settings, a larger amount of wires is needed to ensure it can be shortened enough
-n, d = map(int, raw_input().split())
+n, d = list(map(int, input().split()))
 d -= 10 # now distance between the end points
 
 vs = []
 for _ in range(n):
-	vs += [int(raw_input())]
+	vs += [int(input())]
 
 oo = 10000
 

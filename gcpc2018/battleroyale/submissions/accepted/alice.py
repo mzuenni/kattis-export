@@ -1,12 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import math
 
 eps = 10**(-15)
 
-cur = map(float, raw_input().split())
-dest = map(float, raw_input().split())
-map(float, raw_input().split())
-red = map(float, raw_input().split())
+cur = list(map(float, input().split()))
+dest = list(map(float, input().split()))
+map(float, input().split())
+red = list(map(float, input().split()))
 
 def dist(a, b):
     dy = a[1] - b[1]

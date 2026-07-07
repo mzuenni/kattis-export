@@ -1,16 +1,15 @@
-#!/bin/python2
+#!/usr/bin/env python3
 import copy
 import random
 
 STRIP = 5
 
-n, d = map(int, raw_input().split())
+n, d = list(map(int, input().split()))
 d -= 2*STRIP # now distance between the end points
-
+n, d = list(map(int, input().split()))
 vs = []
 for _ in range(n):
-	vs += [int(raw_input())]
-
+	vs += [int(input())]
 dp = []
 for _ in range(n+1):
 	x = []
@@ -112,5 +111,5 @@ for c in vs:
 	if not c in erased:
 		li += [str(c)]
 		count += 1
-print count, d+2*STRIP
-print "\n".join(li)
+print(count, d+2*STRIP)
+print("\n".join(li))
