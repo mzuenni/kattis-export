@@ -1,6 +1,7 @@
 name: Water Testing
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: GCPC 2017 Jury
+author: Gregor Behnke
 license: cc by-sa
-keywords: medium - Pick's Theorem
+keywords: geometry picks-theorem polygon-area
+uuid: "ca627ca5-3700-466c-aa11-c5ff096b4a85"

@@ -19,9 +19,9 @@ def PolygonArea(corners):
 
 corners = []
 
-n = int(raw_input())
+n = int(input())
 for _ in range(n):
-    x,y = map(int,raw_input().split())
+    x,y = list(map(int,input().split()))
     corners.append((x,y))
 p = len(corners)
 for i in range(n):
