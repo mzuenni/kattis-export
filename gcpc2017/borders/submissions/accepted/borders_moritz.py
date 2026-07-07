@@ -4,14 +4,14 @@ Created on 18.05.2017
 @author: Moritz Fuchs
 '''
 
-n = int(raw_input())
+n = int(input())
 max_x = 0
 min_x = 100000000
 max_y = 0
 min_y = 100000000
 l = list()
 for _ in range(n):
-    x,y,c = map(int, raw_input().split())
+    x,y,c = list(map(int, input().split()))
     max_x = max(max_x,x)
     min_x = min(min_x,x)
     max_y = max(max_y,y)
@@ -90,5 +90,4 @@ for x in res_outer:
     print("%.1f %.1f"%x)
 print(len(res_inner))
 for x in res_inner:
-    print("%.1f %.1f"%x)     
-    
+    print("%.1f %.1f"%x)

@@ -1,8 +1,9 @@
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 # source_url:
-author: GCPC 2017 Jury - Paul Wild
+author: Paul Wild
 # rights_owner:
 license: cc by-sa
 name: Borders
 validation: custom
-keywords: hard - Geometry (constructive)
+keywords: computational-geometry constructive geometry polygon
+uuid: "ed0401ec-0a74-4d9a-bdbd-3db685cfb083"
