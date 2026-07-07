@@ -1,9 +1,9 @@
 name: Plug it in
-source: GCPC 2017
+source: German Collegiate Programing Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: Moritz Fuchs - GCPC 2017 Jury
+author: Moritz Fuchs
 license: cc by-sa
-keywords: medium - Matching
-
+keywords: bipartite-graph bipartite-matching matching
 limits:
     time_multiplier: 1.2
+uuid: "bdf5790a-43d4-414a-9773-b8c490cb1938"

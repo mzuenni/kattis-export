@@ -42,7 +42,7 @@ def flow(graph, sink, flow_init=0):
     return graph, f
 
 
-m,n,k = map(int, raw_input().split())
+m,n,k = list(map(int, input().split()))
 
 # setup graph
 graph = defaultdict(lambda:set())
@@ -51,7 +51,7 @@ source = 0
 offset_right = m
 sink = n+m+10
 for _ in range(k):
-    start, end = map(int, raw_input().split())
+    start, end = list(map(int, input().split()))
     #source
     graph[source].add(start)
     #edge to be covered
