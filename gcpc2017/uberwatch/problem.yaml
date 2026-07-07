@@ -1,6 +1,7 @@
 name: Uberwatch
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: Martin Tillmann, GCPC Jury 2017
+author: Martin Tillmann
 license: cc by-sa
-keywords: easy - DP
+keywords: dynamic-programming
+uuid: "e7813cec-7b5e-457e-a554-32bcc93ad272"
