@@ -18,13 +18,13 @@ def find(start, end):
                 seen.add(n)
     return False
 
-n,m = map(int,raw_input().split())
+n,m = list(map(int,input().split()))
 
 inc = defaultdict(lambda:list())
 out = defaultdict(lambda:list())
 
 for _ in range(n):
-    s = raw_input()
+    s = input()
     if " are worse than " in s:
         x = s.split(" are worse than ")
         out[x[0]].append(x[1])
@@ -33,7 +33,7 @@ for _ in range(n):
         worst = s.split()[0]
 
 for _ in range(m):
-    s = raw_input()
+    s = input()
     if " are worse than " in s:
         x = s.split(" are worse than ")
         if find(*x):

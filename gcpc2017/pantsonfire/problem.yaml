@@ -1,6 +1,7 @@
 name: Pants on Fire
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: GCPC 2017 Jury
+author: Gregor Behnke
 license: cc by-sa
-keywords: easy - DFS, BFS
+keywords: graph reachability
+uuid: "867bf09f-33b5-4027-930e-929bc1896929"
