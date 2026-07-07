@@ -1,8 +1,9 @@
 name: Perpetuum Mobile
-source: GCPC 2017
+source: German Collegiate Programming Contest (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: GCPC 2017 Jury
+author: Stefan Jaax
 license: cc by-sa
-keywords: medium - Shortest Paths, Bellman-Ford
+keywords: shortest-path cycle-detection
 limits:
-    time_multiplier: 3
+    time_multiplier: 2.5
+uuid: "7ebdeb23-fe6e-4e11-a359-2b13c4269abb"
