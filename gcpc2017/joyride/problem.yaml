@@ -1,6 +1,7 @@
 name: Joyride
-source: GCPC 2017
+source: German Collegiate Programming Contests (GCPC) 2017
 source_url: http://gcpc.nwerc.eu
-author: GCPC 2017 Jury
+author: Gregor Behnke
 license: cc by-sa
-keywords: medium - DP
+keywords: dynamic-programming
+uuid: "618e0b72-7335-4374-8ca0-ef2060004170"
