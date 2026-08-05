@@ -1,0 +1,11 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Gregor Behnke
+# rights_owner:
+license: cc by-sa
+
+limits:
+  time_multiplier: 2
+  memory: 2048
+# uuid added by BAPCtools
+uuid: '8ee7605a-b83c-801f-1d1a-7503ae5a8be3'

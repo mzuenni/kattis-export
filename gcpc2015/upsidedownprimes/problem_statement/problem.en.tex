@@ -1,0 +1,73 @@
+\problemname{Upside down primes}
+
+\noindent Last night, I must have dropped my alarm clock. When the alarm went
+off in the morning, it showed {\tt 51:80} instead of {\tt 08:15}. This made me
+realize that if you rotate a seven segment display like it is used in digital
+clocks by 180 degrees, some numbers still are numbers after turning them upside
+down.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=1.5cm]{7-segment_bc.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_abcdefg.pdf} %8
+	\includegraphics[height=1.5cm]{7-segment_bc.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_bc.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_acdfg.pdf} %5
+	\includegraphics[height=1.5cm]{7-segment_abdeg.pdf} %2
+	\includegraphics[height=1.5cm]{7-segment_bc.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_bc.pdf} %1
+%	\includegraphics[height=1.5cm]{7-segment_abcdef.pdf}  %0
+%	\includegraphics[height=1.5cm]{7-segment_bc.pdf} %1
+%	\includegraphics[height=1.5cm]{7-segment_abdeg.pdf} %2
+%	\includegraphics[height=1.5cm]{7-segment_abcdg.pdf} %3
+%	\includegraphics[height=1.5cm]{7-segment_bcfg.pdf} %4
+%	\includegraphics[height=1.5cm]{7-segment_acdfg.pdf} %5
+%	\includegraphics[height=1.5cm]{7-segment_acdefg.pdf} %6
+%	\includegraphics[height=1.5cm]{7-segment_abc.pdf} %7
+%	\includegraphics[height=1.5cm]{7-segment_abcdefg.pdf} %8
+%	\includegraphics[height=1.5cm]{7-segment_abcdfg.pdf} %9
+	\caption{Prime number $18115211$ on a seven segment display (see third sample).}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=1.5cm]{7-segment_bc_rot.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_bc_rot.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_abdeg_rot.pdf} %2
+	\includegraphics[height=1.5cm]{7-segment_acdfg_rot.pdf} %5
+	\includegraphics[height=1.5cm]{7-segment_bc_rot.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_bc_rot.pdf} %1
+	\includegraphics[height=1.5cm]{7-segment_abcdefg_rot.pdf} %8
+	\includegraphics[height=1.5cm]{7-segment_bc_rot.pdf} %1
+%	\includegraphics[height=1.5cm]{7-segment_abcdef_rot.pdf} %0
+%	\includegraphics[height=1.5cm]{7-segment_bc_rot.pdf} %1
+%	\includegraphics[height=1.5cm]{7-segment_abdeg_rot.pdf} %2
+%	\includegraphics[height=1.5cm]{7-segment_abcdg_rot.pdf} %3
+%	\includegraphics[height=1.5cm]{7-segment_bcfg_rot.pdf} %4
+%	\includegraphics[height=1.5cm]{7-segment_acdfg_rot.pdf} %5
+%	\includegraphics[height=1.5cm]{7-segment_acdefg_rot.pdf} %6
+%	\includegraphics[height=1.5cm]{7-segment_abc_rot.pdf} %7
+%	\includegraphics[height=1.5cm]{7-segment_abcdefg_rot.pdf} %8
+%	\includegraphics[height=1.5cm]{7-segment_abcdfg_rot.pdf} %9
+	\caption{$18115211$ turned upside down (i.e.\ rotated by 180 degrees) gives $11251181$, which is not prime.}
+\end{figure}
+
+As you can see,
+\begin{itemize}
+	\item \includegraphics[width=1em]{7-segment_abcdef.pdf}, \includegraphics[width=1em]{7-segment_abdeg.pdf}, \includegraphics[width=1em]{7-segment_acdfg.pdf}, and \includegraphics[width=1em]{7-segment_abcdefg.pdf} still are 
+	\includegraphics[width=1em]{7-segment_abcdef_rot.pdf}, \includegraphics[width=1em]{7-segment_abdeg_rot.pdf}, \includegraphics[width=1em]{7-segment_acdfg_rot.pdf}, and \includegraphics[width=1em]{7-segment_abcdefg_rot.pdf}.
+\item \includegraphics[width=1em]{7-segment_bc.pdf} is still readable as \includegraphics[width=1em]{7-segment_bc_rot.pdf} (only moved left).
+\item \includegraphics[width=1em]{7-segment_acdefg.pdf} turns into \includegraphics[width=1em]{7-segment_acdefg_rot.pdf}, while \includegraphics[width=1em]{7-segment_abcdfg.pdf} turns into \includegraphics[width=1em]{7-segment_abcdfg_rot.pdf}.
+	\item \includegraphics[width=1em]{7-segment_abcdg.pdf}, \includegraphics[width=1em]{7-segment_bcfg.pdf} and \includegraphics[width=1em]{7-segment_abc.pdf} are no longer valid numbers (\includegraphics[width=1em]{7-segment_abcdg_rot.pdf}, \includegraphics[width=1em]{7-segment_bcfg_rot.pdf} and \includegraphics[width=1em]{7-segment_abc_rot.pdf})
+\end{itemize}
+
+\noindent My favourite numbers are primes, of course. Your job is to check
+whether a number is a prime and still a prime when turned upside down.
+
+\section*{Input}
+One line with the integer $N$ in question ($1 \le N \le 10^{16}$). $N$
+will not have leading zeros.
+
+\section*{Output}
+Print one line of output containing
+``{\tt yes}'' if the number is a prime and still a prime if turned upside down,
+``{\tt no}'' otherwise.

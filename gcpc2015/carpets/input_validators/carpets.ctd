@@ -1,0 +1,16 @@
+INT(1,100,w) SPACE
+INT(1,100,h) NEWLINE
+
+INT(1,7,c)   NEWLINE
+
+SET(sumca = 0)
+REPI(i,c)
+	INT(1,  7,ca[i]) SPACE
+	INT(1,100,cw[i]) SPACE
+	INT(1,100,ch[i]) NEWLINE
+
+	SET(sumca = sumca + ca[i])
+END
+
+ASSERT(sumca <= 7)
+EOF

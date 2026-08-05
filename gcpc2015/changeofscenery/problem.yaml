@@ -1,0 +1,10 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Philipp Hoffmann
+# rights_owner:
+license: cc by-sa
+# uuid added by BAPCtools
+uuid: '8ee7605a-faa0-8505-1347-5453c2b90b74'
+
+limits:
+  time_multiplier: 2

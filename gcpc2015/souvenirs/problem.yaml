@@ -1,0 +1,9 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Daniel Brinkers
+# rights_owner:
+license: cc by-sa
+limits:
+        time_multiplier: 1.2
+# uuid added by BAPCtools
+uuid: '8ee7605a-17ec-8496-3091-213c766d33df'

@@ -1,0 +1,9 @@
+INT(1,400,n)  NEWLINE
+REP(n)
+	REGEX("[a-zA-Z_0-9]{1,20}::[a-zA-Z_0-9]{1,20}") SPACE INT(0,n,k) NEWLINE
+	REP(k, SPACE)
+		REGEX("[a-zA-Z_0-9]{1,20}::[a-zA-Z_0-9]{1,20}")
+	END
+	NEWLINE
+END
+EOF

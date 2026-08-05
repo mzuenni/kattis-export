@@ -1,0 +1,10 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Thorsten Wißmann
+# rights_owner:
+license: cc by-sa
+# uuid added by BAPCtools
+uuid: '8ee7605a-bf81-8e9c-04b3-ec6f9be3d1b9'
+
+limits:
+  time_multiplier: 3

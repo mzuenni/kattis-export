@@ -1,0 +1,10 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Alexander Rass
+# rights_owner:
+license: cc by-sa
+limits:
+    time_multiplier: 1
+    time_safety_margin: 4
+# uuid added by BAPCtools
+uuid: '8ee7605a-ad4d-8bad-14e1-90fa8423099f'

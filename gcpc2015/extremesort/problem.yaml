@@ -1,0 +1,10 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Hans Spath
+# rights_owner:
+license: cc by-sa
+limits:
+    time_multiplier: 1.2
+# uuid added by BAPCtools
+uuid: '8ee7605a-216f-80f1-2ad1-7bdc5feba7a2'
+

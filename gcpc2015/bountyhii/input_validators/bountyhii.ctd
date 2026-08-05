@@ -1,0 +1,11 @@
+INT(1,1000,n)  NEWLINE
+REPI(i,n)
+	INT(0,n-1,k)
+	REP(k)
+		SPACE
+		INT(0,n-1,to)
+		ASSERT(to != i)
+	END
+	NEWLINE
+END
+EOF

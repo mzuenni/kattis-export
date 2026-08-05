@@ -1,0 +1,19 @@
+INT(1,2*10^4,n)  SPACE
+INT(1,15,p)    SPACE
+INT(1,10^5,m)  SPACE
+INT(1,10^5,g)  SPACE
+INT(1,500,t)   NEWLINE
+
+REPI(i,p)
+	INT(0,n-1,pp[i]) SPACE
+	INT(1,500,pt) NEWLINE
+END
+ASSERT(UNIQUE(pp))
+
+REP(m)
+	INT(0,n-1,ms) SPACE
+	INT(0,n-1,md) SPACE
+	INT(1,500,mt) NEWLINE
+END
+
+EOF

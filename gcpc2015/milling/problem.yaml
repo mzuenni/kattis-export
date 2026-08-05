@@ -1,0 +1,9 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Tobias Werth
+# rights_owner:
+license: cc by-sa
+limits:
+  time_multiplier: 2
+# uuid added by BAPCtools
+uuid: '8ee7605a-44d9-81e9-2f68-1552cc5f6aad'

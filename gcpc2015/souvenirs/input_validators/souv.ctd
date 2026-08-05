@@ -1,0 +1,5 @@
+INT(2,100,g) SPACE INT(1,100,c) SPACE INT(1,100,n) NEWLINE
+REP(n)
+	REGEX("(greedy|generous|honest)") SPACE INT(1,g,p) SPACE INT(1,g-1) NEWLINE
+	ASSERT(g%p == 0)
+END

@@ -1,0 +1,10 @@
+source: GCPC 2015
+source_url: http://gcpc.nwerc.eu
+author: Egor Dranischnikow
+# rights_owner:
+license: cc by-sa
+# uuid added by BAPCtools
+uuid: '8ee7605a-2cb4-8752-178b-aacdc41f80c4'
+
+limits:
+  memory: 2048

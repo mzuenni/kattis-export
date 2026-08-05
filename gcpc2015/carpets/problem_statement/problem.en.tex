@@ -1,0 +1,31 @@
+\problemname{Carpets}
+
+The computer science Professor Toving Liles loves the floor tiles in his office
+so much that he wants to protect them from damage by careless students.
+Therefore, he would like to buy cheap small rectangular carpets from the
+supermarket and cover the floor such that:
+\begin{enumerate}
+\item The entire floor is covered.
+\item The carpets do not overlap.
+\item The carpets are rotated arbitrarily.
+\item No carpet is cut into pieces.
+\end{enumerate}
+But when checking the supermarket's stock he begins to wonder whether he can
+accomplish his plan at all. Can you help him?
+
+\section*{Input}
+
+The first line contains two integers $W$ and $H$
+describing the size of his room ($1\le W,H \le 100$). The second line contains an integer $c$,
+denoting the number of different carpet colors the supermarket has in
+stock ($1 \le c \le 7$).\\
+Each of the following $c$ lines consists of three integers $a_i$, $w_i$, and $h_i$,
+which means: the supermarket's stock contains $a_i$ carpets of size $w_i$,
+$h_i$ and color $i$ ($1\le a_i \le 7$; $1\le w_i\le 100$; $1\le h_i \le 100$).\\
+The supermarket has at most $7$ carpets, i.e.~$\sum_{i} a_i \le 7$.
+
+\section*{Output}
+For the given room dimensions and the supermarket's stock of carpets, print
+``\texttt{yes}'' if it is possible to cover the room with carpets as specified above and
+``\texttt{no}'' otherwise.
+
