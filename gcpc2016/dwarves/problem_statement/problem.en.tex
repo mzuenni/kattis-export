@@ -1,0 +1,24 @@
+\problemname{Dwarves}
+
+Once upon a time, there arose a huge discussion among the dwarves in Dwarfland. The government wanted to introduce an identity card for all inhabitants. 
+
+Most dwarves accept to be small, but they do not like to be measured. Therefore, the government allowed them to substitute the field ``height'' in their personal identity card with a field ``relative dwarf size''. For producing the ID cards, the dwarves were being interviewed about their relative sizes. For some reason, the government suspects that at least one of the interviewed dwarves must have lied. 
+
+Can you help find out if the provided information proves the existence of at least one lying dwarf?
+
+\section*{Input}
+
+The input consists of:
+\begin{itemize}
+\item one line with an integer $n$ ($1 \le n \le 10^5$), where $n$ is the number of statements;
+\item $n$ lines describing the relations between the dwarves. Each relation is described by:
+\begin{itemize}
+\item one line with ``$s_1 < s_2$'' or ``$s_1 > s_2$'', telling whether dwarf $s_1$ is smaller or taller than dwarf $s_2$. $s_1$ and $s_2$ are two different dwarf names.
+\end{itemize}
+\end{itemize}
+
+A dwarf name consists of at most 20 letters from ``A'' to ``Z'' and ``a'' to ``z''. A dwarf name does not contain spaces. The number of dwarves does not exceed $10^4$.
+
+\section*{Output}
+
+Output ``{\tt impossible}'' if the statements are not consistent, otherwise output ``{\tt possible}''.

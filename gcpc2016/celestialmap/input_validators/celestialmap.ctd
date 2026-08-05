@@ -1,0 +1,13 @@
+INT(1,10^4,n) SPACE FLOAT(1,10^5,d) NEWLINE
+REP(2)
+	REPI(i, 3, SPACE) FLOAT(0,10,p[i]) END NEWLINE
+	SET(sqdist = p[0]*p[0] + p[1]*p[1] + p[2]*p[2])
+	ASSERT(sqdist + 0.00000001 >= 0.1^2)
+END
+REP(n)
+	REP(3, SPACE) FLOAT(-1*10^6,10^6) END NEWLINE
+	REPI(i, 3, SPACE) FLOAT(-0.95,0.95,t[i]) END NEWLINE
+	SET(sqdist = t[0]*t[0] + t[1]*t[1] + t[2]*t[2])
+	ASSERT(sqdist + 0.00000001 >= 0.1^2)
+	ASSERT(sqdist <= 0.95^2)
+END

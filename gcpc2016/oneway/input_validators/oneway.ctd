@@ -1,0 +1,6 @@
+INT(1, 500, n) NEWLINE
+INT(0, 2500, m) NEWLINE
+REP(m)
+    INT(1, n, a) SPACE INT(1, n, b) NEWLINE
+    ASSERT(a != b)
+END

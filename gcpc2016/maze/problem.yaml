@@ -1,0 +1,9 @@
+name: Maze
+source: German Collegiate Programming Contest (GCPC) 2016
+source_url: http://gcpc.nwerc.eu
+author: Christian Müller
+license: cc by-sa
+keywords: medium - ad-hoc
+validator_flags: float_tolerance 0.001
+# uuid added by BAPCtools
+uuid: '8ee7605a-afae-894b-2391-49f8e95c7933'

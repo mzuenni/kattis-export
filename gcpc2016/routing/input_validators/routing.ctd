@@ -1,0 +1,18 @@
+INT(2,100,n) NEWLINE
+REPI(i,n)
+	INT(0,n-1,m) SPACE INT(1,1000,t) NEWLINE
+	REP(m)
+		INT(0,n-1,s) SPACE INT(1,n,x)
+		ASSERT(i+1!=x)
+		UNSET(a)
+		REPI(j,s)
+			SPACE INT(1,n,a[j])
+			ASSERT(i+1!=a[j])
+		END
+		IF(s>0)
+			ASSERT(UNIQUE(a))
+		END
+		NEWLINE
+	END
+END
+EOF

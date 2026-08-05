@@ -1,0 +1,6 @@
+INT(1, 10^3, n) SPACE INT(1, 5*10^3, m) NEWLINE
+REP(m)
+    INT(1, n, a) SPACE INT(1, n, b) SPACE REGEX("[A-Z]", c) NEWLINE
+    ASSERT(a != b) 
+END
+REGEX("[A-Z]{1,200}", s) NEWLINE

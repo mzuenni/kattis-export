@@ -1,0 +1,10 @@
+name: Correcting Cheeseburgers
+source: German Collegiate Programming Contest (GCPC) 2016
+source_url: http://gcpc.nwerc.eu
+author: Martin Tillmann
+license: cc by-sa
+limits:
+ time_multiplier: 1.5
+keywords: hard - BFS
+# uuid added by BAPCtools
+uuid: '8ee7605a-15d5-8450-32cc-9c7fed12ab65'

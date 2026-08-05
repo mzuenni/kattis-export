@@ -1,0 +1,8 @@
+name: One-Way Roads
+source: German Collegiate Programming Contest (GCPC) 2016
+source_url: http://gcpc.nwerc.eu
+author: Markus Blumenstock
+license: cc by-sa
+keywords: hard - Maximum Flow
+# uuid added by BAPCtools
+uuid: '8ee7605a-5e85-8671-29a9-5c9d71940b2a'

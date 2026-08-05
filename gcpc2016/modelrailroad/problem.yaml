@@ -1,0 +1,11 @@
+name: Model Railroad
+source: German Collegiate Programming Contest (GCPC) 2016
+source_url: http://gcpc.nwerc.eu
+author: Philipp Hoffmann
+license: cc by-sa
+keywords: medium - Minimum Spanning Tree
+# uuid added by BAPCtools
+uuid: '8ee7605a-6edf-8d6c-023f-842acd305c0f'
+
+limits:
+  time_multiplier: 3

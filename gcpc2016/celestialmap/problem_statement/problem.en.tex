@@ -1,0 +1,63 @@
+\problemname{Celestial Map}
+
+In the distant future humanity has developed into a highly evolved race with vast knowledge of the universe. In particular, they now have an exhaustive map of all stars in the universe and know their trajectory as well as their speed.
+
+Bob works at the center for interplanetary communication. This is usually the most boring job on the planet, since you sit around all day waiting for other yet unknown races to send messages. Today however, as Bob comes back from his daily ping-pong session, he sees a red light blinking away in his control station. As the light is very annoying and keeps him from napping, he decides to look up its meaning in his manual. It says:
+
+\begin{quote}
+Congratulations! You have just made contact with another race. Please submit the coordinates of the newly discovered race to the administration office for proper filing. They can be found on panel 42.
+\end{quote}
+
+``Neat!'' Bob thinks and takes a look at panel 42. Unfortunately, something seems to be broken since instead of showing the coordinates it shows two vectors, a number and ``Warning 54816''. Another look at the manual reveals:
+
+\begin{quote}
+Warning 54816: Something went wrong while calculating the exact coordinates of the message's origin. Instead a plane from which the message must have come from as well as the origin's distance were computed.
+\end{quote} 
+
+After a quick check, Bob finds out that there are quite a few stars whose trajectories intersect with the plane at the given distance, but none that intersect at a slightly different distance (up to 0.1 lightyears). Also, stars which have not been in the plane at the time of the signal transmission were at a distance of at least 0.1 lightyears to the plane. Furthermore, the trajectories of all stars seem to intersect the given plane at an angle between 10 and 90 degrees.
+
+Since Bob wants to plan his afternoon, he first wants to know how many stars he needs to check individually to find out from which one the message originated.
+
+Can you help Bob figure out how many stars fit the description?
+
+\section*{Input}
+
+The input consists of:
+\begin{itemize}
+\item one line with an integer $n$ ($1 \leq n \leq 10^4$) and a real number $d$ ($1.0 \leq d \leq 10^5$), where $n$ is the number of stars in the universe and $d$ is the distance from Bob to the message's origin;
+\item two lines each with three real numbers $p_x$, $p_y$, and $p_z$ ($0.0 \leq p_x, p_y, p_z \leq 10.0,\\|(p_x, p_y, p_z)| \geq 0.1$) describing a vector $(p_x, p_y, p_z)$, where the two vectors span a plane from Bob's location in which the message's origin must have been in when the message was sent;
+\item $2n$ lines describing the stars. Each star is described by:
+\begin{itemize}
+\item one line with three real numbers $s_x$, $s_y$, and $s_z$ ($-1\cdot 10^6 \leq s_x, s_y, s_z \leq 10^6$) where $(s_x, s_y, s_z)$ describes the current location of the star;
+\item one line with three real numbers $t_x$, $t_y$, and $t_z$ ($0.1 \leq |(t_x, t_y, t_z)| \leq 0.95$) where $(t_x, t_y, t_z)$ describes the trajectory of the star. $|(t_x, t_y, t_z)|$ gives the speed at which the star is traveling.
+\end{itemize}
+\end{itemize}
+
+You can assume the following:
+\begin{itemize}
+\item The other civilization's message travels at the speed of light.
+\item All speeds are given in lightyears per year, and distances are in lightyears.
+\item Bob's location is fixed at $(0, 0, 0)$.
+\item Stars never collide.
+\item There are no intersection points of the given plane and any trajectory at distance $d \pm 0.1$ lightyears except for intersection points at distance exactly $d$ lightyears.
+\item Stars which have not been in the plane at the time of the signal transmission were at a distance of at least 0.1 lightyears to the plane.
+\item All trajectories intersect the given plane at an angle between 10 and 90 degrees.
+\end{itemize}
+
+\section*{Output}
+
+Output the number of stars that fit the description.
+
+\section*{Sample Explanation}
+
+In the first sample we need to check 2 stars. The star positions in the present as well as the given plane and the trajectories of the stars are shown in figure 1. The plane from which the message originated is given by the vectors $(1.0, 0.0, 0.0)$ and $(0.0, 1.0, 0.0)$, the distance is $2.0$. The first star is currently at position $(2.0, 0.0, 1.0)$ and moves in direction $(0.0, 0.0, 1.0)$ with speed $0.5$. The second star is currently at position $(0.0, 2.0, 1.0)$ and moves in direction $(0.0, 0.0, 1.0)$ with speed $0.7$. After moving the stars back by 2 years the stars' positions are as shown in Figure~\ref{second_sample}. As we can see, star 1 is in the plane and has the correct distance to Bob, therefore it fits the description. Star 2 is not in the plane and therefore does not fit the description. Hence the correct answer for the first sample is $1$.
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[width=0.7\textwidth]{present}
+  \caption{Star positions in the present for the first sample input.}
+  \centering
+    \includegraphics[width=0.7\textwidth]{past}
+  \caption{Star positions two years ago for the first sample input.}
+  \label{second_sample}
+\end{figure}

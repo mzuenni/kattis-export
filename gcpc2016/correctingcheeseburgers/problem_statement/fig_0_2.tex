@@ -1,0 +1,18 @@
+\documentclass[crop, tikz]{standalone}
+\usetikzlibrary{positioning,calc}
+
+\begin{document}
+
+
+\usetikzlibrary{arrows}
+
+\begin{tikzpicture}[shorten >=1pt,->,ultra thick]
+		\tikzstyle{vertex}=[circle,fill=black!15,minimum size=17pt,inner sep=0pt]
+		\tikzstyle{vv}=[]
+		\node[vv] (s) at (0,-0.75) {};
+		\foreach \l/\name/\x in {c/12/1, a/34/2, d/56/3, b/789/4}
+				\node[vertex] (\name) at (\x,0) {$\frac{\name}{\l}$};
+	\end{tikzpicture}
+
+\end{document}
+

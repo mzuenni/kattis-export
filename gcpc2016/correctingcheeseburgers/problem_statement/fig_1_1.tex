@@ -1,0 +1,24 @@
+\documentclass[crop, tikz]{standalone}
+\usetikzlibrary{positioning,calc}
+
+\begin{document}
+
+
+\usetikzlibrary{arrows}
+
+\begin{tikzpicture}[shorten >=1pt,->,ultra thick]
+			\tikzstyle{vertex}=[circle,fill=black!15,minimum size=17pt,inner sep=0pt]
+			\tikzstyle{vv}=[]
+			\foreach \l/\name/\x in {a/1/1, b/3/2, d/2/4}
+				\node[vertex] (\name) at (\x,0) {$\frac{\name}{\l}$};			
+			\node[vertex] (blank) at (3,0) {$\frac{}{c}$};				
+			\node[vv] (s) at (0,0) {};
+			\node[vv] (e) at (5,0) {};
+			
+			\path[every node/.style={font=\sffamily\small}]
+			(3) edge[bend right=45] node [right] {} (e)
+			(blank) edge[bend right=45] node [left] {} (s);
+		\end{tikzpicture}
+
+\end{document}
+

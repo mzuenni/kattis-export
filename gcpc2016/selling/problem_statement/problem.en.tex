@@ -1,0 +1,28 @@
+\problemname{Selling CPUs}
+
+You are very happy, that you got a job at ACME Corporation's CPU factory.
+After a hard month of labor, your boss has given you $c$ identical CPUs as payment.
+Apparently, ACME Corporation is low on cash at the moment.
+
+Since you can't live on CPUs alone, you want to sell them on the market and buy living essentials from the money you make.
+Unfortunately, the market is very restrictive in the way you are allowed to conduct business.
+You are only allowed to enter the market once, you can only trade with each merchant once, and you have to visit the traders in a specific order.
+The market organizers have marked each merchant with a number from $1$ to $m$ (the number of merchants) and you must visit them in this order.
+Each trader has his own price for every amount of CPUs to buy.
+
+\section*{Input}
+
+The input consists of:
+\begin{itemize}
+\item one line with two integers $c$ and $m$ ($1 \leq c,m \leq 100$), where $c$ is the number of CPUs and $m$ is the number of merchants;
+\item $m$ lines describing the merchants. Each merchant is described by:
+\begin{itemize}
+\item one line with $c$ integers $p_1, \dots, p_c$ ($1 \leq p_i \leq 10^5$ for all $1\leq i\leq c$), where $p_i$ is the amount of money the merchant will give you for $i$ CPUs.
+\end{itemize}
+\end{itemize}
+
+\section*{Output}
+
+Output the maximum amount of money you can make by selling the CPUs you have.
+
+Note that you don't have to sell all CPUs.

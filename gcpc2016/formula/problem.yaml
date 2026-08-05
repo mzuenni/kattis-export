@@ -1,0 +1,9 @@
+name: Formula
+source: German Collegiate Programming Contest (GCPC) 2016
+source_url: http://gcpc.nwerc.eu
+author: Gregor Behnke
+license: cc by-sa
+validator_flags: float_tolerance 0.001
+keywords: easy - Ad-hoc
+# uuid added by BAPCtools
+uuid: '8ee7605a-8b83-86ab-1338-a3a371f63681'
