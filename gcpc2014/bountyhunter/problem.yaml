@@ -1,0 +1,13 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: Bounty Hunter
+validator_flags: float_tolerance 1e-2
+# uuid added by BAPCtools
+uuid: '8ee7605a-735f-8df0-28de-e1ea92925481'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

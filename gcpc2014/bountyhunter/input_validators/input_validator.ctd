@@ -1,0 +1,11 @@
+INT(1, 100, t) NEWLINE
+REP(t)
+	INT(2, 512, n) NEWLINE
+	SET(last=-1)
+	REPI(i, n)
+		INT(last+1, 5000, x) SPACE
+		INT(0, 5000) NEWLINE
+		SET(last=x)
+	END
+END
+EOF

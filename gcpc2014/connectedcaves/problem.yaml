@@ -1,0 +1,13 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: Connected Caves
+validation: custom
+# uuid added by BAPCtools
+uuid: '8ee7605a-4246-8bc5-1e63-361cecd3c9ee'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

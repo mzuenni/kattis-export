@@ -1,0 +1,29 @@
+\problemname{JuQueen}
+\emph{JuQueen} is the super computer with the best performance allover Germany.
+It is on rank $8$ in the famous top$500$ list with its $458\,752$ cores.
+It draws a lot of energy (up to $2\,301$~kW), so we want to reduce that by underclocking the unused cores.
+
+The cluster scheduling algorithm which is in charge of distributing jobs over the nodes and cores of a cluster will issue the following speedstepping commands:
+\begin{itemize}
+	\item \texttt{change X S} changes the frequency of core \texttt{X} by \texttt{S} steps
+	\item \texttt{groupchange A B S} changes the frequency of every core in range \texttt{[A,B]} by \texttt{S} steps
+	\item \texttt{state X} returns the current state of core \texttt{X}
+\end{itemize}
+To be safe for the future, your program should be able to handle $4\,587\,520$ cores.
+The initial frequency for each core is $0$.
+
+\begin{Input}
+    The input contains a single test case.
+    It starts with a line containing three integers $C$, $N$, and $O$,
+    where $C$ is the number of cores ($1 \leq C \leq 4\,587\,520$) to manage, $N$ is the number of frequency steps for each core ($1 \leq N \leq 10\,000$) and $O$ is the number of operations in the test program ($1 \leq O \leq 50\,000$).
+    Then follow $O$ lines, each containing one command as described above.
+    $X$, $A$ and $B$ are $0$-based IDs of the cores ($0 \leq A, B, X < C$; $A \leq B$).
+    $S$ is an integer number of steps, possibly negative ($-N \leq S \leq +N$).
+    Both, the \texttt{change} and the \texttt{groupchange} command will increase (or decrease) in single steps and stop as soon as \textbf{one} core in the group reaches the minimal ($0$) or maximal frequency ($N$).
+\end{Input}
+
+\begin{Output}
+    Output one line for every operation in the input.
+    For \texttt{change} and \texttt{groupchange} print the changed
+    number of steps, for \texttt{state} print the current state.
+\end{Output}

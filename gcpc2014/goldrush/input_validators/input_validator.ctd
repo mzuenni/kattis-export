@@ -1,0 +1,8 @@
+INT(1, 1000, t) NEWLINE
+REP(t)
+	INT(1, 62, n) SPACE
+	INT(1, 2^n, a) SPACE
+	INT(1, 2^n, b) NEWLINE
+	ASSERT(a+b==2^n)
+END
+EOF

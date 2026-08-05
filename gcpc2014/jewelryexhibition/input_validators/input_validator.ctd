@@ -1,0 +1,18 @@
+REPI(i, 100)
+	SET(int[i]=i)
+END
+ASSERT(INARRAY(1.0, int))
+
+INT(1, 10, r) NEWLINE
+REP(r)
+	INT(1, 100, n) SPACE
+	INT(1, 100, m) SPACE
+	INT(1, 10^4, k) NEWLINE
+	REP(k)
+		FLOATP(0, n, 1, 1, x, FIXED) SPACE
+		FLOATP(0, m, 1, 1, y, FIXED) NEWLINE
+		ASSERT(!INARRAY(x, int))
+		ASSERT(!INARRAY(y, int))
+	END
+END
+EOF

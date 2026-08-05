@@ -1,0 +1,25 @@
+\problemname{Not a subsequence}
+In this problem we consider strings over a fixed finite alphabet of size $k$.
+The alphabet contains the first $k$ characters from the list
+$$a, b, c, \dot , z, A, B, C, \dots, Z, 0, 1, \dots, 9\text{.}$$
+For every test case, we are given the value of $k$ (notice that it cannot exceed $62$), and consider only strings consisting of the first $k$ characters from the list.
+
+Given a string $s[1..n]$, we are interested in strings which are \textbf{not} its subsequences.
+Formally, a string $t[1..m]$ is a subsequence of a string $s[1..n]$ when one can choose \textbf{not necessarily contiguous} indices $1 \leq i_1 < i_2 < \dots i_m \leq n$ such that $t[1] = s[i_1]$, $t[2] = s[i_2]$, \dots, $t[m] = t[i_m]$.
+For example, $acb$ is a subsequence of $babcaab$.
+Now, given a string $s[1..n]$, we would like to compute the smallest $m$ such
+that there is a string $t[1..m]$, which is \textbf{not} a subsequence of $s[1..n]$. Additionally, we would like to count the number of such shortest strings $t[1..m]$.
+As the latter number can be quite large, output it modulo $10^9 + 7$.
+
+\begin{Input}
+    The input starts with the number of test cases $T \leq 100$.
+    Then the descriptions of $T$ test cases follow.
+    A single test case consists of a single line containing the size of the alphabet $k$ ($k \in [1, 62]$) and the string $s[1..n]$ ($n \in [1, 10^6]$).
+    The string consists of the first k characters from $a-zA-Z0-9$.
+\end{Input}
+
+\begin{Output}
+    For every test case output one line containing two numbers.
+    The first number is the smallest $m$ such that there is a string $t[1..m]$ consisting of the first $k$ characters from $a-zA-Z0-9$, which is not a subsequence of $s[1..n]$.
+    The second number is the total count of such shortest strings $t[1..m]$ modulo $10^9 + 7$.
+\end{Output}

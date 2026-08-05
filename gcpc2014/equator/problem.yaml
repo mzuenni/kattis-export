@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: Equator
+# uuid added by BAPCtools
+uuid: '8ee7605a-aeb2-86f8-34e1-1cb762fec91a'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

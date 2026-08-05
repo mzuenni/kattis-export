@@ -1,0 +1,9 @@
+INT(1, 10^5, n) SPACE INT(1, n, p) NEWLINE
+SET(last=-1)
+REP(n)
+	INT(last+1, 10^6, c) SPACE
+	SET(last=c)
+	REGEX("[a-zA-Z0-9]*", s) NEWLINE
+	ASSERT(STRLEN(s) <= 100)
+END
+EOF

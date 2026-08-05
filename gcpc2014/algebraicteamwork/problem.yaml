@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: Algebraic Teamwork
+# uuid added by BAPCtools
+uuid: '8ee7605a-85a0-8c4e-3913-cd1ff65310c7'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

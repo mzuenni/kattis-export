@@ -1,0 +1,9 @@
+INT(1, 30, t) NEWLINE
+REP(t)
+	INT(1, 10^6, n)
+	REP(n)
+		SPACE INT(-1000, 1000, c)
+	END
+	NEWLINE
+END
+EOF

@@ -1,0 +1,22 @@
+INT(1, 4587520, c) SPACE
+INT(1, 10^4, n) SPACE
+INT(1, 5*10^4, o) NEWLINE
+REP(o)
+	IF(MATCH("c"))
+		STRING("change") SPACE
+		INT(0, c-1) SPACE
+		INT(-n, n) NEWLINE
+	ELSE
+		IF(MATCH("g"))
+			STRING("groupchange") SPACE
+			INT(0, c-1, a) SPACE
+			INT(0, c-1, b) SPACE
+			INT(-n, n) NEWLINE
+			ASSERT(a <= b)
+		ELSE
+			STRING("state") SPACE
+			INT(0, c-1, a) NEWLINE
+		END
+	END
+END
+EOF

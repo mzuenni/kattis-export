@@ -1,0 +1,25 @@
+INT(1, 10, t) NEWLINE
+REP(t)
+	INT(1, 50-1, p) NEWLINE
+	REP(p)
+		INT(5, 50, n) NEWLINE
+		REPI(i, 2*n, SPACE)
+			INT(0, 10^6, xy[i])
+		END
+		NEWLINE
+		REPI(i, n-1)
+			IF(xy[2*i+0] == xy[2*i+2])
+				SET(h=1)
+			ELSE
+				SET(h=0)
+			END
+			IF(xy[2*i+1] == xy[2*i+3])
+				SET(v=1)
+			ELSE
+				SET(v=0)
+			END
+			ASSERT(h != v)
+		END
+	END
+END
+EOF

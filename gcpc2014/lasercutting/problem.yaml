@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: Laser Cutting
+# uuid added by BAPCtools
+uuid: '8ee7605a-bd26-8d6d-2158-731e5671df98'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

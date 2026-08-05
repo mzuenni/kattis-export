@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: JuQueen
+# uuid added by BAPCtools
+uuid: '8ee7605a-da86-8db6-354d-bedee25b0de8'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

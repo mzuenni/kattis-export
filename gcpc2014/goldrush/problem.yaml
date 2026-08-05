@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2014
+# source_url:
+author: The GCPC 2014 Jury 
+# rights_owner:
+license: cc by-sa
+name: Gold Rush
+# uuid added by BAPCtools
+uuid: '8ee7605a-0c6d-866e-160a-0012f4142779'
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5

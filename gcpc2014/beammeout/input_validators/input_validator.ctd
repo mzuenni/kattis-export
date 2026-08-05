@@ -1,0 +1,13 @@
+INT(2, 50000, n) NEWLINE
+SET(sum=0)
+REP(n-1)
+	INT(0, n, m) NEWLINE
+	SET(last=0, sum=sum+m)
+	REP(m, SPACE)
+		INT(last+1, n, x)
+		SET(last=x)
+	END
+	NEWLINE
+END
+ASSERT(sum<=10^6)
+EOF
