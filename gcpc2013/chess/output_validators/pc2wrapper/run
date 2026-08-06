@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CODE_DIR=$(cd $(dirname $BASH_SOURCE) && pwd)
+input=$1
+judge=$2
+feedback=$3
+output="$feedback/team_output_pc2"
+result="$feedback/result.xml"
+diff="$feedback/diff.out"
+cat > $output
+"$CODE_DIR/compare" "$input" "$output" "$judge" > "$diff" || exit $?
+[[ -f "$diff" ]] || exit -1
+[[ -s "$diff" ]] && exit 43
+exit 42

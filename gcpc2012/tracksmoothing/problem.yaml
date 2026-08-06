@@ -1,0 +1,7 @@
+uuid: 5ccc7f19-32fb-4940-b470-344fd992748e
+author: Daniel Brinkers
+license: cc by-sa
+rights_owner: the GCPC 2012 jury
+source: German Collegiate Programming Contest (GCPC) 2012
+validation: default
+validator_flags: float_tolerance 1e-5

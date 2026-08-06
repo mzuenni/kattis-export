@@ -1,0 +1,6 @@
+Wrap a PC^2 validator [1] to comply with the Kattis standard [2].
+The validator is expected to compile into a file named 'compare'.
+
+[1] http://www.ecs.csus.edu/pc2/doc/valistandard.html
+[2] https://clics.ecs.baylor.edu/index.php/Output_validator
+

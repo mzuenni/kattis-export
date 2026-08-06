@@ -1,0 +1,88 @@
+\problemname{BrainFsckVM}
+Given a brainfsck program, determine whether it terminates or enters
+an endless loop.\\
+
+A brainfsck interpreter has a data array (consisting of unsigned 8-bit
+integers) with an index, the so called ``\emph{data index}''; the
+entry of the array pointed to by the data index is the so called
+``\emph{current entry}''. A brainfsck program consists of a sequence
+of the following eight instructions:
+
+\begin{center}
+  \begin{tabular}{|l|l|}
+    \hline
+    \verb?-? & decrease \emph{current entry} by $1$ (modulo $2^8$)\\
+    \hline
+    \verb?+? & increase \emph{current entry} by $1$ (modulo $2^8$)\\
+    \hline
+    \verb+<+ & decrease \emph{data index} by $1$ \\
+    \hline
+    \verb+>+ & increase \emph{data index} by $1$ \\
+    \hline
+    \verb+[+ & jump behind the matching \verb+]+, 
+    if the \emph{current entry} is equal to 0 \\
+    \hline
+    \verb+]+ & jump behind the matching \verb+[+ if 
+    the \emph{current entry} is \emph{not} equal to $0$\\
+    \hline
+    \verb+.+ & print the \emph{current entry} as character\\
+    \hline
+    \verb+,+ & read a character and save it into the \emph{current
+    entry}. On end of input save $255$.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+Interpretation of a brainfsck program starts at the first instruction,
+and terminates if the instruction pointer leaves the end of the
+program. After an instruction is executed, the instruction pointer
+advances to the instruction to the right (except, of course, if the
+loop instructions \verb+[+ or \verb+]+ cause a jump).\\
+
+In addition to the program, you will be given the size of the data
+array. The entries of the data array shall be unsigned 8-bit integers,
+with usual over- or underflow behaviour. 
+At the start of the program, the data array entries and the data 
+index shall be initialized to zero.\\
+
+Incrementing or decrementing the data index beyond the
+boundaries of the data array shall make it re-enter the data array at
+the other boundary; e.g.\ decrementing the data index when it is
+zero shall set it to the size of the data array minus one.\\
+
+The \verb+[+ and \verb+]+ instructions define loops and are allowed to
+nest. Every given program will be well-formed, i.e. when traversing
+the program from left to right, the number of \verb+[+ instructions
+minus the number of \verb+]+ instructions will always be greater or
+equal zero, and at the end of the program it will be equal to zero.\\
+
+For the purposes of the problem, discard the output of the interpreted program.
+\footnote{For purposes of debugging, you may examine it. The third program
+	from the sample input would print ``ICPC''; the fourth program,
+	when given an arbitrary string, will print a brainfsck program, that in
+	turn will print said arbitrary string when executed.}
+
+
+
+\section*{Input}
+The input starts with a line containing the number of test cases $t$ ($0 < t \le 20$). Each
+test case consists of three lines. The first line contains three integers $s_m,
+s_c, s_i$, describing the size of the memory, the size of the program code and
+the size of the input ($0 < s_m \le 100\,000; 0 < s_c, s_i < 4\,096$).
+
+The second line contains the brainfsck program code to be executed; it
+consists of $s_c$ characters.
+
+The third line contains the input of the program, as text (only printable,
+non-whitespace characters). Once the program has consumed all available input,
+the input instruction shall set the current cell to $255$.
+
+\section*{Output}
+For each test case, print one line, containing either ``{\tt Terminates}'' or
+``{\tt Loops}'', depending on whether the program either terminates after a
+finite number of steps, or enters an endless loop. If the program loops, also
+print the indices ($0$-based) of the two \verb+[+ and the \verb+]+ symbols in
+the code array that correspond to the endless loop. You may safely assume that
+after $50\,000\,000$ instructions, a program either terminated or hangs in an
+endless loop, which then was executed at least once. During each iteration of the endless loop
+ at most $50\,000\,000$ instructions are executed.

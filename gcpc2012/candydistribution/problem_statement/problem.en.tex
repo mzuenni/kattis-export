@@ -1,0 +1,27 @@
+\problemname{Candy Distribution}
+
+Kids like candy, so much that they start beating each other if the candy
+is not fairly distributed. So at your next party, you better start thinking
+before you buy the candy.
+
+If there are $K$ kids, you of course need $K \cdot X$ candies for a fair
+distribution, where $X$ is a positive natural number. But you learned that
+there is always one kid that loses one candy, so you better be prepared with {\bf
+exactly} one spare candy, resulting in $(K \cdot X) + 1$ candies.
+
+Usually, the candies are packed into bags with a fixed number of candies $C$ per bag.
+You will buy some of these bags so that the above constraints are fulfilled.
+
+\section*{Input}
+The first line gives the number of test cases $t$ ($0 < t < 100$). Each test
+case is specified by two integers $K$ and $C$ on a single line, where $K$ is
+the number of kids and $C$ the number of candies in one bag ($1 \le K, C \le
+10^9$). As your money is limited, you will never buy more than $10^9$ candy
+bags.
+
+\section*{Output}
+For each test case, print one line. If there is no such number of candy bags to
+fulfill the above constraints, print ``{\tt IMPOSSIBLE}''. Otherwise
+print the number of candy bags you want to buy. If there is more than one
+solution, any will do.
+

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+CODE_DIR=$(cd $(dirname $BASH_SOURCE) && pwd)
+input=$1
+judge=$2
+feedback=$3
+output="$feedback/team_output_pc2"
+result="$feedback/result.xml"
+diff="$feedback/diff.out"
+cat > $output
+
+# run the actual validator
+"$CODE_DIR/compare" "$input" "$output" "$judge" "$result" "$diff" || exit $?
+
+grep -q '<result outcome="Accepted">Accepted</result>' $result;
+GREP_EXITCODE=$?;
+
+# clear out the output directory... sometimes some of the output can cause the
+# verifyproblem OuputValidator parser to crash, and I don't have time to dive
+# further into fixing this problem's output validator...
+rm -f $feedback/*; 
+
+if [ $GREP_EXITCODE -eq 0 ]; then
+    exit 42;
+else
+    exit 43;
+fi;

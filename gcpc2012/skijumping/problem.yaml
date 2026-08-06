@@ -1,0 +1,7 @@
+uuid: ba8179d7-9f38-4c49-b364-114d9415a00c
+author: Christian Renner
+license: cc by-sa
+rights_owner: the GCPC 2012 jury
+source: German Collegiate Programming Contest (GCPC) 2012
+validation: default
+validator_flags: float_tolerance 1e-4

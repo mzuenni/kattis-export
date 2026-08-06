@@ -1,0 +1,8 @@
+uuid: b473045a-fa26-4e07-8574-a93cb3f95025
+author: Matthias Bayerlein
+license: cc by-sa
+limits:
+  time_multiplier: 2.5
+rights_owner: the GCPC 2013 jury
+source: German Collegiate Programming Contest (GCPC) 2013
+validator_flags: float_tolerance 1e-6

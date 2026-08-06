@@ -1,0 +1,74 @@
+make: Entering directory `/opt/GCPC/GCPC_2012/Outsourcing'
+
+checking solutions/testdata for Outsourcing
+
+Timelimit is 1 seconds
+* checking solutions/outsourcing_minimize_dfs.c
+	 - testcases/PositivesUselessLabels.in: 0.000s
+	 -                 testcases/sample.in: 0.000s
+	 -                    testcases/All.in: 0.000s
+	 -                  testcases/Paths.in: 0.050s
+	 -              testcases/Negatives.in: 0.010s
+	 -              testcases/Positives.in: 0.000s
+* checking solutions/brinky.cpp
+	 - testcases/PositivesUselessLabels.in: 0.000s
+	 -                 testcases/sample.in: 0.000s
+	 -                    testcases/All.in: 0.000s
+	 -                  testcases/Paths.in: 0.000s
+	 -              testcases/Negatives.in: 0.010s
+	 -              testcases/Positives.in: 0.000s
+* checking solutions/outsourcing-moritz.cpp
+	 - testcases/PositivesUselessLabels.in: 0.000s
+	 -                 testcases/sample.in: 0.000s
+	 -                    testcases/All.in: 0.000s
+	 -                  testcases/Paths.in: 0.000s
+	 -              testcases/Negatives.in: 0.020s
+	 -              testcases/Positives.in: 0.020s
+* checking solutions/alex_outsourcing.cpp
+	 - testcases/PositivesUselessLabels.in: 0.000s
+	 -                 testcases/sample.in: 0.000s
+	 -                    testcases/All.in: 0.000s
+	 -                  testcases/Paths.in: 0.000s
+	 -              testcases/Negatives.in: 0.020s
+	 -              testcases/Positives.in: 0.010s
+* checking solutions/outsourcing_hopcroft_karp.cpp
+	 - testcases/PositivesUselessLabels.in: 0.000s
+	 -                 testcases/sample.in: 0.000s
+	 -                    testcases/All.in: 0.000s
+	 -                  testcases/Paths.in: 0.000s
+	 -              testcases/Negatives.in: 0.020s
+	 -              testcases/Positives.in: 0.010s
+* checking solutions/tobi.java
+	 - testcases/PositivesUselessLabels.in: 0.160s
+	 -                 testcases/sample.in: 0.080s
+	 -                    testcases/All.in: 0.150s
+	 -                  testcases/Paths.in: 0.140s
+	 -              testcases/Negatives.in: 0.360s
+	 -              testcases/Positives.in: 0.240s
+* checking solutions/tobi.cpp
+	 - testcases/PositivesUselessLabels.in: 0.000s
+	 -                 testcases/sample.in: 0.000s
+	 -                    testcases/All.in: 0.000s
+	 -                  testcases/Paths.in: 0.000s
+	 -              testcases/Negatives.in: 0.000s
+	 -              testcases/Positives.in: 0.000s
+* checking solutions/Outsourcing.java
+	 - testcases/PositivesUselessLabels.in: 0.140s
+	 -                 testcases/sample.in: 0.070s
+	 -                    testcases/All.in: 0.150s
+	 -                  testcases/Paths.in: 0.860s
+	 -              testcases/Negatives.in: 0.540s
+	 -              testcases/Positives.in: 0.340s
+
+Summary for Outsourcing:
+------------------------
+-    outsourcing_minimize_dfs.c: 0.050s, AC
+-                    brinky.cpp: 0.010s, AC
+-        outsourcing-moritz.cpp: 0.020s, AC
+-          alex_outsourcing.cpp: 0.020s, AC
+- outsourcing_hopcroft_karp.cpp: 0.020s, AC
+-                     tobi.java: 0.360s, AC
+-                      tobi.cpp: 0.000s, AC
+-              Outsourcing.java: 0.860s, AC
+
+make: Leaving directory `/opt/GCPC/GCPC_2012/Outsourcing'
