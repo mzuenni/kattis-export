@@ -1,0 +1,13 @@
+INT(1, 100, c) NEWLINE
+REP(c)
+	INT(1, 10^5, n) SPACE
+	INT(0, 10^6, t) NEWLINE
+	REP(n)
+		INT(0, 10^6, cp) SPACE
+		INT(0, 10^6, cbb) SPACE
+		INT(0, 10^6, cbe) SPACE
+		INT(0, 10^6, ceb) SPACE
+		INT(0, 10^6, cee) NEWLINE
+	END
+END
+EOF

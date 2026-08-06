@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2011
+# source_url:
+author: The GCPC 2011 Jury 
+# rights_owner:
+license: cc by-sa
+name: My brother's diary
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+# uuid added by BAPCtools
+uuid: '8ee7605a-956d-8d62-2e2e-59439f019b78'

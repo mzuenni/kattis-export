@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2011
+# source_url:
+author: The GCPC 2011 Jury 
+# rights_owner:
+license: cc by-sa
+name: Indiana Jones and the lost Soccer Cup
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+# uuid added by BAPCtools
+uuid: '8ee7605a-4916-865c-3bda-863395bb2c0b'

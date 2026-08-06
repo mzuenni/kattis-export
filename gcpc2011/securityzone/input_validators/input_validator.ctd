@@ -1,0 +1,15 @@
+INT(0, 100, c) NEWLINE
+REP(c)
+	INT(1, 25, n) NEWLINE
+	REPI(i, n)
+		INT(-100, 100, x[i]) SPACE
+		INT(-100, 100, y[i]) SPACE
+		INT(1, 100, r[i]) NEWLINE
+		REPI(j, i)
+			IF(i != j)
+				ASSERT((x[i]-x[j])^2+(y[i]-y[j])^2>=(r[i]-r[j])^2)
+			END
+		END
+	END
+END
+EOF

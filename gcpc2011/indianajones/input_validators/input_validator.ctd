@@ -1,0 +1,11 @@
+INT(1, 30, c) NEWLINE
+REP(c)
+	INT(1, 10000, n) SPACE
+	INT(0, 100000, h) NEWLINE
+	REP(h)
+		INT(1, n, a) SPACE
+		INT(1, n, b) NEWLINE
+		ASSERT(a != b)
+	END
+END
+EOF

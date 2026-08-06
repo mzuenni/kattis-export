@@ -1,0 +1,19 @@
+\problemname{Time to live}
+As you might know, most computer networks are organized in a tree-like fashion, i.e. each computer is reachable by each other computer but only over one, unique path.
+
+The so-called \emph{Time to live} (TTL) specifies after how many hops a network packet is dropped if it has not reached its destination yet.
+The purpose of the TTL is to avoid situations in which a packet circulates through the network caused by errors in the routing tables.
+
+The placement of a router that connects the network to another network is optimal when the maximal needed TTL for packets that are sent from this router to any other computer within the same network is minimal.
+Given a network as specified above, you should calculate the maximal needed TTL in this network if you can select the computer that should be used as router.
+
+\begin{Input}
+    The first line of the input consists of the number of test cases c that follow ($1 \leq c \leq 100$).
+    Each test case starts with a line specifying $N$, the number of computers in this network ($1 < N \leq 100\,000$).
+    Computers are numbered from $0$ to $N-1$.
+    Then follow $N-1$ lines, each specifying a network connection by two numbers $a$ and $b$ which means that computer $a$ is connected to computer $b$ and vice versa, of course ($0 \leq a, b < N$).
+\end{Input}
+
+\begin{Output}
+    For each test case in the input, print one line containing the optimal TTL as specified above.
+\end{Output}

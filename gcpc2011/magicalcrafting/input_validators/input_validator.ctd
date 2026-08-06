@@ -1,0 +1,18 @@
+INT(1, 100, c) NEWLINE
+REP(c)
+	INT(0, 30, r) SPACE
+	INT(0, 10, l) NEWLINE
+	REP(r)
+		REGEX("[A-Z]") SPACE
+		REGEX("[A-Z]") SPACE
+		REGEX("[A-Z]") SPACE
+		INT(0, 1000, d) NEWLINE
+	END
+	REP(l)
+		INT(1, 100, ll) SPACE
+		REGEX("[a-z]*", s) NEWLINE
+		ASSERT(STRLEN(s) >= 1)
+		ASSERT(STRLEN(s) <= 100)
+	END
+END
+EOF

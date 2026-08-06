@@ -1,0 +1,6 @@
+REGEX("[.][.][.][.][xA-L][.][.][.][.]") NEWLINE
+REGEX("[.][xA-L][.][xA-L][.][xA-L][.][xA-L][.]") NEWLINE
+REGEX("[.][.][xA-L][.][.][.][xA-L][.][.]") NEWLINE
+REGEX("[.][xA-L][.][xA-L][.][xA-L][.][xA-L][.]") NEWLINE
+REGEX("[.][.][.][.][xA-L][.][.][.][.]") NEWLINE
+EOF

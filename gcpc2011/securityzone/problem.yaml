@@ -1,0 +1,13 @@
+source: German Collegiate Programming Contest (GCPC) 2011
+# source_url:
+author: The GCPC 2011 Jury 
+# rights_owner:
+license: cc by-sa
+name: Security Zone
+validator_flags: float_tolerance 1e-7
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+# uuid added by BAPCtools
+uuid: '8ee7605a-71b3-8275-03bc-63297ce6eba5'

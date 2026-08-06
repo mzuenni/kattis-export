@@ -1,0 +1,9 @@
+INT(1, 1000, c) NEWLINE
+REP(c)
+	INT(1, 1000, n) NEWLINE
+	REGEX("[a-z]*", s1) NEWLINE
+	REGEX("[a-z]*", s2) NEWLINE
+	ASSERT(STRLEN(s1) == n)
+	ASSERT(STRLEN(s2) == n)
+END
+EOF

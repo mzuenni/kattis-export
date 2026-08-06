@@ -1,0 +1,12 @@
+source: German Collegiate Programming Contest (GCPC) 2011
+# source_url:
+author: The GCPC 2011 Jury 
+# rights_owner:
+license: cc by-sa
+name: Sightseeing
+
+limits:
+  time_multiplier: 2
+  time_safety_margin: 1.5
+# uuid added by BAPCtools
+uuid: '8ee7605a-99e3-8537-076a-c7e0e2b3d71c'
