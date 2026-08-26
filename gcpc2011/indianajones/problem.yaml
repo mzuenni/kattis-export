@@ -8,5 +8,6 @@ name: Indiana Jones and the Lost Soccer Cup
 limits:
   time_multiplier: 2
   time_safety_margin: 1.5
+  output: 16
 # uuid added by BAPCtools
 uuid: '8ee7605a-4916-865c-3bda-863395bb2c0b'
