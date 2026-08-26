@@ -3,7 +3,7 @@ source: German Collegiate Programming Contest (GCPC) 2011
 author: The GCPC 2011 Jury 
 # rights_owner:
 license: cc by-sa
-name: Time to live
+name: Time to Live
 
 limits:
   time_multiplier: 2
